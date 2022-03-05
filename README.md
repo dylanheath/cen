@@ -44,6 +44,8 @@ GET mainnet.cen.network/.netlify/functions/api/transactions/totaltransactions
 
 User information will be accessable either by api or browser but some data may not be accessable for the privacy of the users phone number or email.
 
+#### EndPoints
+
 ```
 GET mainnet.cen.network/.netlify/functions/api/user/{address, name, email or phone number}
 ```
