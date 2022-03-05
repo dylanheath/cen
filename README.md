@@ -50,3 +50,11 @@ User information will be accessable either by api or browser but some data may n
 GET mainnet.cen.network/.netlify/functions/api/user/{address, name, email or phone number}
 ```
 
+### Connected Repos
+
+#### Backend
+https://github.com/dylanheath/cen-server
+
+#### Backend Documentation
+https://github.com/dylanheath/cen-api-documentation
+
