@@ -1,0 +1,63 @@
+.Transaction {
+ display: flex;
+ flex-direction: column;
+ height: 40vh;
+  
+}
+
+.Transaction-box {
+height: 400px;
+overflow-y: scroll;
+-ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;
+}
+
+.Transaction-box::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+}
+
+
+.transaction-template-container {
+padding-top: 10px; 
+}
+
+.transactions-template {
+  display: flex;
+  flex-directions: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.6rem;
+  background: #16171a;
+  border-radius: 20px;
+  border: 1.6px solid #1d1e21; 
+  transition: 0.2s;
+}
+
+.transactions-template:hover {
+ border: 1.6px solid #717884;
+ transition: 0.2s;
+}
+
+.transaction-account-container {
+display: flex;
+flex-direction: row;
+align-items: center;
+}
+
+.transaction-account-name {
+color: white;
+font-size:  1vw;
+padding-left: 8px;
+}
+
+.transaction-amount {
+  color: #717884;
+  font-size: 0.8vw;
+}
+
+.transaction-account-picture {
+  height: auto;
+  width: 1.8vw;
+  border-radius: 20px;
+}
