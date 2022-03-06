@@ -48,6 +48,12 @@ User information will be accessable either by api or browser but some data may n
 ```
 GET mainnet.cen.network/.netlify/functions/api/user/{address, name, email or phone number}
 ```
+### Analytics
+
+```
+GET mainnet.cen.network/.netlify/functions/api/transactions/totaltransactions
+GET mainnet.cen.network/.netlify/functions/api/transactions/totalamount
+```
 
 ### Connected Repos
 
