@@ -9,7 +9,7 @@ import './dashboard.css';
 
 export default function MiddleBox() {
   const [TotalTransactions, setTotalTransactions] = useState<number>(0); 
-  const [TotalTransferred, setTotalTransferred] = useState<number>(0);
+  const [TotalAmount, setTotalAmount] = useState<number>(0);
   useEffect(() => {
     const getAnalytics = async () => {
       const getTotalTransactions = await axios.get(`${api.url}/transactions/totaltransactions`, { timeout: 2000 })
@@ -19,6 +19,14 @@ export default function MiddleBox() {
         })
 	.catch((response) => {
           console.log('failed to grab total transactions');
+	})
+      const getTotalAmount = await axios.get(`${api.url}/transactions/totalamount`, { timeout: 2000 })
+        .then((response) => {
+          const TotalAmountData = response.data;
+	  setTotalAmount(TotalAmountData);
+        })
+	.catch(() => {
+          console.log('failed to grab total amount');
 	})
     }
   })
