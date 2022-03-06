@@ -20,7 +20,7 @@ export default function MiddleBox() {
 	.catch((response) => {
           console.log('failed to grab total transactions');
 	})
-      const getTotalAmount = await axios.get(`${api.url}/transactions/totalamount`, { timeout: 2000 })
+      const getTotalAmount = await axios.get(`${api.url}/transactions/totalamount`, { timeout: 15000 })
         .then((response) => {
           const TotalAmountData = response.data;
 	  setTotalAmount(TotalAmountData);
