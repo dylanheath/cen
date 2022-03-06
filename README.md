@@ -24,7 +24,7 @@ npm install
 npm start
 ```
  
-## Api Usage
+## Api Usage [![Netlify Status](https://api.netlify.com/api/v1/badges/202d72f1-f05d-42e5-bd50-238141b3d1a0/deploy-status)](https://app.netlify.com/sites/gracious-rosalind-31c1be/deploys)
 
 ### Transactions
 
@@ -53,6 +53,12 @@ GET mainnet.cen.network/.netlify/functions/api/user/{address, name, email or pho
 ```
 GET mainnet.cen.network/.netlify/functions/api/transactions/totaltransactions
 GET mainnet.cen.network/.netlify/functions/api/transactions/totalamount
+```
+
+### Status
+
+```
+GET mainnet.cen.network/.netlify/functions/api/status
 ```
 
 ### Connected Repos
