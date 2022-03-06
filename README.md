@@ -24,7 +24,7 @@ npm install
 npm start
 ```
  
-## Api Usage
+## Api Usage [![Netlify Status](https://api.netlify.com/api/v1/badges/202d72f1-f05d-42e5-bd50-238141b3d1a0/deploy-status)](https://app.netlify.com/sites/gracious-rosalind-31c1be/deploys)
 
 ### Transactions
 
