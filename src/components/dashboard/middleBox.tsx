@@ -29,7 +29,8 @@ export default function MiddleBox() {
           console.log('failed to grab total amount');
 	})
     }
-  })
+   getAnalytics();
+  }, [])
   return (
     <div className="Middle-top">
       <div className="Middle-top-box">
@@ -41,7 +42,7 @@ export default function MiddleBox() {
 	    <p className="Middle-top-total-transactions">{TotalTransactions}</p>
 	  </div>
 	  <div className="Middle-top-transferred-container">
-	    <p className="Middle-top-transferred">{TotalTransferred} XTZ</p>
+	    <p className="Middle-top-transferred">{TotalAmount} XTZ</p>
 	  </div>
 	</div>
       </div>
