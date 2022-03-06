@@ -1,6 +1,6 @@
 # Cen (In Development)
 
-Cen is a tezos powered payment platform using a Contacts system. Send to a Phone Number, Unique Name or Email address with a 2 step process.
+Cen is a tezos powered payment platform using a Contacts system. Send to a Phone Number, Unique Name or Email address in 2 steps.
 
 * Supports up to 8 Wallets.
 * Safe & Secure using the BeaconSDK
