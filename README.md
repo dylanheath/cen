@@ -55,6 +55,12 @@ GET mainnet.cen.network/.netlify/functions/api/transactions/totaltransactions
 GET mainnet.cen.network/.netlify/functions/api/transactions/totalamount
 ```
 
+### Status
+
+```
+GET mainnet.cen.network/.netlify/functions/api/status
+```
+
 ### Connected Repos
 
 #### Backend
