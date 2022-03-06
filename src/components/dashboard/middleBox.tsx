@@ -12,7 +12,7 @@ export default function MiddleBox() {
   const [TotalTransferred, setTotalTransferred] = useState<number>(0);
   useEffect(() => {
     const getAnalytics = async () => {
-      const getTotalTransactions = await axios.get(`${api.url}/transactions/totaltransaction`)
+      const getTotalTransactions = await axios.get(`${api.url}/transactions/totaltransactions`)
         .then((response) => {
           const TotalTransactionsData = response.data;
 	  setTotalTransactions(TotalTransactions);
