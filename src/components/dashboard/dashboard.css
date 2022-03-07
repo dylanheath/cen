@@ -178,7 +178,7 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
 
 .Middle-top-total-transactions {
 color: white;
-font-size: 2vw;
+font-size: 2.2vw;
 padding-top: 14px;
 }
 
@@ -188,9 +188,8 @@ font-size: 1.8vw;
 }
 
 .Middle-top-total-amount-header-top {
-	color: #717884;
-	font-size: 1vw;
+ color:#717884;
+ font-size: 1.2vw; 
 }
-
 
 

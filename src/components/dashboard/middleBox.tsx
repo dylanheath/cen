@@ -37,10 +37,14 @@ export default function MiddleBox() {
         <div className="Middle-top-header-container">
 	  <p className="Middle-top-header">Analytics</p>
 	</div>
-	<div className="Middle-top-analytics-container">
-	  <p className="Middle-top-total-amount-header-top">Total Amount Transferred</p>
-	  <div className="Middle-top-total-header">
-	    <p className="Middle-top-total-transactions">{TotalAmount} XTZ</p>
+	<div className="Middle-top-analytics-container-main">
+	  <div className="Middle-top-analytics-container">
+	    <p className="Middle-top-total-amount-header-top">Total Transferred</p>
+	    <div className="Middle-top-total-header">
+	      <p className="Middle-top-total-transactions">{TotalAmount} XTZ</p>
+	    </div>
+	  </div>
+	  <div className="Middle-top-analytics-container">
 	  </div>
 	</div>
       </div>
