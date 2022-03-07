@@ -12,10 +12,10 @@ export default function MiddleBox() {
   const [TotalAmount, setTotalAmount] = useState<number>(0);
   useEffect(() => {
     const getAnalytics = async () => {
-      const getTotalTransactions = await axios.get(`${api.url}/transactions/totaltransactions`, { timeout: 2000 })
+      const getTotalTransactions = await axios.get(`${api.url}/transactions/totaltransactions`, { timeout: 5000 })
         .then((response) => {
           const TotalTransactionsData = response.data;
-	  setTotalTransactions(TotalTransactions);
+	  setTotalTransactions(TotalTransactionsData);
         })
 	.catch((response) => {
           console.log('failed to grab total transactions');
@@ -38,11 +38,9 @@ export default function MiddleBox() {
 	  <p className="Middle-top-header">Analytics</p>
 	</div>
 	<div className="Middle-top-analytics-container">
+	  <p className="Middle-top-total-amount-header-top">Total Amount Transferred</p>
 	  <div className="Middle-top-total-header">
-	    <p className="Middle-top-total-transactions">{TotalTransactions}</p>
-	  </div>
-	  <div className="Middle-top-transferred-container">
-	    <p className="Middle-top-transferred">{TotalAmount} XTZ</p>
+	    <p className="Middle-top-total-transactions">{TotalAmount} XTZ</p>
 	  </div>
 	</div>
       </div>
