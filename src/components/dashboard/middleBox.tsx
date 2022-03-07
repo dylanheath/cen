@@ -44,7 +44,9 @@ export default function MiddleBox() {
 	      <p className="Middle-top-total-transactions">{TotalAmount} XTZ</p>
 	    </div>
 	  </div>
-	  <div className="line-divider"></div>
+	  <div className="line-divider-container">
+	    <div className="line-divider"/>
+	  </div>
 	  <div className="Middle-top-analytics-container-right">
 	    <p className="Middle-top-total-amount-header-top">Total Transactions</p>
 	    <div className="Middle-top-total-header">

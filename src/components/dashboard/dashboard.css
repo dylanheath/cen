@@ -207,13 +207,15 @@ font-size: 1.8vw;
  font-size: 1.2vw; 
 }
 
+.line-divider-container {
+	padding-top: 22px;
+	padding-right: 24px;
+}
 
 .line-divider {
 	align-items: center;
         border-left: 1px solid #717884;
-        height: 20px;
-	padding-right: 22px;
-	padding-top: 100px;
+        height: 5vw;
 }
 
 
