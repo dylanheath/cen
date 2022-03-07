@@ -45,6 +45,7 @@ export default function MiddleBox() {
 	    </div>
 	  </div>
 	  <div className="Middle-top-analytics-container">
+	    <p>ss</p>
 	  </div>
 	</div>
       </div>
