@@ -39,7 +39,7 @@ export default function MiddleBox() {
 	  <p className="Middle-top-header">Analytics</p>
 	  <button className="Middle-top-personal-analytics" type="button">personal analytics</button>
 	</div>
-	<p className="Middle-top-converted-price">$50,00000</p>
+	<p className="Middle-top-converted-price">${TotalAmountConverted}</p>
 	<div className="Middle-top-analytics-container-main">
 	  <div className="Middle-top-analytics-container">
 	    <p className="Middle-top-total-amount-header-top">Total XTZ</p>
