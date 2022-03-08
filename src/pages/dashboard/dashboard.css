@@ -1,12 +1,12 @@
 .dashboard {
-  justify-content: center!important;
+  justify-content: left!important;
   width: 100%;
-  display: flex;
+  display:grid;
 }
 
-.dashboard-container {
+.dashboard-top-container {
   display: flex;
-  width: 80%;   
+  width: 100%;   
   margin-top: 48px!important;
   padding-left: 24px!important;
   padding-right: 24px!important;
@@ -14,16 +14,26 @@
   margin-right: 30px!important;
 }
 
+.dashboard-bottom-container {
+ display: flex;
+ width: 100%;
+ margin-top: 20px!important;
+ padding-left: 24px!important;
+ padding-right:24px!important;
+ margin-left: 30px!important;
+ margin-right: 30px!important;
+}
+
 .dashboard-left {
  display: flex;
  flex-direction: column;
- width: 24%;
+ width: 100%;
 }
 
 .dashboard-middle {
- width: 50%;
  padding-left: 20px;
  padding-right: 20px;
+ width: 100%;
 }
 
 .dashboard-bottom-left-container  {

@@ -1,3 +1,11 @@
+.top-left {
+ width: 100%;
+}
+
+.bottom-left {
+ width: 100%;
+}
+
 .top-left-box {
   display: flex;
   overflow: hidden;
@@ -142,6 +150,7 @@ flex-direction: column;
 border-radius: 20px;
 background: #141517;
 padding: 1.4rem;	
+width: 100%;
 }
 
 .Middle-top-header-container {
@@ -170,8 +179,8 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
 .Middle-top-analytics-container-main {
  display: flex;
  flex-direction: row;
- padding-top: 6px;
- justify-content: left;
+ justify-content: space-between;
+ width: 23vw;
 }
 
 .Middle-top-analytics-container {
@@ -179,7 +188,6 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
  flex-direction: column;
  justify-content: space-between;
  align-items: left;
- width: 28%;
  padding-top: 20px;
 
 }
@@ -189,19 +197,18 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
  flex-direction: column;
  justify-content: space-between;
  align-items: left;
- width: 32%;
  padding-top: 20px;
  }
 
 .Middle-top-total-transactions {
 color: white;
-font-size: 2.2vw;
-padding-top: 12px;
+font-size: 1.4vw;
+padding-top: 16px;
 }
 
 .Middle-top-transferred {
 color: white;
-font-size: 1.8vw;
+font-size: 1.6vw;
 }
 
 .Middle-top-total-amount-header-top {
@@ -210,21 +217,22 @@ font-size: 1.8vw;
 }
 
 .line-divider-container {
-	padding-top: 22px;
-	padding-right: 24px;
+	padding-top: 2vw;
+	padding-right: 40px;
+	padding-left: 36px;
 }
 
 .line-divider {
 	align-items: center;
         border-left: 1px solid #717884;
-        height: 5vw;
+        height: 3rem;
 }
 
 .Middle-top-personal-analytics {
 color: #717884;
   display: flex;
   padding: 0.4rem 1rem;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   background: #16171a;
   border-radius: 10px;
   border: 1.6px solid #1d1e21;
@@ -235,6 +243,12 @@ color: #717884;
 	color: white;
  transition: 0.2s;
  border: 1.6px solid #717884;
+}
+
+.Middle-top-converted-price {
+ color: #717884;
+ padding-top: 3px;
+ font-size: 0.8vw
 }
 
 

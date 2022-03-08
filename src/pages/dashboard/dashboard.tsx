@@ -35,28 +35,11 @@ export default function Dashboard() {
   }, [User])
   return (
     <div className="dashboard">
-      <div className="dashboard-container">
-        <div className="dashboard-left">
-          <div className="dashboard-top-left-container">
-	    <TopLeftBox />
-	  </div>
-	  <div className="dashboard-bottom-left-container">
-	    <BottomLeftBox />
-	  </div>
-	</div>
-	<div className="dashboard-middle">
-	  <div className="dashboard-middle-top-container">      
-	    <MiddleBox /> 
-	  </div>
-	  <div className="dashboard-middle-bottom-container">
-	  </div>
-        </div>
-	<div className="dashboard-right">
-	  <div className="dashboard-top-right-container">
-	  </div>
-	  <div className="dashboard-bottom-right-container">
-	  </div>
-	</div>
+      <div className="dashboard-top-container">
+	<TopLeftBox />
+      </div>
+      <div className="dashboard-bottom-container">
+        <BottomLeftBox />
       </div>
     </div>
   ) 
