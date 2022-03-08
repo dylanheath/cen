@@ -87,8 +87,8 @@
 .bottom-left-button {
   color: #717884;
   display: flex;
-  padding: 0.4rem 1.4rem;
-  font-size: 1rem;
+  padding: 0.8vh 1.6vw;
+  font-size: 1vw;
   background: #16171a;
   border-radius: 10px;
   border: 1.6px solid #1d1e21;
@@ -105,8 +105,8 @@
 .top-left-buy-button {
   color: #717884;
   display: flex;
-  padding: 0.4rem 1.4rem;
-  font-size: 1rem;
+  padding: 0.8vh 1.6vw;
+  font-size: 1vw;
   background: #16171a;
   border-radius: 10px;
   border: 1.6px solid #1d1e21;
@@ -231,8 +231,8 @@ font-size: 1.6vw;
 .Middle-top-personal-analytics {
 color: #717884;
   display: flex;
-  padding: 0.4rem 1rem;
-  font-size: 0.9rem;
+  padding: 0.4vw 1vh;
+  font-size: 1vw;
   background: #16171a;
   border-radius: 10px;
   border: 1.6px solid #1d1e21;

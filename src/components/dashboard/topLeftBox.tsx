@@ -76,7 +76,7 @@ export default function TopLeftBox() {
 	</div>
 	<div className="top-left-button-container">
           <div className="top-left-send-button-container">	  
-	    <button className="top-left-send-button" onClick={() => sendNav()}>Send</button>
+	    <button className="top-left-buy-button" onClick={() => sendNav()}>Send</button>
 	  </div>
           <div className="top-left-buy-button-container">
 	    <button className="top-left-buy-button" onClick={() => buyNav()}>Buy</button>
