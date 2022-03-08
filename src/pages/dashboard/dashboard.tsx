@@ -34,11 +34,10 @@ export default function Dashboard() {
     checkForUser();
   }, [User])
   return (
-    <div className="dashboard">
-      <div className="dashboard-top-container">
+    <div className="dashboard-container">
+      <div className="dashboard">
 	<TopLeftBox />
-      </div>
-      <div className="dashboard-bottom-container">
+        <MiddleBox />
         <BottomLeftBox />
       </div>
     </div>
