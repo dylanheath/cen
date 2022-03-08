@@ -10,6 +10,7 @@ import './dashboard.css';
 export default function MiddleBox() {
   const [TotalTransactions, setTotalTransactions] = useState<number>(0); 
   const [TotalAmount, setTotalAmount] = useState<number>(0);
+  const [TotalAmountConverted, setTotalAmountConverted] = useState<number>(0);
   useEffect(() => {
     const getAnalytics = async () => {
       const getTotalTransactions = await axios.get(`${api.url}/transactions/totaltransactions`, { timeout: 5000 })
@@ -38,9 +39,10 @@ export default function MiddleBox() {
 	  <p className="Middle-top-header">Analytics</p>
 	  <button className="Middle-top-personal-analytics" type="button">personal analytics</button>
 	</div>
+	<p className="Middle-top-converted-price">$50,00000</p>
 	<div className="Middle-top-analytics-container-main">
 	  <div className="Middle-top-analytics-container">
-	    <p className="Middle-top-total-amount-header-top">Total Amount</p>
+	    <p className="Middle-top-total-amount-header-top">Total XTZ</p>
 	    <div className="Middle-top-total-header">
 	      <p className="Middle-top-total-transactions">{TotalAmount} XTZ</p>
 	    </div>
