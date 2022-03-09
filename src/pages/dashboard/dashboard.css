@@ -1,7 +1,7 @@
 .dashboard-container {
   display: flex;
   justify-content: left;
-  margin-top: 60px!important;
+  margin-top: 40px!important;
   padding-left: 24px!important;
   padding-right: 24px!important;
   margin-left: 30px!important;
@@ -9,10 +9,10 @@
 }
 
 .dashboard {
-  width: 48%;
+  width: 50%;
   display:grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 18px;
 }
 
 .dashboard-top-container {
@@ -49,4 +49,10 @@
 
 .dashboard-bottom-left-container  {
   padding-top: 14px;
+}
+
+.Middle-bottom-grid-container {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 10px;
 }

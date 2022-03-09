@@ -14,6 +14,10 @@ import { getActiveAccount, getAddress } from '../../utils/wallet';
 import TopLeftBox from '../../components/dashboard/topLeftBox';
 import BottomLeftBox from '../../components/dashboard/bottomLeftBox';
 import MiddleBox from '../../components/dashboard/middleBox';
+import MiddleBottomTopLeft from '../../components/dashboard/middleBottomTopLeft';
+import MiddleBottomTopRight from '../../components/dashboard/middleBottomTopRight';
+import MiddleBottomLeft from '../../components/dashboard/middleBottomLeft';
+import MiddleBottomRight from '../../components/dashboard/middleBottomRight';
 
 //styling
 import './dashboard.css';
@@ -39,6 +43,12 @@ export default function Dashboard() {
 	<TopLeftBox />
         <MiddleBox />
         <BottomLeftBox />
+	<div className="Middle-bottom-grid-container">
+	  <MiddleBottomTopLeft />
+	  <MiddleBottomTopRight />
+	  <MiddleBottomLeft />
+	  <MiddleBottomTopLeft />
+	</div>
       </div>
     </div>
   ) 

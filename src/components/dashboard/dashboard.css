@@ -252,4 +252,10 @@ color: #717884;
  font-weight: 500;
 }
 
-
+.Middle-bottom-grid-box {
+  position: relative;
+  display: flex;
+  background: #141517;
+  border-radius: 20px;
+  padding: 1.4rem;
+}
