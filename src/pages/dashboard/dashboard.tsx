@@ -19,6 +19,7 @@ import MiddleBottomTopRight from '../../components/dashboard/middleBottomTopRigh
 import MiddleBottomLeft from '../../components/dashboard/middleBottomLeft';
 import MiddleBottomRight from '../../components/dashboard/middleBottomRight';
 import TopRightBox from '../../components/dashboard/topRightBox';
+import BottomRightBox from '../../components/dashboard/bottomRightBox';
 
 //styling
 import './dashboard.css';
@@ -50,6 +51,8 @@ export default function Dashboard() {
 	  <MiddleBottomLeft />
 	  <MiddleBottomRight />
 	</div>
+	<TopRightBox />
+        <BottomRightBox />	
       </div>
     </div>
   ) 

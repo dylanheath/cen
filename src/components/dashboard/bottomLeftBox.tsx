@@ -35,7 +35,7 @@ export default function BottomLeftBox() {
 	  const ReceivedPush = TransactionsReceived.map((transaction: any) => transactionsBundle.push(transaction));
         })
         .catch(() => {
-          console.log(' could not grab received transactions');
+          console.log('could not grab received transactions');
         })
         const getTransactionSent = await axios.get(`${api.url}/transactions/getsent${address}`, { timeout: 3000 })
           .then((response) => {

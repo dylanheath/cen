@@ -6,6 +6,16 @@
  width: 100%;
 }
 
+.top-right-box {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  background: #141517;
+  flex-direction: column;
+  padding: 1.5rem;
+  border-radius: 20px;
+}
+
 .top-left-box {
   display: flex;
   overflow: hidden;
@@ -304,4 +314,17 @@ color: #717884;
  border: 1.6px solid #717884; 
  color: white;
  transition: 0.2s;
+}
+
+.top-right-header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bottom-right-contact-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2vh;
 }
