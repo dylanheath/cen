@@ -18,6 +18,7 @@ import MiddleBottomTopLeft from '../../components/dashboard/middleBottomTopLeft'
 import MiddleBottomTopRight from '../../components/dashboard/middleBottomTopRight';
 import MiddleBottomLeft from '../../components/dashboard/middleBottomLeft';
 import MiddleBottomRight from '../../components/dashboard/middleBottomRight';
+import TopRightBox from '../../components/dashboard/topRightBox';
 
 //styling
 import './dashboard.css';
