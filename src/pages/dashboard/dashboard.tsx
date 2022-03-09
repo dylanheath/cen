@@ -47,7 +47,7 @@ export default function Dashboard() {
 	  <MiddleBottomTopLeft />
 	  <MiddleBottomTopRight />
 	  <MiddleBottomLeft />
-	  <MiddleBottomTopLeft />
+	  <MiddleBottomRight />
 	</div>
       </div>
     </div>

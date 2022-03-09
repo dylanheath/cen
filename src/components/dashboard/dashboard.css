@@ -87,10 +87,10 @@
 .bottom-left-button {
   color: #717884;
   display: flex;
-  padding: 0.8vh 1.6vw;
-  font-size: 1vw;
-  background: #16171a;
-  border-radius: 10px;
+  padding: 0.4rem 1.4rem;
+ font-size: 0.8vw; 
+ background: #16171a; 
+ border-radius: 10px;
   border: 1.6px solid #1d1e21;
   transition: 0.2s;
 
@@ -105,8 +105,8 @@
 .top-left-buy-button {
   color: #717884;
   display: flex;
-  padding: 0.8vh 1.6vw;
-  font-size: 1vw;
+  padding: 0.4rem 1.4rem;
+  font-size: 0.8vw;
   background: #16171a;
   border-radius: 10px;
   border: 1.6px solid #1d1e21;
@@ -231,8 +231,8 @@ font-size: 1.6vw;
 .Middle-top-personal-analytics {
 color: #717884;
   display: flex;
-  padding: 0.4vw 1vh;
-  font-size: 1vw;
+  padding: 0.4rem 1rem;
+  font-size: 0.8vw;
   background: #16171a;
   border-radius: 10px;
   border: 1.6px solid #1d1e21;
@@ -253,9 +253,55 @@ color: #717884;
 }
 
 .Middle-bottom-grid-box {
-  position: relative;
   display: flex;
   background: #141517;
   border-radius: 20px;
   padding: 1.4rem;
+  flex-direction: column;
+}
+
+.Middle-bottom-grid-header {
+	color: #717884;
+	font-size: 1vw;
+}
+
+.Middle-bottom-grid-header-container {
+	display: flex;
+    flex-direction: row;
+    justify-content: space-between!important;
+    align-items: center;
+}
+
+.Middle-bottom-grid-header-icon {
+  height: auto;
+  width: 1.4vw;
+}
+
+.Middle-bottom-grid-content-container {
+ padding-top: 40px;
+}
+
+.Middle-bottom-grid-content {
+ color: #717884;
+ font-size: 0.8vw;
+}
+
+.Middle-bottom-grid-button-container {
+	padding-top: 40px;
+}
+
+.Middle-bottom-grid-button {
+  background: #16171a;
+  color: #717884;
+  padding: 0.4vw 1vh;
+  border-radius: 10px;
+  font-size: 0.7vw;
+  border: 1.6px solid #1d1e21;
+  transition: 0.2s;
+}
+
+.Middle-bottom-grid-button:hover {
+ border: 1.6px solid #717884; 
+ color: white;
+ transition: 0.2s;
 }
