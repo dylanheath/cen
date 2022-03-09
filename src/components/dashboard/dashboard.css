@@ -254,10 +254,12 @@ color: #717884;
 
 .Middle-bottom-grid-box {
   display: flex;
+  position: relative;
   background: #141517;
   border-radius: 20px;
   padding: 1.4rem;
   flex-direction: column;
+  justify-content: space-between!important;
 }
 
 .Middle-bottom-grid-header {
@@ -278,7 +280,6 @@ color: #717884;
 }
 
 .Middle-bottom-grid-content-container {
- padding-top: 40px;
 }
 
 .Middle-bottom-grid-content {
@@ -287,7 +288,6 @@ color: #717884;
 }
 
 .Middle-bottom-grid-button-container {
-	padding-top: 40px;
 }
 
 .Middle-bottom-grid-button {
