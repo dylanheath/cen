@@ -34,6 +34,18 @@
   padding: 1.5rem;
   border-radius: 20px;
 }
+
+.bottom-right-box {
+display: flex;
+overflow: hidden;
+position: relative;
+background: #141517;
+flex-direction: column;
+padding: 1.5rem;
+border-radius: 20px;
+}
+
+
 .top-left-header-container {
   display: flex;
   flex-direction: row;
@@ -43,6 +55,14 @@
 .bottom-left-header {
   font-size: 1.2vw;
   color: #717884;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+}
+
+.top-right-header {
+  font-size: 1.1vw;
+  color:  #717884;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   font-weight: 500;
@@ -97,7 +117,7 @@
 .bottom-left-button {
   color: #717884;
   display: flex;
-  padding: 0.4rem 1.4rem;
+  padding: 0.4vw 1.4vh;
  font-size: 0.8vw; 
  background: #16171a; 
  border-radius: 10px;
@@ -106,8 +126,25 @@
 
 }
 
+.top-right-button {
+	color: #717884;
+	display: flex;
+	padding: 0.3vw 1.4vh;
+	font-size: 0.8vw;
+	background: #16171a;
+	border-radius: 10px;
+	border: 1.6px solid #1d1e21;
+	transition: 0.2s;
+}
+
 .bottom-left-button:hover {
   color: white;
+ transition: 0.2s;
+ border: 1.6px solid #717884;
+}
+
+.top-right-button:hover {
+ color: white;
  transition: 0.2s;
  border: 1.6px solid #717884;
 }
@@ -150,6 +187,12 @@
  display: flex;
  flex-direction: column;
  padding-top: 2vh;
+}
+
+.bottom-right-contacts-container {
+	display: flex;
+	flex-direction: column;
+	padding-top: 2vh;
 }
 
 .Middle-top-box {
@@ -316,6 +359,7 @@ color: #717884;
  transition: 0.2s;
 }
 
+
 .top-right-header-container {
   display: flex;
   flex-direction: row;
@@ -324,6 +368,12 @@ color: #717884;
 }
 
 .bottom-right-contact-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2vh;
+}
+
+.top-right-contacts-container {
   display: flex;
   flex-direction: column;
   padding-top: 2vh;

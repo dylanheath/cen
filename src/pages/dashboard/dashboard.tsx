@@ -43,16 +43,16 @@ export default function Dashboard() {
     <div className="dashboard-container">
       <div className="dashboard">
 	<TopLeftBox />
-        <MiddleBox />
-        <BottomLeftBox />
+	<MiddleBox />
+	<BottomRightBox />
+	<BottomLeftBox />
 	<div className="Middle-bottom-grid-container">
-	  <MiddleBottomTopLeft />
+          <MiddleBottomTopLeft />
 	  <MiddleBottomTopRight />
 	  <MiddleBottomLeft />
 	  <MiddleBottomRight />
 	</div>
 	<TopRightBox />
-        <BottomRightBox />	
       </div>
     </div>
   ) 
