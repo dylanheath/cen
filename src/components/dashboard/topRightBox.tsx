@@ -16,7 +16,7 @@ import Contact from './Contact';
 
 export default function TopRightBox() {
   const [AddPopup, setAddPopup] = useState<boolean | null>(null); 
-  const [Contacts, setContacts] = useState<boolean |null>(null);
+  const [Contacts, setContacts] = useState<Array<string | null>>(['']);
   const { User, setUser } = useContext<any>(UserContext); 
   useEffect(() => {
     if (User) {
