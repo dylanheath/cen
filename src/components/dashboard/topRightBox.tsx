@@ -28,6 +28,7 @@ export default function TopRightBox() {
 	  .then((response) => {
             const ContactsData = response.data;
 	    setContacts(ContactsData);
+	    console.log('contacts received');
 	  })
 	  .catch(() => {
             console.log('could not grab contacts');

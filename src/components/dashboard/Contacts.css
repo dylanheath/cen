@@ -1,0 +1,55 @@
+.Contact {
+  display: flex;
+  flex-direction: column;
+  height: 40vh;
+}
+
+.Contact-box {
+ height: 400px;
+ overflow-y: scroll;
+ -ms-oveflow-style: none;
+ scrollbar-width: none;
+}
+.Contact-box::-webkit-scrollbar {
+ display: none;
+}
+
+.contact-template-container {
+	padding-top: 10px;
+}
+
+.contact-template {
+ display: flex;
+ flex-directions: row;
+ justify-content: space-between;
+ align-items: center;
+ width: 100%;
+ padding: 0.6rem;
+ background: #16171a;
+ border-radius: 20px;
+ border: 1.6px solid #1d1e21;
+ transaction: 0.2s;
+}
+
+.contact-template:hover {
+  border: 1.6px solid #717884;
+  transition: 0.2s;
+}
+
+.contact-account-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.contact-account-name {
+ color: white;
+ font-size: 1vw;
+ padding-left: 8px;
+}
+
+.contact-account-picture {
+  height: auto;
+  width: 1.8vw;
+  border-radius: 20px;
+}
