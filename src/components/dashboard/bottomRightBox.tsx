@@ -14,10 +14,10 @@ export default function BottomRightBox() {
   useEffect(() => {
     if (User) {
       const fetchContacts = async () => {
-        const UserContacts = await User?.contact;
+        const UserContacts = await User?.contacts;
 	const address = await User?.address;
-	if (User) {
-	const getContacts = await axios.get(`${api.url}/user/contacts/list/users${address}`, { params: { contactsList: UserContacts } }) 
+	if (address || UserContacts) {
+	const getContacts = await axios.get(`${api.url}/user/contacts/list/users${address}`, { params: { contactslist: UserContacts } }) 
 	    .then((response) => {
               const ContactsData = response.data;
 	      setContacts(ContactsData);
