@@ -43,6 +43,8 @@ background: #141517;
 flex-direction: column;
 padding: 1.5rem;
 border-radius: 20px;
+justify-content: space-between;
+height: 100%;
 }
 
 
@@ -222,6 +224,7 @@ height: 100%;
   font-size: 1.1vw;
 }
 
+
 .Middle-top-right-header {
 color: #717884;
 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -317,7 +320,7 @@ color: #717884;
 
 .Middle-bottom-grid-header {
 	color: #717884;
-	font-size: 1vw;
+	font-size: 1.1vw;
 }
 
 .Middle-bottom-grid-header-container {
@@ -337,7 +340,7 @@ color: #717884;
 
 .Middle-bottom-grid-content {
  color: white;
- font-size: 0.8vw;
+ font-size: 0.9vw;
 }
 
 .Middle-bottom-grid-button-container {
@@ -377,4 +380,7 @@ color: #717884;
   display: flex;
   flex-direction: column;
   padding-top: 2vh;
+}
+
+.bottom-right-buttons-container {
 }
