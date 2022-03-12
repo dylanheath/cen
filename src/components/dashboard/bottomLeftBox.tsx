@@ -29,7 +29,7 @@ export default function BottomLeftBox() {
     const fetchTransactions = async () => {
       const address = await User.address?.toString();
       if (address) {
-      const getTransactionsReceived = await axios.get(`${api.url}/transactions/getreceived${address}`, { timeout: 3000 })
+      const getTransactionsReceived = await axios.get(`${api.url}/transactions/getreceived${address}`, { timeout: 4000 })
         .then((response) => {
           const TransactionsReceived = response.data;
 	  const ReceivedPush = TransactionsReceived.map((transaction: any) => transactionsBundle.push(transaction));
@@ -37,7 +37,7 @@ export default function BottomLeftBox() {
         .catch(() => {
           console.log('could not grab received transactions');
         })
-        const getTransactionSent = await axios.get(`${api.url}/transactions/getsent${address}`, { timeout: 3000 })
+        const getTransactionSent = await axios.get(`${api.url}/transactions/getsent${address}`, { timeout: 4000 })
           .then((response) => {
           const TransactionSent = response.data;
 	  const SentPush = TransactionSent.map((transaction: any) => transactionsBundle.push(transaction));
