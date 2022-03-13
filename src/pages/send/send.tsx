@@ -10,6 +10,9 @@ import { api } from '../../utils/api';
 // styling
 import './send.css';
 
+// utils
+import { tokens } from '../../utils/tokens';
+
 export default function send() {
   return  (
     <div className="send">
