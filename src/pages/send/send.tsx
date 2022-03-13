@@ -13,7 +13,7 @@ import './send.css';
 // utils
 import { tokens } from '../../utils/tokens';
 
-import { getActiveAccount, sendXTZ } from '../../utils/wallet';
+import { getActiveAccount, sendXTZ, sendUSDtz } from '../../utils/wallet';
 
 export default function send() {
   return  (
