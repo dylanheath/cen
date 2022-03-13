@@ -12,13 +12,17 @@ import './send.css';
 
 // utils
 import { tokens } from '../../utils/tokens';
-
 import { getActiveAccount, sendXTZ, sendUSDtz } from '../../utils/wallet';
 
 export default function send() {
   return  (
     <div className="send">
-      <p>send</p>
+      <div className="send-container">
+        <div className="send-box">
+	  <div className="send-header">
+	  </div>
+	</div>
+      </div>
     </div>
   )
 }
