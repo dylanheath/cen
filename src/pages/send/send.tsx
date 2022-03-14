@@ -18,12 +18,16 @@ import { getActiveAccount, sendXTZ, sendUSDtz } from '../../utils/wallet';
 // assets
 import DefaultIcon from '../../assets/default.png';
 
+// components 
+import Contacts from '../../components/contacts/Contacts';
+
 export default function Send() {
   const { User, setUser } = useContext<any>(UserContext);
   const [Reciever, setReceiver]  = useState<string | null>(null);
   const [Amount, setAmount] = useState<number>(0);
   const [Message, setMessage] = useState<string | null>(null);
-  const [Contacts, setContacts] = useState<Array<string | null>>(['']);
+  const [Contacts, setContacts] = useState<Array<string>>(['']);
+  const [Popup, setPopup] = useState<boolean | null>(null);
   const navigate = useNavigate();
   useEffect(() => {
     const fetchContacts = async () => {
@@ -32,13 +36,13 @@ export default function Send() {
 	const UserContacts = await User?.contacts;
 	if (address | UserContacts) {
 	  const getContacts = await axios.get(`${api.url}/user/contacts/list/users${address}`, { params: { contactslist: UserContacts } }) 
-	  .then((response) => {
-            const ContactsData = response.data;
-	    setContacts(ContactsData);
-	  })
-	  .catch(() => {
-	    console.log('could not grab contacts')
-	  })
+	    .then((response) => {
+              const ContactsData = response.data;
+	      setContacts(ContactsData);
+	    })
+	    .catch(() => {
+	      console.log('could not grab contacts')
+	    })
 	}  
       }
     }
@@ -46,8 +50,10 @@ export default function Send() {
   }, [])
   return  (
     <div className="send">
-      <div className="send-contact-popup-container">
-      </div>
+      {Popup && (
+        <div className="send-contact-popup-container">
+        </div>
+      )}
       <div className="send-container">
         <div className="send-box">
 	  <div className="send-header">
