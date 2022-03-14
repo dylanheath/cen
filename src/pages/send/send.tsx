@@ -19,11 +19,11 @@ import { getActiveAccount, sendXTZ, sendUSDtz } from '../../utils/wallet';
 import DefaultIcon from '../../assets/default.png';
 
 // components 
-import Contacts from '../../components/contacts/Contacts';
+import ContactsPopup from '../../components/contacts/Contacts';
 
 export default function Send() {
   const { User, setUser } = useContext<any>(UserContext);
-  const [Reciever, setReceiver]  = useState<string | null>(null);
+  const [Receiver, setReceiver]  = useState<string | null>(null);
   const [Amount, setAmount] = useState<number>(0);
   const [Message, setMessage] = useState<string | null>(null);
   const [Contacts, setContacts] = useState<Array<string>>(['']);
@@ -52,6 +52,7 @@ export default function Send() {
     <div className="send">
       {Popup && (
         <div className="send-contact-popup-container">
+	  <ContactsPopup currentUser={User?.address} ContactsData={Contacts} selectReceiver={setReceiver} />
         </div>
       )}
       <div className="send-container">
@@ -62,7 +63,7 @@ export default function Send() {
             <input className="send-amount-input" />
 	  </div>
 	  <div className="send-contact-button-container">
-            <button className="send-contact-button" type="button">
+            <button className="send-contact-button" type="button" onClick={() => setPopup(true)}>
 	      <div className="send-account-container">
 	        <img className="send-accout-picture" src={DefaultIcon} />
                 <p className="send-account-name"></p>
