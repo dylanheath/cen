@@ -23,7 +23,7 @@ import ContactsPopup from '../../components/contacts/Contacts';
 
 export default function Send() {
   const { User, setUser } = useContext<any>(UserContext);
-  const [Receiver, setReceiver]  = useState<string | null>(null);
+  const [Receiver, setReceiver]  = useState<any>(null);
   const [Amount, setAmount] = useState<number>(0);
   const [Message, setMessage] = useState<string | null>(null);
   const [Contacts, setContacts] = useState<Array<string>>(['']);
@@ -66,7 +66,7 @@ export default function Send() {
             <button className="send-contact-button" type="button" onClick={() => setPopup(true)}>
 	      <div className="send-account-container">
 	        <img className="send-accout-picture" src={DefaultIcon} />
-                <p className="send-account-name"></p>
+                <p className="send-account-name">{Receiver.User}</p>
 	      </div>
 	    </button>
 	  </div>
