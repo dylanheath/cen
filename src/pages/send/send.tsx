@@ -18,6 +18,7 @@ import { getActiveAccount, sendXTZ, sendUSDtz } from '../../utils/wallet';
 // assets
 import DefaultIcon from '../../assets/default.png';
 import SettingsIcon from '../../assets/settings.svg';
+import ArrowDown from '../../assets/arrowdown.png';
 
 // components 
 import ContactsPopup from '../../components/contacts/Contacts';
@@ -70,7 +71,11 @@ export default function Send() {
 	      <input className="send-amount-input" placeholder="0.0" type="text" pattern="^[0-9]*[.,]?[0-9]*$" inputMode="decimal" defaultValue="0.00"/>
 	      <div className="send-token-select-container">
 	        <button className="send-token-select-button" type="button">
-
+		  <div className="send-token-select-content-container">
+                    <img className="send-token-select-icon" src={tokens.XTZ.image} />
+		    <p className="send-token-select-name">{tokens.XTZ.name}</p>
+		    <img className="send-token-down-arrow" src={ArrowDown} />
+		  </div>
 		</button> 
 	      </div>
 	    </div>

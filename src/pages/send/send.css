@@ -107,3 +107,52 @@ padding: none;
 .send-account-name {
 
 }
+
+
+.send-token-select-container {
+	width: 31%;
+}
+
+.send-token-select-button {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ background: #141517;
+ border-radius: 20px;
+ color: #717884;
+ padding: 6px;
+ justify-content: space-between;
+ width: 100%;
+ border: 1px solid #1d1e21;
+ transition: 0.2s;
+}
+
+.send-token-select-button:hover {
+  border: 1px solid #717884;
+  transition: 0.2s;
+  color: white;
+}
+
+
+.send-token-select-content-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: space-between;
+}
+ 
+.send-token-select-icon {
+  height: auto;
+  width: 26px;
+}
+
+.send-token-down-arrow {
+	height: auto;
+	width: 20px;
+}
+
+.send-token-select-name {
+  font-size: 18px;
+  padding-left:8px;
+  padding-right:10px;
+}
