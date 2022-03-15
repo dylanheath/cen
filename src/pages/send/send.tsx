@@ -17,6 +17,7 @@ import { getActiveAccount, sendXTZ, sendUSDtz } from '../../utils/wallet';
 
 // assets
 import DefaultIcon from '../../assets/default.png';
+import SettingsIcon from '../../assets/settings.svg';
 
 // components 
 import ContactsPopup from '../../components/contacts/Contacts';
@@ -32,7 +33,7 @@ export default function Send() {
 
   useEffect(() => {
     const fetchContacts = async () => {
-      if (User.status == true) {
+      if (User.status === true) {
         const address = await User.address?.toString();
 	const UserContacts = await User?.contacts;
 	if (address | UserContacts) {
@@ -58,16 +59,27 @@ export default function Send() {
       )}
       <div className="send-container">
         <div className="send-box">
-	  <div className="send-header">
+	  <div className="send-header-container">
+            <p className="send-header">Send</p>
+	    <button className="settings-header-icon-button" type="button" >
+	      <img className="settings-header-icon" src={SettingsIcon} />
+	    </button>
 	  </div>
 	  <div className="send-input-container">
-            <input className="send-amount-input" />
+            <div className="send-amount-input-box">
+	      <input className="send-amount-input" placeholder="0.0" type="text" pattern="^[0-9]*[.,]?[0-9]*$" inputMode="decimal" defaultValue="0.00"/>
+	      <div className="send-token-select-container">
+	        <button className="send-token-select-button" type="button">
+
+		</button> 
+	      </div>
+	    </div>
 	  </div>
 	  <div className="send-contact-button-container">
             <button className="send-contact-button" type="button" onClick={() => setPopup(true)}>
 	      <div className="send-account-container">
-	        <img className="send-accout-picture" src={DefaultIcon} />
-                <p className="send-account-name">{Receiver.User}</p>
+	        <img className="send-account-picture" src={DefaultIcon} />
+                <p className="send-account-name">{Receiver?.User}</p>
 	      </div>
 	    </button>
 	  </div>
