@@ -1,7 +1,8 @@
 .dashboard-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly!important;
   margin-top: 40px!important;
+
 }
 
 .dashboard {
