@@ -72,6 +72,7 @@ padding: none;
   padding: 1rem;
   border-radius: 20px;
   width: 100%;
+  align-items: center;
 }
 
 .send-amount-input {
@@ -155,4 +156,13 @@ padding: none;
   font-size: 18px;
   padding-left:8px;
   padding-right:10px;
+}
+
+
+.send-contact-button-container {
+
+}
+
+.send-contract-button {
+
 }

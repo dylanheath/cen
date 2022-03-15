@@ -47,6 +47,8 @@ export default function Send() {
 	      console.log('could not grab contacts')
 	    })
 	}  
+      } else {
+        navigate('/app');	
       }
     }
     fetchContacts();
