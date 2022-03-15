@@ -111,7 +111,7 @@ const Navbar = () => {
           navigate('/app/signup');
         });
       setAddress({address:`${myAddress?.slice(0, 5)}...${myAddress?.slice(myAddress.length - 5)}`});
-      navigate('/app');
+      navigate('/app/dashboard');
     }
   };
   return (

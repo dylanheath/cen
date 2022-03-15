@@ -29,6 +29,7 @@ export default function Send() {
   const [Contacts, setContacts] = useState<Array<string>>(['']);
   const [Popup, setPopup] = useState<boolean | null>(null);
   const navigate = useNavigate();
+
   useEffect(() => {
     const fetchContacts = async () => {
       if (User.status == true) {
