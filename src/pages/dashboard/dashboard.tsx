@@ -20,6 +20,7 @@ import MiddleBottomLeft from '../../components/dashboard/middleBottomLeft';
 import MiddleBottomRight from '../../components/dashboard/middleBottomRight';
 import TopRightBox from '../../components/dashboard/topRightBox';
 import BottomRightBox from '../../components/dashboard/bottomRightBox';
+import XTZprice from '../../components/dashboard/XTZprice';
 
 //styling
 import './dashboard.css';
@@ -53,6 +54,7 @@ export default function Dashboard() {
 	  <MiddleBottomRight />
 	</div>
 	<TopRightBox />
+	<XTZprice />
       </div>
     </div>
   ) 
