@@ -61,6 +61,7 @@ height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   font-weight: 500;
+  padding-right: 10px;
 }
 
 .top-right-header {
@@ -418,36 +419,114 @@ color: #717884;
 }
 
 .XTZ-price-analytics-container {
-  padding-top: 10px;
+  padding-top: 4px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between!important;
+  width: 40vh;
 }
 
 .XTZ-price-total-container {
+padding-top: 8px;
 display: flex;
-flex-direction: column;
+flex-direction: row;
+align-items: center;
+justify-content: space-between!important;
+width: 52%;
+}
+
+.XTZ-token-icon {
+	height: auto;
+	width: 3vh;
 }
 
 .XTZ-price-total-header {
- color: white;
+color: white;
+    font-weight: 500;
+    padding-left: 12px;
+    font-size: 2.6vh;
+}
+
+
+.XTZ-price-total {
+  color: white;
+    font-size: 2.8vh;
+    font-weight: 500;
+    padding-left: 12px;
+}
+
+.XTZ-information-container {
+  display: flex;
+  flex-direction: row;
 }
 
 .XTZ-market-cap-container {
 display: flex;	
-flex-direction: column;
+flex-direction: row;
+align-items: center;
+justify-content: space-between!important;
+width: 80%;
 } 
 
 .XTZ-market-cap-header {
+color: #717884;
+    display: flex;
+    padding: 0.2rem 1.4rem;
+    font-size: 0.8vw;
+    background: #16171a;
+    border-radius: 10px;
+    border: 1.6px solid #1d1e21;
+    transition: 0.2s;
+}
 
+.XTZ-market-cap-header:hover {
+color: white;
+ transition: 0.2s;
+ border: 1.6px solid #717884;
 }
 
 .XTZ-supply-container {
 display: flex; 
-flex-direction: column;
+flex-direction: row;
+align-items: center;
+padding-top: 8px;
+justify-content: space-between!important;
+width: 80%;
 
 }
 
 .XTZ-supply-header {
+color: #717884;
+    color: #717884;
+    display: flex;
+    padding: 0.2rem 1.4rem;
+    font-size: 0.8vw;
+    background: #16171a;
+    border-radius: 10px;
+    border: 1.6px solid #1d1e21;
+    transition: 0.2s;
+}
 
+.XTZ-supply-header:hover {
+	color: white;
+ transition: 0.2s;
+ border: 1.6px solid #717884;
+}
+
+.XTZ-bottom-analytics-container {
+  padding-top: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between!important;
+  width: 34vh; 
+}
+
+.XTZ-market-cap {
+	color: white;
+    font-size: 2vh;
+}
+
+.XTZ-supply {
+	color: white;
+    font-size: 2vh;
 }

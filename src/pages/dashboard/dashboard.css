@@ -7,7 +7,7 @@
 }
 
 .dashboard {
-  width: 80%;
+  width: 90%;
   display:grid;
   gap: 18px;
   grid-template-columns: repeat(4, 1fr);

@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
+// assets
+import TezosIcon from '../../assets/TezosCoin.png';
+
 export default function XTZprice() {
   const [Price, setPrice] = useState<number>(0); 
   const [MarketCap, setMarketCap] = useState<number>(0);
@@ -16,19 +19,25 @@ export default function XTZprice() {
       <div className="XTZ-price-container">
         <div className="XTZ-price-box">
 	  <div className="XTZ-price-header-container">
-	    <p className="XTZ-price-header">XTZ</p>
+	    <p className="XTZ-price-header">Price</p>
 	  </div>
 	  <div className="XTZ-price-analytics-container">
 	    <div className="XTZ-price-total-container">
+	      <div className="XTZ-information-container">
+	        <img className="XTZ-token-icon"  src={TezosIcon} />
+	        <p className="XTZ-price-total-header">XTZ</p>
+	      </div>
 	      <p className="XTZ-price-total">${Price}</p>
 	    </div>
-	    <div className="XTZ-market-cap-container">
-	      <p className="XTZ-market-cap-header">Market Cap</p>
-	      <p className="XTZ-market-cap">{MarketCap}</p>
-	    </div>
-            <div className="XTZ-supply-container">
-	      <p className="XTZ-supply-header">Circulating Supply</p>
-	      <p className="XTZ-supply">{Supply}</p>
+	    <div className="XTZ-bottom-analytics-container">
+	      <div className="XTZ-market-cap-container">
+	        <p className="XTZ-market-cap-header">Market Cap</p>
+	        <p className="XTZ-market-cap">{MarketCap}</p>
+	      </div>
+              <div className="XTZ-supply-container">
+	        <p className="XTZ-supply-header">Circulating Supply</p>
+	        <p className="XTZ-supply">{Supply}</p>
+	      </div>
 	    </div>
 	  </div>
 	</div>
