@@ -23,7 +23,6 @@ position: relative;
   gap: 10px;
   background:#141517;
   border-radius: 20px;
-  width: 46vh;
 }
 
 .send-header {
@@ -95,7 +94,8 @@ padding: none;
 }
 
 .send-account-container {
-
+ padding-right: 10px;
+ padding-left: 10px;
 }
 
 
@@ -109,7 +109,7 @@ padding: none;
 
 }
 
-
+k
 .send-token-select-container {
 	width: 31%;
 }

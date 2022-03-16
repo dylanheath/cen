@@ -47,17 +47,18 @@ align-items: center;
 
 .transaction-account-name {
 color: white;
-font-size:  1vw;
+font-size:  2vh;
 padding-left: 8px;
+padding-right: 8px;
 }
 
 .transaction-amount {
   color: #717884;
-  font-size: 0.8vw;
+  font-size: 1.4vh;
 }
 
 .transaction-account-picture {
   height: auto;
-  width: 1.8vw;
+  width: 3.2vh;
   border-radius: 20px;
 }

@@ -44,12 +44,12 @@
 
 .contact-account-name {
  color: white;
- font-size: 1vw;
+ font-size: 2vh;
  padding-left: 8px;
 }
 
 .contact-account-picture {
   height: auto;
-  width: 1.8vw;
+  width: 3.2vh;
   border-radius: 20px;
 }
