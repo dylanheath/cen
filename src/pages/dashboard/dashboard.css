@@ -7,10 +7,10 @@
 }
 
 .dashboard {
-  width: 62%;
+  width: 80%;
   display:grid;
   gap: 18px;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .dashboard-top-container {

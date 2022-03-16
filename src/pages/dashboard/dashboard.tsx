@@ -46,6 +46,7 @@ export default function Dashboard() {
 	<TopLeftBox />
 	<MiddleBox />
 	<BottomRightBox />
+	<XTZprice />
 	<BottomLeftBox />
 	<div className="Middle-bottom-grid-container">
           <MiddleBottomTopLeft />
@@ -54,7 +55,6 @@ export default function Dashboard() {
 	  <MiddleBottomRight />
 	</div>
 	<TopRightBox />
-	<XTZprice />
       </div>
     </div>
   ) 

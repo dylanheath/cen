@@ -421,6 +421,7 @@ color: #717884;
   padding-top: 10px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between!important;
 }
 
 .XTZ-price-total-container {
@@ -429,7 +430,7 @@ flex-direction: column;
 }
 
 .XTZ-price-total-header {
-
+ color: white;
 }
 
 .XTZ-market-cap-container {

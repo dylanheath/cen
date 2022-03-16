@@ -20,7 +20,6 @@ export default function XTZprice() {
 	  </div>
 	  <div className="XTZ-price-analytics-container">
 	    <div className="XTZ-price-total-container">
-	      <p className="XTZ-price-total-header">Price</p>
 	      <p className="XTZ-price-total">${Price}</p>
 	    </div>
 	    <div className="XTZ-market-cap-container">
