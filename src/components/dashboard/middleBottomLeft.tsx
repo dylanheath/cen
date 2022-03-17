@@ -17,7 +17,7 @@ export default function MiddleBottomLeft() {
 	<img className="Middle-bottom-grid-header-icon" src={TransactionIcon} />
       </div>
       <div className="Middle-bottom-grid-content-container">
-        <p className="Middle-bottom-grid-content">View all Transactions on Cen.</p>
+        <p className="Middle-bottom-grid-content">View all Transactions & Data on Cen.</p>
       </div>
       <div className="Middle-bottom-grid-button-container">
         <button className="Middle-bottom-grid-button" type="button" onClick={TransactionNav}>View</button>

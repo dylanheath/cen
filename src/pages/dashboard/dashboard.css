@@ -1,15 +1,14 @@
 .dashboard-container {
   margin-top: 40px!important;
-  margin-left: 40px!important;
-  margin-right: 40px!important;
-  padding-right: 40px!important;
+  padding-left: 60px!important;
+  padding-right: 60px!important;
 
 }
 
 .dashboard {
-  width: 90%;
+  width: 100%;
   display:grid;
-  gap: 18px;
+  gap: 14px;
   grid-template-columns: repeat(4, 1fr);
 }
 
@@ -57,4 +56,15 @@ k
 
 .Middle-bottom-grid-header {
 
+}
+
+.Middle-grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  grid-gap: 14px;
+}
+
+.Middle-bottom-grid-flex {
+	display: flex;
 }

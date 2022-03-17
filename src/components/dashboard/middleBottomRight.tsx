@@ -17,7 +17,7 @@ export default function MiddleBottomRight() {
 	<img className="Middle-bottom-grid-header-icon" src={FinderIcon} />
       </div>
       <div className="Middle-bottom-grid-content-container">
-        <p className="Middle-bottom-grid-content">View all Users recent history.</p>
+        <p className="Middle-bottom-grid-content">View all User Data & history on Cen.</p>
       </div>
       <div className="Middle-bottom-grid-button-container">
         <button className="Middle-bottom-grid-button" type="button" onClick={FinderNav}>Go to Finder</button>
