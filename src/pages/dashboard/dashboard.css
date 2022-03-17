@@ -1,7 +1,7 @@
 .dashboard-container {
   margin-top: 40px!important;
-  padding-left: 60px!important;
-  padding-right: 60px!important;
+  padding-left: 40px!important;
+  padding-right: 40px!important;
 
 }
 
@@ -51,7 +51,7 @@ k
 .Middle-bottom-grid-container {
  display: grid;
  grid-template-columns: 1fr 1fr;
- gap: 20px;
+ gap: 14px;
 }
 
 .Middle-bottom-grid-header {
@@ -63,8 +63,4 @@ k
   grid-template-columns: 1fr;
   gap: 14px;
   grid-gap: 14px;
-}
-
-.Middle-bottom-grid-flex {
-	display: flex;
 }
