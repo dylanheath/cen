@@ -59,7 +59,7 @@ export default function BottomLeftBox() {
       <div className="bottom-left-box">
         <div className="bottom-left-header-container">
 	  <p className="bottom-left-header">Transactions</p>
-	  <button className="bottom-left-button">View</button>
+	  <button className="bottom-left-button">View All</button>
 	</div>
 	<div className="bottom-left-transaction-container">
 	  {Transactions.length  && (

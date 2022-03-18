@@ -38,7 +38,7 @@ const Navbar = () => {
 
   const Logout = async () => {
     const disconnectFromCen = await disconnectWallet();
-    setUser({name: null, email: null, address:  null, cid: null, contacts: null, status: false});
+    setUser({name: null, email: null, address:  null, cid: null, contacts: null, token: null, status: false});
     setConnectionState(null);
     navigate('/');
   };
