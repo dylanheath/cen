@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Token() {
+export default function Token({TokensList} : {TokensList:Array<string>}) {
 
   return (
     <div className="Token-template-container">

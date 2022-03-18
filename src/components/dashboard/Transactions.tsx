@@ -16,7 +16,7 @@ export default function ComponentTransactions({TransanctionData, currentUser} : 
 	        <p className="transaction-account-name">{transaction?.receiverdata?.name}</p>
 	      </div>
 	      {transaction.sender === currentUser ? <p className="transaction-amount">- {transaction.amount / 1000000} XTZ</p> 
-	        : <p className="transaction-amount">+ {transaction.amount / 1000000} XTZ</p>}
+	        : <p className="transaction-amount-in">+ {transaction.amount / 1000000} XTZ</p>}
 	    </button>
 	  </div>
 	))}

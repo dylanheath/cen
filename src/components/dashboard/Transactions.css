@@ -57,6 +57,11 @@ padding-right: 8px;
   font-size: 1.4vh;
 }
 
+.transaction-amount-in {
+  color: white;
+  font-size: 1.4vh;
+}
+
 .transaction-account-picture {
   height: auto;
   width: 3.2vh;

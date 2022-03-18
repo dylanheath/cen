@@ -10,6 +10,9 @@ import { api } from '../../utils/api';
 // styling
 import './dashboard.css';
 
+// components
+import Token from './Token';
+
 export default function Tokens() {
   const { User, setUser } = useContext<any>(UserContext);
   const [Tokens, setTokens] = useState<Array<string>>(['']);
@@ -41,6 +44,11 @@ export default function Tokens() {
         <div className="Tokens-box">
           <div className="Tokens-header-container">
             <p className="Tokens-header">Tokens</p>
+	  </div>
+	  <div className="Token-content-container">
+	    {Tokens && (
+              <Token TokensList={Tokens} />          
+	    )}
 	  </div>
 	</div>
       </div>
