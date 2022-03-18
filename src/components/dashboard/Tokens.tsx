@@ -3,8 +3,12 @@ import axios from 'axios';
 
 // context
 import { UserContext } from '../../context/context';
+
 // api
 import { api } from '../../utils/api';
+
+// styling
+import './dashboard.css';
 
 export default function Tokens() {
   const { User, setUser } = useContext<any>(UserContext);
@@ -28,6 +32,7 @@ export default function Tokens() {
             console.log("failed to grab tokens");
 	  })
       }
+      fetchTokens();
     }
   }, [])
   return (

@@ -23,7 +23,10 @@ import BottomRightBox from '../../components/dashboard/bottomRightBox';
 import XTZprice from '../../components/dashboard/XTZprice';
 import Github from '../../components/dashboard/Github';
 import ControlPanel from '../../components/dashboard/controlPanel';
-//styling
+import Tokens from '../../components/dashboard/Tokens';
+
+//styling 
+
 import './dashboard.css';
 
 export default function Dashboard() {
@@ -46,7 +49,7 @@ export default function Dashboard() {
       <div className="dashboard">
 	<TopLeftBox />
 	<MiddleBox />
-	<ControlPanel />
+	<Tokens />
 	<Github />
 	<BottomLeftBox />
 	<div className="Middle-grid-container">
