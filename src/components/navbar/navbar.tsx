@@ -59,6 +59,7 @@ const Navbar = () => {
               cid: UserData.CID,
               email: UserData.Email,
               contacts: UserData.Contacts,
+	      token: UserData.Token,
 	      status: true,
             };
             console.log(UserData);
@@ -91,7 +92,6 @@ const Navbar = () => {
       // eslint-disable-next-line no-unused-vars
       await axios.get(`${api.url}/user/${myAddress}`)
         .then((response) => {
-          console.log('poggers');
           const UserData = response.data;
           const userdata = {
             name: UserData.User,
@@ -99,6 +99,7 @@ const Navbar = () => {
             cid: UserData.CID,
             email: UserData.Email,
             contact: UserData.Contacts,
+	    token: UserData.Token,
 	    status: true,
           };
           setUser(userdata);

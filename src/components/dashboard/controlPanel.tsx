@@ -5,6 +5,7 @@ import { nodes } from '../../utils/nodes';
 
 export default function ControlPanel() {
   const [CurrentNode, setCurrentNode] = useState<string>('');
+  const [DarkMode, setDarkMode] = useState<boolean>(false);
   return (
     <div className="Control-panel">
       <div className="Control-panel-container">
