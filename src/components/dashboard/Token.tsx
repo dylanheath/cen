@@ -1,11 +1,20 @@
 import React from 'react';
 
-export default function Token({TokensList} : {TokensList:Array<string>}) {
+// styling
+import './Token.css';
 
+export default function Token({TokensList} : {TokensList:Array<string>}) {
+  console.log(TokensList);
   return (
     <div className="Token-template-container">
-      <p className="token-name">name</p>
-      <p className="token-balance">balance</p>
+      {TokensList.map((tok:any) => (
+        <div className="token-template">
+          <div className="token-information-container">
+	    <p className="token-name">{tok.symbol}</p>
+	    <p className="token-balance">{tok.balance}</p>
+          </div>
+        </div>
+      ))} 
     </div>
   )
 }

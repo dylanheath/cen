@@ -612,7 +612,7 @@ display: flex;
 }
 
 .Tokens-container {
-
+height: 100%; 
 }
 
 .Tokens-box {
@@ -643,3 +643,22 @@ position: relative;
     font-size: 2.2vh;
 }
 
+
+.Token-header-button {
+
+    color: #717884;
+    display: flex;
+    padding: 0.4rem 1rem;
+    font-size: 0.8vw;
+    background: #16171a;
+    border-radius: 10px;
+    border: 1.6px solid #1d1e21;
+    transition: 0.2s;
+}
+
+
+.Token-header-button:hover {
+color: white;
+ transition: 0.2s;
+ border: 1.6px solid #717884;
+}

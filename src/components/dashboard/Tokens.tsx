@@ -15,25 +15,27 @@ import Token from './Token';
 
 export default function Tokens() {
   const { User, setUser } = useContext<any>(UserContext);
-  const [Tokens, setTokens] = useState<Array<string>>(['']);
+  const [UserTokens, setUserTokens] = useState<Array<string>>(['']);
   useEffect(() => { 
     if (User.status === true) {
       const fetchTokens = async () => {
 	const address = await User.address?.toString();
 	const TokenBalance: Array<string> = [];
-        const getTokens = await axios.get<any>(`https://api.better-call.dev/v1/account/mainnet/${address}/token_balances`)  
-	  .then((response) => {
-            const TokenData = response.data;
-	    TokenData.map((token:any) => {
-	      if (token.token_id == 0 && token.hasOwnProperty('symbol')) {
-                TokenBalance.push(token); 
-	      }
+	if (address) {
+          const getTokens = await axios.get<any>(`https://api.better-call.dev/v1/account/mainnet/${address}/token_balances`, { timeout: 4000 })  
+	    .then((response) => {
+              const TokenData = response.data;
+	      TokenData.balances.map((token:any) => {
+	        if (token.token_id == 0 && token.hasOwnProperty('symbol')) {
+                  TokenBalance.push(token);
+	        }
+	      })
+     	      setUserTokens(TokenBalance);
 	    })
-	    setTokens(TokenBalance);
-	  })
-	  .catch(() => {
-            console.log("failed to grab tokens");
-	  })
+	    .catch(() => {
+              console.log("failed to grab tokens");
+	    })
+	 }
       }
       fetchTokens();
     }
@@ -44,10 +46,11 @@ export default function Tokens() {
         <div className="Tokens-box">
           <div className="Tokens-header-container">
             <p className="Tokens-header">Tokens</p>
+	    <button className="Token-header-button">View NFTS</button>
 	  </div>
 	  <div className="Token-content-container">
-	    {Tokens && (
-              <Token TokensList={Tokens} />          
+	    {UserTokens && (
+              <Token TokensList={UserTokens} />          
 	    )}
 	  </div>
 	</div>
