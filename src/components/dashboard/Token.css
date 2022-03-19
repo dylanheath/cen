@@ -1,13 +1,41 @@
-.token-template {
-
+.Token-template-container {
+  overflow-y:scroll;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  height: 102px
 }
+
+.Token-template-container::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+}
+
 .token-information-container {
 display: flex;
 flex-direction: row;
+align-items: center;
+justify-content: space-between!important;
 }
 .token-name {
-
+color: white;
+font-size:2vh;
+font-weight: 500;
 }
 .token-balance {
-
+color: white;
+font-size: 2vh;
+font-weight: 500;
 }
+
+.token-divider {
+	border: 1.4px solid #1d1e21;
+  border-radius: 5px;
+}
+
+
+.token-container {
+ padding-top: 4px;
+ padding-bottom: 4px;
+}
+
+
+

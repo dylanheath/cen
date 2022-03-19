@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500px" height="500px" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>Home</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="100%" y1="0%" x2="-6.13755969%" y2="75.0251827%" id="linearGradient-1">
+            <stop stop-color="#29DADC" offset="0%"></stop>
+            <stop stop-color="#01095A" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home">
+            <circle id="Oval" fill="url(#linearGradient-1)" opacity="0.90359933" cx="250" cy="250" r="250"></circle>
+            <g id="tzbtc_logo_full-white" transform="translate(48.000000, 47.000000)" stroke="#FFFFFF" stroke-linejoin="bevel">
+                <path d="M216.528924,368.270543 L216.528924,325.618416" id="Path" stroke-width="22.7216813"></path>
+                <path d="M155.141549,323.670894 L155.141549,368.270543" id="Path" stroke-width="22.7216813"></path>
+                <ellipse id="Oval" stroke-width="13.7341599" stroke-linecap="round" cx="203.226869" cy="203.504604" rx="203.226869" ry="203.348066"></ellipse>
+                <path d="M102.338373,114.397387 L264.098731,114.397387 L189.234395,199.904219 C207.645544,183.265102 278.574497,179.158269 293.446103,235.839005 C306.973695,287.404615 262.473947,329.582523 204.276304,329.582523" id="Path" stroke-width="22.7216813"></path>
+                <path d="M143.749651,114.397387 L143.823295,251.99009 C143.823295,276.313405 172.641347,289.131143 190.71189,272.860351" id="Path" stroke-width="22.7216813"></path>
+                <path d="M205.256698,48.6788575 L205.256698,113.536425" id="Path" stroke-width="22.7216813"></path>
+                <path d="M143.864721,48.6788575 L143.864721,123.858756" id="Path" stroke-width="22.7216813"></path>
+            </g>
+        </g>
+    </g>
+</svg>

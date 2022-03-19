@@ -662,3 +662,7 @@ color: white;
  transition: 0.2s;
  border: 1.6px solid #717884;
 }
+
+.Token-content-container {
+  padding-top: 14px;
+}
