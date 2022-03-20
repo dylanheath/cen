@@ -2,8 +2,7 @@ import React from 'react';
 
 //assets
 import TezosIcon from '../assets/TezosCoin.png';
-import USDtzIcon from '../assets/USDtez.png';
-import tzBTCIcon from '../assets/tzBTC.svg';
+import USDtzIcon from '../assets/USDtz.png';
 
 type token = {
    "XTZ": {
@@ -14,11 +13,6 @@ type token = {
     name: string,
     image: string,
    },
-   "tzBTC": {
-    name: string,
-    image: string,
-   }
-
 }
 
 export const tokens: token = {
@@ -30,8 +24,4 @@ export const tokens: token = {
     name: "USDtz",
     image: USDtzIcon,
   },
-  "tzBTC": {
-    name: "tzBTC",
-    image: tzBTCIcon,
-  }
 }

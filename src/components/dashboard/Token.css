@@ -2,7 +2,7 @@
   overflow-y:scroll;
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
   scrollbar-width: none;
-  height: 102px
+  height: 104px
 }
 
 .Token-template-container::-webkit-scrollbar {
@@ -19,11 +19,13 @@ justify-content: space-between!important;
 color: white;
 font-size:2vh;
 font-weight: 500;
+padding-left: 6px;
 }
 .token-balance {
 color: white;
 font-size: 2vh;
 font-weight: 500;
+padding-left: 4px;
 }
 
 .token-divider {
@@ -38,4 +40,12 @@ font-weight: 500;
 }
 
 
+.token-icon {
+  height: auto;
+  width: 24px;
+}
 
+.token-icon-name-container {
+ display: flex;
+ flex-direction: row
+}

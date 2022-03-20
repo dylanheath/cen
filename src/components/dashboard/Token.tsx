@@ -3,16 +3,26 @@ import React from 'react';
 // styling
 import './Token.css';
 
-export default function Token({TokensList} : {TokensList:Array<string>}) {
-  console.log(TokensList);
+// utils
+import { tokens } from '../../utils/tokens';
+
+// assets
+import DefaultIcon from '../../assets/default.png';
+
+export default function Token({TokensList} : {TokensList:Array<string | null>}) {
   return (
+    <div>
+    {TokensList  && (
     <div className="Token-template-container">
       {TokensList.map((tok:any) => (
         <div>
 	  <div className="token-container">
             <div className="token-template">
               <div className="token-information-container">
-	        <p className="token-name">{tok.symbol}</p>
+	        <div className="token-icon-name-container">
+	          <img className="token-icon" src={require(`../../assets/${tok.symbol}.png`).default} alt={DefaultIcon} />
+	          <p className="token-name">{tok.symbol}</p>
+		</div>
 	        <p className="token-balance">{tok.balance}</p>
               </div>
             </div>
@@ -20,6 +30,8 @@ export default function Token({TokensList} : {TokensList:Array<string>}) {
 	  <hr className="token-divider"></hr>
 	</div>
       ))} 
+    </div>
+    )}
     </div>
   )
 }

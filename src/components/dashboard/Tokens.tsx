@@ -15,8 +15,10 @@ import Token from './Token';
 
 export default function Tokens() {
   const { User, setUser } = useContext<any>(UserContext);
-  const [UserTokens, setUserTokens] = useState<Array<string>>(['']);
+  const [UserTokens, setUserTokens] = useState<Array<string | null>>([null]);
+  const [TokensReceived, setTokensReceived] = useState<boolean>(false);
   useEffect(() => { 
+    setTokensReceived(false);
     if (User.status === true) {
       const fetchTokens = async () => {
 	const address = await User.address?.toString();
@@ -31,6 +33,7 @@ export default function Tokens() {
 	        }
 	      })
      	      setUserTokens(TokenBalance);
+	      setTokensReceived(true);
 	    })
 	    .catch(() => {
               console.log("failed to grab tokens");
@@ -49,7 +52,7 @@ export default function Tokens() {
 	    <button className="Token-header-button">View NFTS</button>
 	  </div>
 	  <div className="Token-content-container">
-	    {UserTokens && (
+	    {TokensReceived == true && (
               <Token TokensList={UserTokens} />          
 	    )}
 	  </div>
