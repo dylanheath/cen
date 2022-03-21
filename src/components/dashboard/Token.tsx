@@ -9,7 +9,7 @@ import { tokens } from '../../utils/tokens';
 // assets
 import DefaultIcon from '../../assets/default.png';
 
-export default function Token({TokensList} : {TokensList:Array<string | null>}) {
+export default function Token({TokensList} : {TokensList:Array<string>}) {
   return (
     <div>
     {TokensList  && (

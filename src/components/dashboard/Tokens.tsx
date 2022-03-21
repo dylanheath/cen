@@ -15,7 +15,7 @@ import Token from './Token';
 
 export default function Tokens() {
   const { User, setUser } = useContext<any>(UserContext);
-  const [UserTokens, setUserTokens] = useState<Array<string | null>>([null]);
+  const [UserTokens, setUserTokens] = useState<Array<string>>(['']);
   const [TokensReceived, setTokensReceived] = useState<boolean>(false);
   useEffect(() => { 
     setTokensReceived(false);
@@ -28,7 +28,7 @@ export default function Tokens() {
 	    .then((response) => {
               const TokenData = response.data;
 	      TokenData.balances.map((token:any) => {
-	        if (token.token_id == 0 && token.hasOwnProperty('symbol')) {
+	        if (token.token_id == 0 && token.hasOwnProperty('symbol') && !token.hasOwnProperty('creators')) {
                   TokenBalance.push(token);
 	        }
 	      })

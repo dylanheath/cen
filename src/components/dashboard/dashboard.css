@@ -331,6 +331,7 @@ color: #717884;
     flex-direction: row;
     justify-content: space-between!important;
     align-items: center;
+    width: 20vh;
 }
 
 .Middle-bottom-grid-header-icon {
@@ -552,6 +553,7 @@ font-size: 1.9vh;
   flex-direction: row;
   align-items: center;
   justify-content: space-between!important;
+  width: 20vh;
 }
 
 .Github-header {
@@ -665,4 +667,11 @@ color: white;
 
 .Token-content-container {
   padding-top: 14px;
+}
+
+.Top-right-grid-container {
+	    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 14px;
+    gap: 14px;
 }
