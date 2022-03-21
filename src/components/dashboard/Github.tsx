@@ -20,7 +20,7 @@ export default function Github() {
         <p className="Github-content">View Source code and Contribute</p>
       </div>
       <div className="Github-button-container">
-        <button className="Github-button" type="button">View Repo</button>
+        <button className="Github-button" type="button" onClick={RepoNav}>View Repo</button>
       </div>
     </div>
   )

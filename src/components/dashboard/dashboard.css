@@ -698,3 +698,9 @@ color: white;
     border: 1.6px solid #1d1e21;
     transition: 0.2s;
 }
+
+.Github-button:hover {
+	color: white;
+ transition: 0.2s;
+ border: 1.6px solid #717884;
+}
