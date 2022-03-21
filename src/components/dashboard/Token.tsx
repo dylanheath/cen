@@ -20,7 +20,7 @@ export default function Token({TokensList} : {TokensList:Array<string>}) {
             <div className="token-template">
               <div className="token-information-container">
 	        <div className="token-icon-name-container">
-	          <img className="token-icon" src={require(`../../assets/${tok.symbol}.png`).default} alt={DefaultIcon} />
+		<img className="token-icon" src={require(`../../assets/${tok.symbol}.png`).default} onError={(e) => { (e.target as HTMLImageElement).src = DefaultIcon}} />
 	          <p className="token-name">{tok.symbol}</p>
 		</div>
 	        <p className="token-balance">{tok.balance}</p>

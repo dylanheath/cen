@@ -7,7 +7,9 @@ import './dashboard.css';
 import GithubIcon from '../../assets/Github.svg';
 
 export default function Github() {
-
+  const RepoNav = () => {
+    window.open('https://github.com/dylanheath/cen');
+  };
   return (
     <div className="Github">
       <div className="Github-header-container">
