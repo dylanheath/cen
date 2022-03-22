@@ -13,6 +13,7 @@
   grid-template-columns: repeat(4, 1fr);
 }
 
+
 .dashboard-top-container {
   display: flex;
   width: 100%;   
@@ -77,4 +78,16 @@ k
     grid-template-columns: 1fr 1fr;
     grid-gap: 14px;
     gap: 14px;
+}
+
+@media screen and (max-width: 1200px) {
+.dashboard {
+  grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 700px) {
+.dashboard {
+  grid-template-columns: repeat(1, 1fr);
+  }
 }
