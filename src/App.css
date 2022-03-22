@@ -173,6 +173,19 @@ canvas {
 
 .content {
   display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 428px) {
+  .content {
+    justify-content:unset!important ;
+  }
 }
 
 .scale-up-center {

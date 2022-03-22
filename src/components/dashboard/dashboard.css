@@ -333,6 +333,12 @@ color: #717884;
   width: 26vh;
 }
 
+@media screen and (max-width: 1200px) {
+  .Middle-bottom-grid-box {
+    width: unset;
+  }
+}
+
 .Middle-bottom-grid-header {
 	color: #717884;
 	font-size: 2vh;
@@ -554,6 +560,12 @@ font-size: 1.9vh;
     justify-content: space-between!important;
     width: 26vh;
 }
+
+@media screen and (max-width: 1200px) {
+  .Github {
+     width: unset;
+  }
+} 
 
 .Github-container {
     width: 100%;
