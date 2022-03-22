@@ -2,6 +2,7 @@
   margin-top: 40px!important;
   padding-left: 40px!important;
   padding-right: 40px!important;
+  padding-bottom: 40px!important;
 
 }
 
@@ -64,4 +65,16 @@ k
   grid-template-columns: 1fr;
   gap: 14px;
   grid-gap: 14px;
+}
+
+
+.Bottom-right-grid-container {
+ display: grid;
+}
+
+.Bottom-right-top-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 14px;
+    gap: 14px;
 }

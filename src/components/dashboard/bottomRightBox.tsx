@@ -5,9 +5,6 @@ import axios from 'axios';
 //styling
 import './dashboard.css';
 
-// context
-import { UserContext } from '../../context/context';
-
 // api
 import { api } from '../../utils/api';
 
@@ -18,7 +15,6 @@ import Contacts from './Contact';
 import DocsIcon from '../../assets/docs.png';
 
 export default function BottomRightBox() {
-  const { User, setUser } = useContext<any>(UserContext);
   return (
     <div className="bottom-right">
       <div className="bottom-right-box">

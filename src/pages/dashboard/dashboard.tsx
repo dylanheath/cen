@@ -63,7 +63,7 @@ export default function Dashboard() {
 	  </div>
 	</div>
 	<TopRightBox />
-	<BottomRightBox />
+	<ControlPanel />
       </div>
     </div>
   ) 

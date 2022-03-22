@@ -73,6 +73,7 @@ export default function TopLeftBox() {
 	  <div className="top-left-tezos-icon-container">
 	  </div>
 	  <p className="top-left-balance">{Balance}</p>
+	  <p className="top-left-balance-xtz">XTZ</p>
 	</div>
 	<div className="top-left-button-container">
           <div className="top-left-send-button-container">	  

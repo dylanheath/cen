@@ -55,17 +55,15 @@ export default function BottomLeftBox() {
 } ,[])
   const navigate = useNavigate();
   return (
-    <div className="bottom-left">
-      <div className="bottom-left-box">
-        <div className="bottom-left-header-container">
-	  <p className="bottom-left-header">Transactions</p>
-	  <button className="bottom-left-button">View All</button>
-	</div>
-	<div className="bottom-left-transaction-container">
-	  {Transactions.length  && (
-            <ComponentTransactions TransanctionData={Transactions} currentUser={User.address} /> 
-	  )}
-	</div>
+    <div className="bottom-left-box">
+      <div className="bottom-left-header-container">
+        <p className="bottom-left-header">Transactions</p>
+	<button className="bottom-left-button">View</button>
+      </div>
+      <div className="bottom-left-transaction-container">
+        {Transactions.length  && (
+          <ComponentTransactions TransanctionData={Transactions} currentUser={User.address} /> 
+	)}
       </div>
     </div>
   )

@@ -99,8 +99,23 @@ height: 100%;
  font-size: 3.4vh;
  color: white;
  font-weight: 500;
+}
+
+.top-left-balance-container {
+ display: flex;
+ flex-direction: row;
  padding-top: 2.6vh;
 }
+
+
+.top-left-balance-xtz {
+ padding-left: 8px;
+ font-size: 1.8vh;
+ color: #717884;
+ font-weight: 600;
+ padding-top: 4px;
+}
+
  
 .top-left-button-container {
  display: flex;
@@ -319,6 +334,7 @@ color: #717884;
   padding: 1.4rem;
   flex-direction: column;
   justify-content: space-between!important;
+  width: 26vh;
 }
 
 .Middle-bottom-grid-header {
@@ -331,7 +347,6 @@ color: #717884;
     flex-direction: row;
     justify-content: space-between!important;
     align-items: center;
-    width: 20vh;
 }
 
 .Middle-bottom-grid-header-icon {
@@ -343,7 +358,7 @@ color: #717884;
 }
 
 .Middle-bottom-grid-content {
- color: white;
+ color: #B7B6C1;
  font-size: 1.6vh;
 }
 
@@ -542,6 +557,7 @@ font-size: 1.9vh;
     padding: 1.4rem;
     flex-direction: column;
     justify-content: space-between!important;
+    width: 26vh;
 }
 
 .Github-container {
@@ -551,12 +567,12 @@ font-size: 1.9vh;
 .Github-box {
 }
 
+
 .Github-header-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between!important;
-  width: 20vh;
 }
 
 .Github-header {
@@ -638,7 +654,7 @@ position: relative;
 }
 
 .Github-content {
-    color: white;
+    color: #B7B6C1;
     font-size: 1.6vh;
 }
 

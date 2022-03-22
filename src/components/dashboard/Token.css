@@ -16,7 +16,7 @@ align-items: center;
 justify-content: space-between!important;
 }
 .token-name {
-color: white;
+color: #B7B6C1;
 font-size:2vh;
 font-weight: 500;
 padding-left: 6px;
@@ -24,7 +24,7 @@ padding-left: 6px;
 .token-balance {
 color: white;
 font-size: 2vh;
-font-weight: 500;
+font-weight: 600;
 padding-left: 4px;
 }
 
