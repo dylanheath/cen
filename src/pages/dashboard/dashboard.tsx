@@ -64,8 +64,8 @@ export default function Dashboard() {
 	</div>
 	<TopRightBox />
 	<div className="Bottom-right-top-grid-container">
-	  <Github />
-	  <Github />
+	  <MiddleBottomLeft />
+	  <MiddleBottomRight />
 	  <Github />
 	  <Github />
 	</div>
