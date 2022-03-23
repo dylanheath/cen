@@ -37,7 +37,6 @@
 
 @media screen and (max-width: 784px) {
   .dashboard-container {
-    width: unset;
   }
 }
 
@@ -132,7 +131,7 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 778px) {
 .dashboard {
   grid-template-columns: repeat(1, 1fr);
   }

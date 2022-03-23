@@ -63,7 +63,12 @@ export default function Dashboard() {
 	  </div>
 	</div>
 	<TopRightBox />
-	<ControlPanel />
+	<div className="Bottom-right-top-grid-container">
+	  <Github />
+	  <Github />
+	  <Github />
+	  <Github />
+	</div>
       </div>
     </div>
   ) 
