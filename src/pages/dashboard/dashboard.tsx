@@ -50,10 +50,7 @@ export default function Dashboard() {
 	<TopLeftBox />
 	<MiddleBox />
 	<Tokens />
-	<div className="Top-right-grid-container">
-	  <MiddleBottomTopLeft />
-	  <Github />
-	</div>
+	<MiddleBottomTopLeft />
 	<BottomLeftBox />
 	<div className="Middle-grid-container">
 	  <XTZprice /> 
@@ -66,8 +63,6 @@ export default function Dashboard() {
 	<div className="Bottom-right-top-grid-container">
 	  <MiddleBottomLeft />
 	  <MiddleBottomRight />
-	  <Github />
-	  <Github />
 	</div>
       </div>
     </div>

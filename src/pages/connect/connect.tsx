@@ -9,7 +9,7 @@ import { UserContext } from '../../context/context';
 import { getActiveAccount, getAddress } from '../../utils/wallet';
 
 export default  function Connect() {
-  const [User, setUser] = useContext<any>(UserContext);
+  const {User, setUser} = useContext<any>(UserContext);
   const navigate = useNavigate();
   useEffect(() => {
     const checkForUser = async () => {
@@ -18,7 +18,7 @@ export default  function Connect() {
         console.log('wallet already connected');
 	navigate('/app/dashboard');
       } else if (User.status === true) {
-	console.log('user already connected');
+	console.log('wallet already connected');
         navigate('/app/dashboard'); 
       }
     }

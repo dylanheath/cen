@@ -120,7 +120,7 @@
 
 .Bottom-right-top-grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 14px;
     gap: 14px;
 }

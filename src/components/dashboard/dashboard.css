@@ -331,7 +331,7 @@ color: #717884;
   padding: 1.4rem;
   flex-direction: column;
   justify-content: space-between!important;
-  width: 26vh;
+  width: 100%;
 }
 
 @media screen and (max-width: 1200px) {
@@ -343,6 +343,7 @@ color: #717884;
 .Middle-bottom-grid-header {
 	color: #717884;
 	font-size: 2vh;
+	padding-right: 60px;
 }
 
 .Middle-bottom-grid-header-container {
