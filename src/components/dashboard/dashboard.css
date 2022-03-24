@@ -14,7 +14,10 @@
   flex-direction: column;
   padding: 1.5rem;
   border-radius: 20px;
+  border: 1.6px solid #1d1e21;
+  transition: .2s;
 }
+
 
 .top-left-box {
   display: flex;
@@ -25,7 +28,10 @@
   padding: 1.5rem;
   border-radius: 20px;
   height: 100%;
+      border: 1.6px solid #1d1e21;
+  transition: .2s;
 }
+
 .bottom-left-box {
   display: flex;
   overflow: hidden;
@@ -34,7 +40,10 @@
   flex-direction: column;
   padding: 1.5rem;
   border-radius: 20px;
+      border: 1.6px solid #1d1e21;
+  transition: .2s;
 }
+
 
 .bottom-right-box {
 display: flex;
@@ -46,6 +55,7 @@ padding: 1.5rem;
 border-radius: 20px;
 justify-content: space-between;
 height: 100%;
+
 }
 
 
@@ -223,6 +233,7 @@ background: #141517;
 padding: 1.4rem;	
 width: 100%;
 height: 100%;
+    border: 1.6px solid #1d1e21;
 }
 
 .Middle-top-header-container {
@@ -332,6 +343,7 @@ color: #717884;
   flex-direction: column;
   justify-content: space-between!important;
   width: 100%;
+      border: 1.6px solid #1d1e21;
 }
 
 @media screen and (max-width: 1200px) {
@@ -422,6 +434,7 @@ color: #717884;
  padding: 1.5rem;
  border-radius: 20px;
  width: 100%;
+     border: 1.6px solid #1d1e21;
 }
 
 
@@ -655,6 +668,7 @@ position: relative;
     padding: 1.4rem;
     width: 100%;
     height: 100%;
+        border: 1.6px solid #1d1e21;
 
 }
 
