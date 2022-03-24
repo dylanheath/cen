@@ -27,12 +27,12 @@
  padding: 0.6rem;
  background: #a6a4a6;
  border-radius: 20px;
- border: 1.6px solid #717884;
+ border: 1px solid #717884;
  transaction: 0.2s;
 }
 
 .contact-template:hover {
-  border: 1.6px solid #717884;
+  border: 1px solid #717884;
   transition: 0.2s;
 }
 
