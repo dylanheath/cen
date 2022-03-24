@@ -158,8 +158,6 @@ const Navbar = () => {
           )}
         </div>
       </div>
-      {User?.status === true && <Link to="/app/profile"><img src={defaultpic} style={loadedPfp.loaded === true ? {} : {display: 'none'}} onLoad={() => setLoadedPfp({loaded: true})} className="def-pic" /></Link> }
-      {loadedPfp.loaded === false && <Link to="/app/profile"><SkeletonPfp /></Link>}
       <div className="gpt3__navbar-sign">
         {!ConnectionState && (
           <button type="button" onClick={ConnectWallet}>Connect Wallet</button>

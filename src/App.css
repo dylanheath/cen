@@ -8,12 +8,11 @@
 }
 
 .App {
-    display: flex;
     justify-content: flex-start;
 }
 
 body {
-  background: #17181c;
+  background: #16171a;
 }
 
 
