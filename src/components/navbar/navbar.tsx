@@ -128,28 +128,28 @@ const Navbar = () => {
             <div className="gpt3__navbar-links_container">
               <div className="Dashboard-link-container">
                 <Link to="/app/dashboard">
-		  <button className="Nav-button-dashboard" style={currentPage.currentPage == 'dashboard' ? {background: '#18191c', color: '#fff'} : {}} onClick={() => setCurrentPage({currentPage: 'dashboard'})}>
+		  <button className="Nav-button-dashboard" style={currentPage.currentPage == 'dashboard' ? {background: '#a6a4a6', color: '#fff'} : {}} onClick={() => setCurrentPage({currentPage: 'dashboard'})}>
                     <p style={currentPage.currentPage == 'dashboard' ? {color: '#fff'} : {}} className="Dashboard-nav">Dashboard</p>
 		  </button>
                 </Link>
               </div>
               <div className="Send-link-container">
                 <Link to="/app/send">
-		  <button className="Nav-button" style={currentPage.currentPage == 'send' ? {background: '#18191c'} : {}} onClick={() => setCurrentPage({currentPage: 'send'})}>
+		  <button className="Nav-button" style={currentPage.currentPage == 'send' ? {background: '#a6a4a6'} : {}} onClick={() => setCurrentPage({currentPage: 'send'})}>
                     <p style={currentPage.currentPage == 'send' ? {color: '#fff'} : {}} className="Send-nav">Send</p>
 		  </button>
                 </Link>
               </div>
               <div className="Explore-link-container">
                 <Link to="/app/explore">
-		  <button className="Nav-button" style={currentPage.currentPage == 'explore' ? {background: '#18191c'} : {}} onClick={() => setCurrentPage({currentPage: 'explore'})}>
+		  <button className="Nav-button" style={currentPage.currentPage == 'explore' ? {background: '#a6a4a6'} : {}} onClick={() => setCurrentPage({currentPage: 'explore'})}>
                     <p style={currentPage.currentPage == 'explore' ? {color: '#fff'} : {}} className="Explore-nav">Explore</p>
 		  </button>
                 </Link>
               </div>
               <div className="Receive-link-container">
                 <Link to="/app/receive">
-		  <button className="Nav-button" style={currentPage.currentPage == 'receive' ? {background: '#18191c'} : {}} onClick={() => setCurrentPage({currentPage: 'receive'})}>
+		  <button className="Nav-button" style={currentPage.currentPage == 'receive' ? {background: '#a6a4a6'} : {}} onClick={() => setCurrentPage({currentPage: 'receive'})}>
                     <p style={currentPage.currentPage == 'receive' ? {color: '#fff'} : {}} className="Receive-nav">Receive</p>
 		  </button>
                 </Link>

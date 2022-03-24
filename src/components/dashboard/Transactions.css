@@ -28,9 +28,9 @@ padding-top: 10px;
   align-items: center;
   width: 100%;
   padding: 0.6rem;
-  background: #16171a;
+  background: #a6a4a6;
   border-radius: 20px;
-  border: 1.6px solid #1d1e21; 
+  border: 1.6px solid #717884; 
   transition: 0.2s;
 }
 
@@ -46,15 +46,16 @@ align-items: center;
 }
 
 .transaction-account-name {
-color: white;
+color: black;
 font-size:  2vh;
 padding-left: 8px;
 padding-right: 8px;
 }
 
 .transaction-amount {
-  color: #717884;
-  font-size: 1.4vh;
+  color: white;
+  font-size: 1.6vh;
+  font-weight: 600;
 }
 
 .transaction-amount-in {
