@@ -23,7 +23,7 @@ export default function Token({TokensList} : {TokensList:Array<string>}) {
 		<img className="token-icon" src={(`/${tok.symbol}.png`)} onError={(e) => { (e.target as HTMLImageElement).src = DefaultIcon}} />
 	          <p className="token-name">{tok.symbol}</p>
 		</div>
-	        <p className="token-balance">{(Math.round(Number(tok.balance) * 100) / 100).toLocaleString()}</p>
+	        <p className="token-balance">{tok.balance}</p>
               </div>
             </div>
 	  </div>
