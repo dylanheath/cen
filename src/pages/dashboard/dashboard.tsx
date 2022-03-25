@@ -24,6 +24,7 @@ import XTZprice from '../../components/dashboard/XTZprice';
 import Github from '../../components/dashboard/Github';
 import ControlPanel from '../../components/dashboard/controlPanel';
 import Tokens from '../../components/dashboard/Tokens';
+import Lottery from '../../components/dashboard/Lottery';
 
 //styling 
 
@@ -54,10 +55,7 @@ export default function Dashboard() {
 	<BottomLeftBox />
 	<div className="Middle-grid-container">
 	  <XTZprice /> 
-	  <div className="Middle-bottom-grid-container">
-	    <MiddleBottomLeft />
-	    <MiddleBottomRight />
-	  </div>
+	  <Lottery />
 	</div>
 	<TopRightBox />
 	<div className="Bottom-right-top-grid-container">

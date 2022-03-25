@@ -16,7 +16,7 @@ export default function Token({TokensList} : {TokensList:Array<string>}) {
     <div className="Token-template-container">
       {TokensList.map((tok:any) => (
         <div>
-	  <div className="token-container">
+	  <div className="token-container" key={tok.symbol}>
             <div className="token-template">
               <div className="token-information-container">
 	        <div className="token-icon-name-container">
