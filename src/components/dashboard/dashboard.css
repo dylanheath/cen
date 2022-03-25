@@ -353,7 +353,6 @@ color: black;
 .Middle-bottom-grid-header {
 	color: black;
 	font-size: 2vh;
-	padding-right: 60px;
 	font-weight: 500;
 }
 
@@ -365,8 +364,8 @@ color: black;
 }
 
 .Middle-bottom-grid-header-icon {
-  height: auto;
-  width: 1.4vw;
+  height: 24px;
+  width: 24px;
 }
 
 .Middle-bottom-grid-content-container {
