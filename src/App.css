@@ -9,6 +9,14 @@
 
 .App {
     justify-content: flex-start;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;
+
+}
+
+.App::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
 }
 
 body {
