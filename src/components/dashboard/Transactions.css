@@ -28,16 +28,16 @@ padding-top: 10px;
   align-items: center;
   width: 100%;
   padding: 0.6rem;
-  background: #a6a4a6;
   border-radius: 20px;
   border: 1px solid #717884; 
   transition: 0.2s;
+  background: none;
 }
 
-.transactions-template:hover {
- border: 1px solid #717884;
- transition: 0.2s;
+.transaction-divider {
+  border: 0.8px solid #717884;
 }
+
 
 .transaction-account-container {
 display: flex;
@@ -72,8 +72,10 @@ padding-right: 8px;
 .transaction-icon-circle {
 height: 28px;
   width: 28px;
-  background-color: #bbb;
+  background-color: #a6a4a6;
   border-radius: 50%;
   display: inline-block;
   padding: 4px;
 }
+
+
