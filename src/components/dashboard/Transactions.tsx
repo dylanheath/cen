@@ -14,8 +14,8 @@ export default function ComponentTransactions({TransanctionData, currentUser} : 
           <div className="transaction-template-container" key={transaction.id}>
 	    <button className="transactions-template" type="button">
 	      <div className="transaction-account-container">
-	        {transaction.sender === currentUser ? <div className="transaction-icon-circle" style={{border: '1px solid green'}}><img className="transaction-account-picture" src={AmountOut} /></div> 
-		: <div className="transaction-icon-circle"><img className="transaction-account-picture" src={AmountIn} /></div> }
+	        {transaction.sender === currentUser ? <div className="transaction-icon-circle" style={{border: '1px solid red'}}><img className="transaction-account-picture" src={AmountOut} /></div> 
+		: <div className="transaction-icon-circle" style={{border: '1px solid green'}}><img className="transaction-account-picture" src={AmountIn} /></div> }
 	        <p className="transaction-account-name">{transaction?.receiverdata?.name}</p>
 	      </div>
 	      {transaction.sender === currentUser ? <p className="transaction-amount">- {transaction.amount / 1000000} XTZ</p> 

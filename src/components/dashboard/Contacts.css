@@ -25,7 +25,7 @@
  align-items: center;
  width: 100%;
  padding: 0.6rem;
- background: #a6a4a6;
+ background: none;
  border-radius: 20px;
  border: 1px solid #717884;
  transaction: 0.2s;
@@ -43,7 +43,7 @@
 }
 
 .contact-account-name {
- color: white;
+ color: black;
  font-size: 2vh;
  padding-left: 8px;
 }
