@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './Transactions.css';
 
-// default icon
+// asssets
 import DefaultIcon from '../../assets/default.png';
+import AmountIn from '../../assets/In.png';
+import AmountOut from '../../assets/Out.png';
 
 export default function ComponentTransactions({TransanctionData, currentUser} : {TransanctionData:any, currentUser:any}) {
   return (
@@ -12,7 +14,8 @@ export default function ComponentTransactions({TransanctionData, currentUser} : 
           <div className="transaction-template-container" key={transaction.id}>
 	    <button className="transactions-template" type="button">
 	      <div className="transaction-account-container">
-	        <img className="transaction-account-picture" src={DefaultIcon} />
+	        {transaction.sender === currentUser ? <div className="transaction-icon-circle"><img className="transaction-account-picture" src={AmountOut} /></div> 
+		: <img className="transaction-account-picture" src={AmountIn} /> }
 	        <p className="transaction-account-name">{transaction?.receiverdata?.name}</p>
 	      </div>
 	      {transaction.sender === currentUser ? <p className="transaction-amount">- {transaction.amount / 1000000} XTZ</p> 
