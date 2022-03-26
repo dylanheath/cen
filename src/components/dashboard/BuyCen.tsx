@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import axios from 'axios'
 
 // styling
 import './dashboard.css';
@@ -6,19 +7,25 @@ import './dashboard.css';
 // assets
 import LiquidityIcon from '../../assets/Liquidity.png';
 
-export default function BuyCen() {
+// context
+import { UserContext } from '../../context/context';
 
+export default function BuyCen() {
+  const { User, setUser } = useContext<any>(UserContext);
+  const [LiquidityAmount, setLiquidityAmount] = useState<number>(0);
+  const [LiquidityUSD, setLiquidityUSD] = useState<number>(0);
   return (
     <div className="Buy-cen-box">
       <div className="buy-cen-header-container">
         <p className="buy-cen-header">Liquidity</p>
-	<img className="buy-cen-header-icon" src={LiquidityIcon} />
+	<button className="buy-cen-button" type="button">Add/Remove</button>
       </div>
-      <div className="buy-cen-content-container">
-        <p className="buy-cen-content">Provide XTZ to the Cen Liquidity Pool</p>
+      <div className="buy-cen-pool-usd-container">
+        <p className="buy-cen-pool-usd">${LiquidityUSD}</p>
       </div>
-      <div className="buy-cen-button-container">
-        <button className="buy-cen-button" type="button">Interact</button>
+      <div className="buy-cen-pool-header-container">
+        <p className="buy-cen-pool-header">Total Locked in Pools</p>
+	<p className="buy-cen-pool-amount">{LiquidityAmount} XTZ</p>
       </div>
     </div>
   )

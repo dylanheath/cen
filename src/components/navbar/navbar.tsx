@@ -148,11 +148,9 @@ const Navbar = () => {
                 </Link>
               </div>
               <div className="Receive-link-container">
-                <Link to="/app/receive">
-		  <button className="Nav-button" style={currentPage.currentPage == 'receive' ? {background: '#a6a4a6'} : {}} onClick={() => setCurrentPage({currentPage: 'receive'})}>
-                    <p style={currentPage.currentPage == 'receive' ? {color: '#fff'} : {}} className="Receive-nav">Receive</p>
-		  </button>
-                </Link>
+	        <button className="Nav-button" style={currentPage.currentPage == 'receive' ? {background: '#a6a4a6'} : {}} onClick={() => setCurrentPage({currentPage: 'receive'})}>
+                  <p style={currentPage.currentPage == 'receive' ? {color: '#fff'} : {}} className="Receive-nav">More</p>
+	        </button>
               </div>
             </div>
           )}

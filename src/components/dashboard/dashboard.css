@@ -814,7 +814,7 @@ color: black;
     flex-direction: row;
     justify-content: space-between!important;
     align-items: center;
-    padding-bottom: 40px;
+    padding-bottom: 8px;
 }
 
 .buy-cen-header {
@@ -831,7 +831,7 @@ color: black;
 }
 
 .buy-cen-button-container {
-	padding-top: 40px;
+	padding-top: 20px;
 }
 
 
@@ -852,4 +852,41 @@ color: white;
 .buy-cen-header-icon {
     height: 24px;
     width: 24px;
+}
+
+.buy-cen-pool-header-container {
+align-items: left;
+padding-top: 20px;
+}
+
+.buy-cen-pool-header {
+color: black;
+    font-size: 1.8vh;
+    font-weight: 500;
+}
+
+.buy-cen-pool-amount-container {
+align-items: left;
+}
+
+.buy-cen-pool-amount {
+	color: white;
+    font-size: 2.4vh;
+    font-weight: 600;
+    padding-top: 10px;
+}
+
+.buy-cen-pool-usd-container {
+
+}
+
+.buy-cen-pool-usd {
+color: white;
+    font-size: 2.8vh;
+    font-weight: 500;
+}
+
+.buy-cen-header-cen-xtz {
+font-weight: 500;
+font-size: 16px; 
 }

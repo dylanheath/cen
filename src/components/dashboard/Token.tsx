@@ -23,7 +23,7 @@ export default function Token({TokensList} : {TokensList:Array<string>}) {
 		<img className="token-icon" src={(`/${tok.symbol}.png`)} onError={(e) => { (e.target as HTMLImageElement).src = DefaultIcon}} />
 	          <p className="token-name">{tok.symbol}</p>
 		</div>
-	        <p className="token-balance">{tok.balance}</p>
+	        <p className="token-balance">{tok.balance.slice(0, - tok.decimals) + "." + tok.balance.slice(- tok.decimals)}</p>
               </div>
             </div>
 	  </div>
