@@ -1,4 +1,4 @@
-# Cen (In Development) [![Netlify Status](https://api.netlify.com/api/v1/badges/329eff12-dd82-4aaf-8a08-78b067c343a8/deploy-status)](https://app.netlify.com/sites/creative-dodol-7d64e8/deploys)
+# Cen (In Development)                                [![Netlify Status](https://api.netlify.com/api/v1/badges/329eff12-dd82-4aaf-8a08-78b067c343a8/deploy-status)](https://app.netlify.com/sites/creative-dodol-7d64e8/deploys)
 
 
 Cen is a tezos powered payment platform using a Contacts system. Send to a Phone Number, Unique Name or Email address in 2 steps.
