@@ -9,6 +9,12 @@
   z-index: 1;
 }
 
+@media screen and (max-width: 900px) {
+  .send {
+    padding: 50px 16px 0px;
+  }
+}
+
 .send-contact-popup-container {
 
 }
@@ -222,9 +228,9 @@ display: flex;
 }
 
 .send-button {
-    background-color: rgb(166, 164, 166);
-    color: black;
-    font-size: 16px;
+    background: rgb(33, 114, 229);
+    color: white;
+    font-size: 18px;
     font-weight: 500;
         padding: 16px;
     width: 100%;
@@ -232,6 +238,7 @@ display: flex;
     text-align: center;
     border-radius: 20px;
     display: flex;
+    border: none;
     -webkit-box-pack: center;
     justify-content: center;
     flex-wrap: nowrap;
@@ -243,12 +250,12 @@ display: flex;
     transition: transform 450ms ease 0s;
     transform: perspective(1px) translateZ(0px);
     transition: .2s;
-    border: 1px solid #717884;
 }
 
 .send-button:hover {
     transition: .2s;
     color: white;
+    box-shadow: 0px 0px 20px 1px rgb(33, 114, 229);
 }
 
 .send-account-name {

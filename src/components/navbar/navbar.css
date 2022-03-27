@@ -205,7 +205,7 @@ padding-right:8px;
 
 .gpt3__navbar-sign button,
 .gpt3__navbar-menu_container button {
-    color: black;
+    color: white;
     font-family: var(--font-family);
     font-weight: 600;
     font-size: 16px;
@@ -216,8 +216,7 @@ padding-right:8px;
     outline: none;
     cursor: pointer;
     border-radius: 16px;
-    background: #f1243d;
-    box-shadow: 0px 0px 20px 1px #f1243d;
+    background: rgb(33, 114, 229);
 
     -o-transition:.5s;
   -ms-transition:.5s;
@@ -230,8 +229,7 @@ padding-right:8px;
 .gpt3__navbar-sign:hover button,
 .gpt3__navbar-menu_container button {
         color: white;
-        background: #f1243d;
-        box-shadow: 0px 0px 20px 1px #f1243d;
+        box-shadow: 0px 0px 20px 1px rgb(33, 114, 229);
 }
 
 @-webkit-keyframes AnimationName {
