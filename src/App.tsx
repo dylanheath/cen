@@ -14,6 +14,7 @@ import Connect from './pages/connect/connect';
 import NotFound from './pages/notFound/notFound';
 import Swap from './pages/swap/swap';
 import Send from './pages/send/send';
+import Liquidity from './pages/liquidity/liquidity';
 
 // styling
 import './App.css';
@@ -40,6 +41,7 @@ function App() {
 		  <Route path="/app/connect" element={<Connect />} />
 		  <Route path="/app/swap" element={<Swap />} />
 		  <Route path="/app/send" element={<Send />} />
+		  <Route path="/app/liquidity" element={<Liquidity />} />
 		  <Route path="*" element={<NotFound />} />
 	        </Routes>
 	      </div>

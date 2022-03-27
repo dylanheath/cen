@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 
 // styling
@@ -15,6 +16,10 @@ export default function BuyCen() {
   const [LiquidityAmount, setLiquidityAmount] = useState<number>(0);
   const [LiquidityUSD, setLiquidityUSD] = useState<number>(0);
   const [LiquidityTokens, setLiquidityTokens] = useState<any>(0);
+  const navigate = useNavigate();
+  const LiquidityNav = () => {
+    navigate('/app/liquidity');
+  }
   useEffect(() => {
     const fetchLiquidityData = async () => {
       const isMounted = true
@@ -43,7 +48,7 @@ export default function BuyCen() {
     <div className="Buy-cen-box">
       <div className="buy-cen-header-container">
         <p className="buy-cen-header">Liquidity</p>
-	<button className="buy-cen-button" type="button">Add/Remove</button>
+	<button className="buy-cen-button" type="button" onClick={LiquidityNav}>Add/Remove</button>
       </div>
       <div className="buy-cen-pool-usd-container">
         <p className="buy-cen-pool-usd">${LiquidityUSD}</p>

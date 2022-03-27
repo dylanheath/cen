@@ -21,13 +21,13 @@ position: relative;
   display: grid;
   grid-auto-row: auto;
   gap: 10px;
-  background:#141517;
+  background:#bab8ba;
   border-radius: 20px;
 }
 
 .send-header {
   font-size:  2.4vh;
-  color: #717884;
+  color: black;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   font-weight: 500;
@@ -67,7 +67,7 @@ padding: none;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background: #16171a;
+  background: rgb(166, 164, 166);
   padding: 1rem;
   border-radius: 20px;
   width: 100%;
@@ -80,7 +80,7 @@ padding: none;
   border: none;
   font-size: 34px; 
   width: 200px;
-  color: #717884;
+  color: black;
   font-weight: 520;
 }
 
@@ -118,18 +118,17 @@ k
  display: flex;
  flex-direction: row;
  align-items: center;
- background: #141517;
+ background: #999799;
  border-radius: 20px;
- color: #717884;
+ color: black;
  padding: 6px;
  justify-content: space-between;
  width: 100%;
- border: 1px solid #1d1e21;
+ border: 1px solid #717884;
  transition: 0.2s;
 }
 
 .send-token-select-button:hover {
-  border: 1px solid #717884;
   transition: 0.2s;
   color: white;
 }
