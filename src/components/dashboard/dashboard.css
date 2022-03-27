@@ -861,7 +861,7 @@ padding-top: 20px;
 
 .buy-cen-pool-header {
 color: black;
-    font-size: 1.8vh;
+    font-size: 1.9vh;
     font-weight: 500;
 }
 
@@ -873,7 +873,12 @@ align-items: left;
 	color: white;
     font-size: 2.4vh;
     font-weight: 600;
-    padding-top: 10px;
+}
+
+.buy-cen-pool-tokens-amount {
+	color: white;
+	font-size: 2.4vh;
+	font-weight: 600;
 }
 
 .buy-cen-pool-usd-container {
@@ -890,3 +895,22 @@ color: white;
 font-weight: 500;
 font-size: 16px; 
 }
+
+.buy-cen-pool-amount-container {
+  display: flex;
+  padding-top: 10px;
+  align-items: center;
+  flex-direction: row;
+}
+
+.pool-amount-divider-container {
+padding-left: 20px; 
+padding-right: 20px;
+}
+
+.pool-amount-divider {
+    align-items: center;
+    border-left: 1px solid #717884;
+    height: 34px;
+}
+

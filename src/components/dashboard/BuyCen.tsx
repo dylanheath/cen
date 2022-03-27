@@ -14,6 +14,22 @@ export default function BuyCen() {
   const { User, setUser } = useContext<any>(UserContext);
   const [LiquidityAmount, setLiquidityAmount] = useState<number>(0);
   const [LiquidityUSD, setLiquidityUSD] = useState<number>(0);
+  const [LiquidityTokens, setLiquidityTokens] = useState<any>(0);
+  useEffect(() => {
+    const fetchLiquidityData = async () => {
+      if (User.status == true) {
+      const getAvailableTokens = await axios.get<any>(`https://api.better-call.dev/v1/account/mainnet/KT1NNMGcCs9Afm87esXbKUmU3mv2KLngrqGK/token_balances`)
+        .then((response) => {
+          const AvailableTokensResponse = response.data.balances;
+          setLiquidityTokens(AvailableTokensResponse);
+	})
+	.catch(() => {
+          console.log('failed to fetch available tokens');
+	})
+      }
+    }
+    fetchLiquidityData();
+  }, [])
   return (
     <div className="Buy-cen-box">
       <div className="buy-cen-header-container">
@@ -25,7 +41,11 @@ export default function BuyCen() {
       </div>
       <div className="buy-cen-pool-header-container">
         <p className="buy-cen-pool-header">Total Locked in Pools</p>
-	<p className="buy-cen-pool-amount">{LiquidityAmount} XTZ</p>
+	<div className="buy-cen-pool-amount-container">
+	  <p className="buy-cen-pool-amount">{LiquidityAmount} XTZ</p>
+	  <div className="pool-amount-divider-container"><div className="pool-amount-divider"></div></div>
+	  <p className="buy-cen-pool-tokens-amount">{LiquidityTokens[0]?.balance.slice(0, LiquidityTokens[0].decimals)} CEN</p>
+	</div>
       </div>
     </div>
   )
