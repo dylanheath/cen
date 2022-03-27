@@ -19,6 +19,7 @@ import { getActiveAccount, sendXTZ, sendUSDtz } from '../../utils/wallet';
 import DefaultIcon from '../../assets/default.png';
 import SettingsIcon from '../../assets/settings.svg';
 import ArrowDown from '../../assets/arrowdown.png';
+import SendArrowDown from '../../assets/In.png';
 
 // components 
 import ContactsPopup from '../../components/contacts/Contacts';
@@ -64,9 +65,7 @@ export default function Send() {
         <div className="send-box">
 	  <div className="send-header-container">
             <p className="send-header">Send</p>
-	    <button className="settings-header-icon-button" type="button" >
-	      <img className="settings-header-icon" src={SettingsIcon} />
-	    </button>
+	    <button className="settings-header-icon-button" type="button">configure</button>
 	  </div>
 	  <div className="send-input-container">
             <div className="send-amount-input-box">
@@ -82,13 +81,23 @@ export default function Send() {
 	      </div>
 	    </div>
 	  </div>
+	  <div className="send-arrow-down-container">
+	    <img className="send-arrow-down" src={SendArrowDown} />
+	  </div>
 	  <div className="send-contact-button-container">
             <button className="send-contact-button" type="button" onClick={() => setPopup(true)}>
 	      <div className="send-account-container">
-	        <img className="send-account-picture" src={DefaultIcon} />
-                <p className="send-account-name">{Receiver?.User}</p>
+	        {Receiver && (
+                  <p className="send-account-name">{Receiver?.User}</p>
+		)}
+                {!Receiver && (
+                  <p className="send-account-name">Select Contact</p>
+		)}
 	      </div>
 	    </button>
+	  </div>
+	  <div className="send-button-container">
+            <button className="send-button" type="button">Send</button>
 	  </div>
 	</div>
       </div>
