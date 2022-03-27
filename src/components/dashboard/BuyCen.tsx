@@ -12,7 +12,7 @@ import { UserContext } from '../../context/context';
 
 export default function BuyCen() {
   const { User, setUser } = useContext<any>(UserContext);
-  const [LiquidityAmount, setLiquidityAmount] = useState<any>(0);
+  const [LiquidityAmount, setLiquidityAmount] = useState<number>(0);
   const [LiquidityUSD, setLiquidityUSD] = useState<number>(0);
   const [LiquidityTokens, setLiquidityTokens] = useState<any>(0);
   useEffect(() => {
