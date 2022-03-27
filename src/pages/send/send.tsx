@@ -65,7 +65,7 @@ export default function Send() {
         <div className="send-box">
 	  <div className="send-header-container">
             <p className="send-header">Send</p>
-	    <button className="settings-header-icon-button" type="button">configure</button>
+	    <button className="settings-header-icon-button" type="button">Settings</button>
 	  </div>
 	  <div className="send-input-container">
             <div className="send-amount-input-box">

@@ -10,8 +10,10 @@
   }
 }
 
-@media screen and (max-width: 784px) {
+@media screen and (max-width: 400px) {
   .dashboard-container {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 
