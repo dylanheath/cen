@@ -26,7 +26,7 @@ position: relative;
 }
 
 .send-header {
-  font-size:  2.4vh;
+  font-size:  22px;
   color: black;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -49,10 +49,16 @@ position: relative;
 }
 
 .settings-header-icon-button {
-background: none;
-border: none;
-padding: none;
-
+    color: black;
+    display: flex;
+    padding: 0.4rem 1rem;
+    background: #a6a4a6;
+    border-radius: 10px;
+    border: 1px solid #717884;
+    transition: 0.2s;
+}
+.settings-header-icon-button:hover {
+	color:white;
 }
 
 .send-input-container {
@@ -84,6 +90,7 @@ padding: none;
   font-weight: 500;
     color: white;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  width: 99%;
 }
 
 
@@ -250,3 +257,4 @@ display: flex;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     font-weight: 500;
 }
+
