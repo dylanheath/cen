@@ -242,3 +242,46 @@ transition: .2s;
     padding-left: 8px;
     padding-right: 10px;
 }
+
+.liquidity-data-container {
+	padding-top: 10px;
+}
+
+.liquidity-data-box {
+	display: flex;
+	flex-direction:row;
+	justify-content: space-between;
+	display: flex;
+    background: #bab8ba;
+    border-radius: 20px;
+        padding: 1rem 1.25rem 0.5rem;
+}
+
+.Cen-data {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.XTZ-data {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.Pool-share {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.liquidity-data-header {
+ font-size: 14px;
+ font-weight: 500;
+}
+
+.liquidity-data {
+	padding-top: 6px;
+	font-size: 16px;
+	font-weight: 600;
+}

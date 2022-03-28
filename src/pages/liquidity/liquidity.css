@@ -9,10 +9,11 @@
 }
 
 @media screen and (max-width: 1000px) {
-  .liquidity-container {
-    padding: 50px 16px 0px;
+  .Liquidity-container {
+    padding: 70px 16px 0px;
   }
 }
+
 
 
 .liquidity {
