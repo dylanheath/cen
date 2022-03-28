@@ -65,6 +65,9 @@ GET mainnet.cen.network/.netlify/functions/api/status
 
 ### Connected Repos
 
+#### Smart Contracts
+https://github.com/dylanheath/cen-lottery
+
 #### Backend
 https://github.com/dylanheath/cen-server
 
