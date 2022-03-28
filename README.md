@@ -8,6 +8,7 @@ Cen is a tezos powered payment platform using a Contacts system. Send to a Phone
 * Open Transaction and Account information using Cen's dedicated api
 * Zero Transaction Fees
 * Supports Mobile Devices
+* Open Source frontend/backend
 
 ## How It Works
 
