@@ -1,0 +1,20 @@
+.Liquidity-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 200px 16px 0px;
+    align-items: center;
+    flex: 1 1;
+    z-index: 1;
+}
+
+@media screen and (max-width: 1000px) {
+  .liquidity-container {
+    padding: 50px 16px 0px;
+  }
+}
+
+
+.liquidity {
+  position: relative;
+}
