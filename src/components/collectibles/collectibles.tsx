@@ -17,7 +17,7 @@ export default function Collectible() {
     const fetchNFTS = async () => {
       let isMounted = true;
       if (User.status == true && isMounted == true) {
-        const getNFTs = await axios.get(`https://api.better-call.dev/v1/account/mainnet/${api.url}/token_balance`)
+        const getNFTs = await axios.get(`https://api.better-call.dev/v1/account/mainnet/${User.address}/token_balance`)
 	  .then((response) => {
             const NFTdata = response.data;
 	    setNFTS(NFTdata);
