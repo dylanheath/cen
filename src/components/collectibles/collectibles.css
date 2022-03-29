@@ -1,7 +1,17 @@
 .Collectibles  {
     width: 100%;
     display: grid;
-    grid-gap: 40px;
-    gap: 40px;
-    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 60px;
+    gap: 60px;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.collectible-template {
+  display: flex;
+  flex-direction: column;
+}
+
+.nft-image {
+	height: 260px;
+	width: 260px;
 }

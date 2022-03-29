@@ -43,7 +43,8 @@ export default function CollectiblesBox() {
         <div className="Collectibles">
           {NFTS.map((nftData:any) => (
             <div className="collectible-template">
-	      <p>{nftData?.name}</p>
+	      <img className="nft-image" src={`https://ipfs.io/ipfs/${nftData?.display_uri.replace("ipfs://", "")}`} /> 
+	      <p className="nft-name">{nftData?.name}</p>
 	    </div>
           ))}
         </div>

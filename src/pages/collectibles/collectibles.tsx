@@ -10,10 +10,8 @@ import './collectibles.css'
 export default function Collectibles() {
 
   return (
-    <div className="Collectibles">
-      <div className="collectibles-container">
-         <CollectiblesBox />
-      </div>
+    <div className="Collectibles-container">
+      <CollectiblesBox />
     </div>
   )
 }
