@@ -12,7 +12,7 @@ import './collectibles.css'
 
 export default function CollectiblesBox() {
   const { User, setUser } = useContext<any>(UserContext);
-  const [NFTS, setNFTS] = useState<any>([null]);
+  const [NFTS, setNFTS] = useState<Array<string | null>>([null]);
   useEffect(() => {
     let isMounted = true;
     const fetchNFTS = async () => {
@@ -23,7 +23,7 @@ export default function CollectiblesBox() {
 	  .then((response) => {
             const NFTdata = response.data.balances;
 	    NFTdata.map((nft:any) => {
-	      if (nft.token_id > 0) {
+	      if (nft.token_id > 0 &&  nft.decimals === 0) {
                 NFTcollection.push(nft); 
 	      }
 	    })
