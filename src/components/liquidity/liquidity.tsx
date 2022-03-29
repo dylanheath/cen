@@ -17,9 +17,9 @@ import CENicon from '../../assets/CEN.png';
 export default function LiquidityBox() {
   const { User, setUser } = useContext<any>(UserContext);
   const [CenOutput, setCenOutput] = useState<number>(0);
-  const [PoolShare, setPoolShare] = useState<number>(0);
-  const [CenPerXTZ, setCenPerXTZ] = useState<number>(0);
-  const [XtzPerCEN, setXtzPerCEN] = useState<number>(0);
+  const [PoolShare, setPoolShare] = useState<number | string>('0.00');
+  const [CenPerXTZ, setCenPerXTZ] = useState<number | string>('0.00');
+  const [XtzPerCEN, setXtzPerCEN] = useState<number | string>('0.00');
   return (
     <div>
     <div className="Liquidity-box">
@@ -75,7 +75,7 @@ export default function LiquidityBox() {
         </div>
         <div className="Pool-share">
           <p className="liquidity-data-header">Pool Share</p>
-	  <p className="liquidity-data">{PoolShare}</p>
+	  <p className="liquidity-data">{PoolShare}%</p>
         </div>
       </div>
     </div>

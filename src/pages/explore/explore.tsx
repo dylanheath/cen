@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 
-export default function explore() {
-  const hello: string = "hello";
+export default function Explore() {
+  const [ExploreData, setExploreData] = useState<string>(); 
   return (
-  <div className="explore">
-    <p>nothing</p>
+  <div className="Explore">
+    <div className="explore-container">
+    </div>
   </div>
   )
 }
