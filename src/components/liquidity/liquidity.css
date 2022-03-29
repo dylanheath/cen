@@ -254,7 +254,7 @@ transition: .2s;
 	display: flex;
     background: #bab8ba;
     border-radius: 20px;
-        padding: 1rem 1.25rem 0.5rem;
+        padding: 0.8rem 1.4rem 0.8rem;
 }
 
 .Cen-data {
@@ -276,7 +276,7 @@ transition: .2s;
 }
 
 .liquidity-data-header {
- font-size: 16px;
+ font-size: 15px;
  font-weight: 500;
 }
 
