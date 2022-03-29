@@ -1,0 +1,7 @@
+.Collectibles  {
+    width: 100%;
+    display: grid;
+    grid-gap: 40px;
+    gap: 40px;
+    grid-template-columns: repeat(4, 1fr);
+}

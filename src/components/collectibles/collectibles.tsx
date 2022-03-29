@@ -10,28 +10,43 @@ import { api } from '../../utils/api';
 // styling
 import './collectibles.css'
 
-export default function Collectible() {
+export default function CollectiblesBox() {
   const { User, setUser } = useContext<any>(UserContext);
-  const [NFTS, setNFTS] = useState<string>('');
+  const [NFTS, setNFTS] = useState<any>([null]);
   useEffect(() => {
+    let isMounted = true;
     const fetchNFTS = async () => {
-      let isMounted = true;
-      if (User.status == true && isMounted == true) {
-        const getNFTs = await axios.get(`https://api.better-call.dev/v1/account/mainnet/${User.address}/token_balance`)
+      const address = await User.address?.toString();
+      const NFTcollection: Array<string> = [];
+      if (User.status === true) {
+        const getNFTs = await axios.get(`https://api.better-call.dev/v1/account/mainnet/${address}/token_balances`, { timeout: 4000 })
 	  .then((response) => {
-            const NFTdata = response.data;
-	    setNFTS(NFTdata);
+            const NFTdata = response.data.balances;
+	    NFTdata.map((nft:any) => {
+	      if (nft.token_id > 0) {
+                NFTcollection.push(nft); 
+	      }
+	    })
+	    console.log(NFTdata);
+	    setNFTS(NFTcollection);
 	  })
 	  .catch(() => {
             console.log('failed to get owned NFTS');
 	  })
       } 
+      isMounted = false;
     }
+    fetchNFTS();
   }, [])
   return (
-    <div className="Collectibles">
-      <div className="collectibles-container">
-      </div>
+    <div className="Collectibles-container">
+        <div className="Collectibles">
+          {NFTS.map((nftData:any) => (
+            <div className="collectible-template">
+	      <p>{nftData?.name}</p>
+	    </div>
+          ))}
+        </div>
     </div>
   )
 }
