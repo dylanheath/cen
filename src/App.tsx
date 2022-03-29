@@ -15,6 +15,7 @@ import NotFound from './pages/notFound/notFound';
 import Swap from './pages/swap/swap';
 import Send from './pages/send/send';
 import Liquidity from './pages/liquidity/liquidity';
+import Collectibles from './pages/collectibles/collectibles';
 
 // styling
 import './App.css';
@@ -42,6 +43,7 @@ function App() {
 		  <Route path="/app/swap" element={<Swap />} />
 		  <Route path="/app/send" element={<Send />} />
 		  <Route path="/app/liquidity" element={<Liquidity />} />
+		  <Route path="/app/collectibles" element={<Collectibles />} />
 		  <Route path="*" element={<NotFound />} />
 	        </Routes>
 	      </div>
