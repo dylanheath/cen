@@ -373,7 +373,7 @@ padding-right:8px;
     display: none;
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 860px) {
     .gpt3__navbar-links_container {
         display: none;
     }
@@ -503,3 +503,7 @@ transform: translateY(-3px);
  transition: .2s;
  color: white;
 }
+
+.Dropdown-container {
+}
+

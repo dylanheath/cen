@@ -1,0 +1,37 @@
+.Dropdown {
+    display: flex;
+    flex-direction: column;
+    background: #bab8ba;
+    box-sizing: border-box;
+    border-radius: 1rem;
+    top: 4rem;
+    width: 140px;
+    position: absolute;
+    box-shadow: 20px 20px 50px grey;
+    z-index: 2;
+    align-items:center;
+}
+
+.dropdown-option-container {
+padding-bottom: 4px;
+}
+
+.dropdown-option {
+	text-align: center;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    background: none;
+    width: 100px;
+    padding: 0.6rem 1rem;
+    padding: 0.6rem;
+    border-radius: 8px;
+    height: 34px;
+    border: none;
+    transition: .5s;
+        font-weight: 500;
+    font-size: 16px;
+}
+
+.dropdown-option:hover {
+	color: white;
+}
+

@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
+
 //context
 import { UserContext } from '../../context/context';
 import { pageContext  } from '../../context/pageContext';
@@ -14,8 +15,8 @@ import { userInfo } from '../../modules/context/userInterface';
 import { api } from '../../utils/api';
 import { ipfs } from '../../utils/ipfs';
 
-//modules
-import SkeletonPfp from '../../modules/account/skeletonPfp';
+// components
+import Dropdown from './dropdown';
 
 //assets
 import logo from '../../assets/cen/CenWhite.png';
@@ -35,6 +36,7 @@ const Navbar = () => {
   const [pfp, setPfp] = useState<any>(null);
   const [loadedPfp, setLoadedPfp] = useState<any>({loaded: false});
   const [currentPage, setCurrentPage] = useState<any>({currentPage: null});
+  const [DropdownState, setDropdownState] = useState<boolean | null>(null);
 
   const Logout = async () => {
     const disconnectFromCen = await disconnectWallet();
@@ -148,10 +150,15 @@ const Navbar = () => {
                 </Link>
               </div>
               <div className="Receive-link-container">
-	        <button className="Nav-button">
+	        <button className="Nav-button" onClick={DropdownState ? () => setDropdownState(null) : () => setDropdownState(true)}>
                   <p style={currentPage.currentPage == 'receive' ? {color: '#fff'} : {}} className="Receive-nav">More</p>
 	        </button>
               </div>
+	      {DropdownState && (
+                <div className="Dropdown-container">
+                  <Dropdown state={setDropdownState} />
+		</div>
+	      )}
             </div>
           )}
         </div>
