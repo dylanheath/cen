@@ -4,6 +4,9 @@ import axios from 'axios';
 // context
 import { UserContext } from '../../context/context';
 
+// assets
+import DefaultIcon from '../../assets/default.png';
+
 // utils
 import { api } from '../../utils/api';
 
@@ -60,7 +63,7 @@ export default function CollectiblesBox() {
           {NFTS.map((nftData:any) => (
 	    <div className="collectible-container">
             <button className="collectible-template">
-	      <img className="nft-image" src={`https://ipfs.io/ipfs/${nftData?.display}`} /> 
+	      <img className="nft-image" src={`https://ipfs.io/ipfs/${nftData?.display}`} onError={(e) => { (e.target as HTMLImageElement).src = DefaultIcon}} /> 
 	      <div className="nft-information-container">
 	        <div className="nft-name-collected-container">
 	          <p className="nft-name">{nftData?.name.length > 19 ? nftData?.name.slice(0, - 3 ) + " ..." : nftData?.name}</p>

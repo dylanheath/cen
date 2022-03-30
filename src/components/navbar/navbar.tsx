@@ -148,7 +148,7 @@ const Navbar = () => {
                 </Link>
               </div>
               <div className="Receive-link-container">
-	        <button className="Nav-button" style={currentPage.currentPage == 'receive' ? {background: '#a6a4a6'} : {}} onClick={() => setCurrentPage({currentPage: 'receive'})}>
+	        <button className="Nav-button">
                   <p style={currentPage.currentPage == 'receive' ? {color: '#fff'} : {}} className="Receive-nav">More</p>
 	        </button>
               </div>
