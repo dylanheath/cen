@@ -56,9 +56,9 @@ export default function CollectiblesBox() {
     fetchNFTS();
   }, [])
   return (
-    <div className="Collectibles-container">
         <div className="Collectibles">
           {NFTS.map((nftData:any) => (
+	    <div className="collectible-container">
             <button className="collectible-template">
 	      <img className="nft-image" src={`https://ipfs.io/ipfs/${nftData?.display}`} /> 
 	      <div className="nft-information-container">
@@ -68,9 +68,9 @@ export default function CollectiblesBox() {
 		</div>
 	      </div>
 	    </button>
+	    </div>
           ))}
         </div>
-    </div>
   )
 }
 
