@@ -1,17 +1,86 @@
 .Collectibles  {
     width: 100%;
     display: grid;
-    grid-gap: 60px;
-    gap: 60px;
-    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
 }
 
 .collectible-template {
-  display: flex;
-  flex-direction: column;
+	    display: flex;
+    overflow: hidden;
+    position: relative;
+    background: #bab8ba;
+    flex-direction: column;
+    border: none;
+    padding: 1.5rem;
+    border-radius: 20px;
+    height: 100%;
+    transition: .2s;
+    animation: fadeIn 1s;
+  -webkit-animation: fadeIn 1s;
+  -moz-animation: fadeIn 1s;
+  -o-animation: fadeIn 1s;
+  -ms-animation: fadeIn 1s;
+}
+
+.collectible-template:hover {
+	box-shadow: 20px 20px 50px grey;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
 }
 
 .nft-image {
 	height: 260px;
 	width: 260px;
+	border-radius: 14px;
+}
+
+.nft-name {
+    color: black;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.nft-name-collected-container  {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: 10px;
+}
+
+.nft-collected {
+	    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.nft-information-container {
+	width: 100%;
 }
