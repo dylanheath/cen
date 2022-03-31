@@ -9,6 +9,8 @@ Cen is a tezos powered payment platform using a Contacts system. Send to a Phone
 * Zero Transaction Fees
 * Supports Mobile Devices
 * Open Source frontend/backend
+* Asset Management for NFTs & Tokens
+* Swap & Liquidity Support
 
 ## How It Works
 
