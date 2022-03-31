@@ -1,0 +1,213 @@
+.Swap {
+	display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 200px 16px 0px;
+    align-items: center;
+    flex: 1 1;
+    z-index: 1;
+}
+
+.swap-container {
+	    position: relative;
+}
+
+.swap-box {
+    display: grid;
+    grid-auto-row: auto;
+    grid-gap: 2px;
+    gap: 2px;
+    background: #bab8ba;
+    border-radius: 20px;
+}
+
+.swap-header-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 1rem 1.25rem 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.swap-input-container {
+display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+    padding-left: 18px;
+    padding-right: 18px;
+    z-index: 2;
+}
+
+.swap-arrow-down-container  {
+padding: 2px;
+    border-radius: 12px;
+    height: 32px;
+    width: 32px;
+    position: relative;
+    margin-top: -14px;
+    margin-bottom: -14px;
+    left: calc(50% - 16px);
+    background-color: rgb(166, 164, 166);
+    border: 4px solid #bab8ba;
+    z-index: 3;
+}
+
+.swap-output-container {
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-bottom: 14px;
+    z-index: 2;
+}
+
+.swap-button-container {
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+    padding-left: 18px;
+    padding-right: 18px;
+    z-index: 2;
+    padding-bottom: 18px;
+}
+
+.swap-header {
+    font-size: 22px;
+    color: black;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+}
+
+.swap-header-button {
+color: black;
+    display: flex;
+    padding: 0.4rem 1rem;
+    background: #a6a4a6;
+    border-radius: 10px;
+    border: 1px solid #717884;
+    transition: 0.2s;
+}
+
+.swap-amount-input-box {
+display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: rgb(166, 164, 166);
+    padding: 1rem;
+    border-radius: 20px;
+    width: 100%;
+    align-items: center;
+}
+
+.swap-amount-input {
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 30px;
+    width: 200px;
+    font-weight: 500;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    width: 99%;
+}
+
+.swap-token-select-container {
+
+}
+
+.swap-token-select-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #999799;
+    border-radius: 20px;
+    color: black;
+    padding: 6px;
+    justify-content: space-between;
+    width: 100%;
+    border: 1px solid #717884;
+    transition: 0.2s;
+}
+
+.swap-token-select-content-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.swap-token-select-icon {
+    height: auto;
+    width: 26px;
+}
+
+.swap-token-select-name {
+    font-size: 18px;
+    padding-left: 8px;
+    padding-right: 10px;
+}
+
+.swap-token-arrow-down {
+    height: auto;
+    width: 20px;
+}
+
+.swap-arrow-down {
+    height: 20px;
+    width: 20px;
+}
+
+.swap-output-button {
+display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: rgb(166, 164, 166);
+    padding: 1rem;
+    border-radius: 20px;
+    width: 100%;
+    align-items: center;
+}
+
+.swap-amount-container {
+display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between!important;
+    width: 100%;
+}
+
+.swap-amount  {
+	    font-size: 30px;
+    font-weight: 500;
+    color: white;
+}
+
+.swap-button {
+    background: rgb(33, 114, 229);
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 16px;
+    width: 100%;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 20px;
+    display: flex;
+    border: none;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    transition: transform 450ms ease 0s;
+    transform: perspective(1px) translateZ(0px);
+    transition: .2s;
+}
+
+.swap-button:hover {
+box-shadow: 0px 0px 20px 1px rgb(33, 114, 229);
+}
+
