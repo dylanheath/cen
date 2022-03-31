@@ -1,5 +1,6 @@
-# Cen                              
-Cen is a tezos powered payment platform using a Contacts system. Send to a Phone Number, Unique Name or Email address in 2 steps.
+# Cen
+
+Cen is a Tezos powered payment & assets managemnet dapp which provides resources for Sending/Receiving XTZ or FA1.2/FA2 Tokens and tracking assets such as NFTs.
 
 * Supports up to 8 Wallets.
 * Safe & Secure using the BeaconSDK
