@@ -72,7 +72,8 @@ Cen is Open to Contributions, for every pull request make sure you include
 - A detailed explanation of changes
 - Reason for these changes
 
-### Connected Repos
+
+## Connected Repos
 
 #### Smart Contracts
 https://github.com/dylanheath/cen-lottery
