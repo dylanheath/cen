@@ -1,6 +1,6 @@
 # Cen
 
-Cen is a Tezos powered payment & assets managemnet dapp which provides resources for Sending/Receiving XTZ or FA1.2/FA2 Tokens and tracking assets such as NFTs.
+Cen is a Tezos powered payment & assets managemnet dapp which provides resources for Sending/Receiving XTZ or FA1.2/FA2 Tokens and tracking assets across a range of other dapps
 
 * Supports up to 8 Wallets.
 * Safe & Secure using the BeaconSDK
