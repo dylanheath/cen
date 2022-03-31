@@ -111,3 +111,20 @@ justify-content: center;
 .collectible-container {
 	padding-right: 2px;
 }
+
+.collectible-popup-container {
+    width: 100%;
+    align-items: left;
+    flex: 1 1;
+    z-index: 1;
+animation: fadeIn 0.2s;
+  -webkit-animation: fadeIn 0.2s;
+  -moz-animation: fadeIn 0.2s;
+  -o-animation: fadeIn 0.2s;
+  -ms-animation: fadeIn 0.2s;
+}
+@media screen and (max-width: 940px) {
+  .collectible-popup-container {
+    display: none;
+  }
+}

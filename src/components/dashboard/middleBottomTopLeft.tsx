@@ -8,7 +8,7 @@ import SwapIcon from '../../assets/swap.png';
 export default function MiddleBottomTopLeft() {
   const navigate = useNavigate();
   const SwapNav = () => {
-    navigate("/app/send"); 
+    navigate("/app/swap"); 
   };
   return (
     <div className="Middle-bottom-grid-box">

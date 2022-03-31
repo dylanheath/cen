@@ -1,0 +1,79 @@
+
+
+.Collectible {
+	padding-bottom: 20px;
+}
+ 
+.collectible-box {
+display: flex;
+flex-direction: row;
+width: 100%; 
+}
+
+.collectible-image {
+	border-radius: 20px;
+ height: 500px;
+ width: 500px;
+}
+
+.collectible-information-container {
+	padding-left: 20px;
+	width: 100%;
+}
+
+.collectible-information-box {
+	background: #bab8ba;
+	width: 100%;  
+	height: 100%;
+	border-radius: 20px;
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.collectible-header-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+.collectible-name {
+	    color: black;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+}
+
+.collectible-symbol-container {
+width: 10%
+}
+
+.collectible-symbol {
+	color: white;
+    display: flex;
+    padding: 0.4rem 1rem;
+    background: rgb(33, 114, 229);
+    border-radius: 10px;
+    transition: 0.2s;
+    font-weight: 600;
+
+}
+
+.collectible-collected {
+	    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.collectible-description-container {
+	width: 30vw;
+}
+
+.collectible-description {
+	    color: black;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+}

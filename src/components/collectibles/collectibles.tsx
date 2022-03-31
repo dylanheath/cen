@@ -4,6 +4,9 @@ import axios from 'axios';
 // context
 import { UserContext } from '../../context/context';
 
+// components
+import CollectibleInfo from './collectibleInfo';
+
 // assets
 import DefaultIcon from '../../assets/default.png';
 
@@ -20,11 +23,13 @@ interface NFTfields {
   alias: any,
   display: string,
   collected: number,
+  symbol: string,
 }
 
 export default function CollectiblesBox() {
   const { User, setUser } = useContext<any>(UserContext);
   const [NFTS, setNFTS] = useState<Array<string | null>>([null]);
+  const [NFTpopup, setNFTpopup] = useState<string | null>(null);
   useEffect(() => {
     let isMounted = true;
     const fetchNFTS = async () => {
@@ -43,6 +48,7 @@ export default function CollectiblesBox() {
 		  alias: null, 
 		  display: nft.display_uri.replace("ipfs://", ""),
 		  collected: nft.balance,
+		  symbol: nft.symbol,
 	        }
                 NFTcollection.push(NFTobj); 
 	      }
@@ -59,10 +65,17 @@ export default function CollectiblesBox() {
     fetchNFTS();
   }, [])
   return (
+    <div>
+      {NFTpopup && (
+        <div className="collectible-popup-container">
+          <CollectibleInfo setCollectibleData={setNFTpopup} CollectibleData={NFTpopup} />
+	</div>
+      )}
         <div className="Collectibles">
           {NFTS.map((nftData:any) => (
+	   <div>
 	    <div className="collectible-container">
-            <button className="collectible-template">
+            <button className="collectible-template" onClick={() => setNFTpopup(nftData)}>
 	      <img className="nft-image" src={`https://ipfs.io/ipfs/${nftData?.display}`} onError={(e) => { (e.target as HTMLImageElement).src = DefaultIcon}} /> 
 	      <div className="nft-information-container">
 	        <div className="nft-name-collected-container">
@@ -72,8 +85,10 @@ export default function CollectiblesBox() {
 	      </div>
 	    </button>
 	    </div>
+	   </div>
           ))}
         </div>
+    </div>
   )
 }
 
