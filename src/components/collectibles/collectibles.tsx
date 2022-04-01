@@ -24,6 +24,7 @@ interface NFTfields {
   display: string,
   collected: number,
   symbol: string,
+  type: string,
 }
 
 export default function CollectiblesBox() {
@@ -49,6 +50,7 @@ export default function CollectiblesBox() {
 		  display: nft.display_uri.replace("ipfs://", ""),
 		  collected: nft.balance,
 		  symbol: nft.symbol,
+		  type: nft.formats[0].mimeType,
 	        }
                 NFTcollection.push(NFTobj); 
 	      }

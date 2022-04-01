@@ -77,3 +77,15 @@ width: 10%
     font-weight: 500;
     font-size: 18px;
 }
+
+.collectible-detail {
+	color: black;
+	font-weight: 600;
+	font-size: 17px;
+}
+
+.collectible-details-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}

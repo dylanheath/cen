@@ -21,6 +21,8 @@ export default function CollectibleInfo({setCollectibleData, CollectibleData} : 
              <p className="collectible-description">{CollectibleData.description.length < 1000 ? CollectibleData.description.slice(0, 600) +  " ......" : CollectibleData.description}</p>
 	   </div>
 	   <div className="collectible-details-container">
+	     <p className="collectible-detail">{CollectibleData.collected} x</p>
+	     <p className="collectible-detail">{CollectibleData.type}</p>
 	   </div>
          </div>
        </div>
