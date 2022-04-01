@@ -1,4 +1,6 @@
-# Cen
+<p align="center">
+  <img width="280" height="100" src="CenWhite.png">
+</p>
 
 Cen is a Tezos powered payment & assets managemnet dapp which provides resources for Sending/Receiving XTZ or FA1.2/FA2 Tokens and tracking assets across a range of other dapps
 
