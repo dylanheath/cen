@@ -22,6 +22,7 @@ export default function XTZprice() {
 	  setPrice(PriceData.Price); 
 	  setMarketCap(PriceData.MarketCap);
           setChange(PriceData.PriceChange);
+	  setSupply(PriceData.CircSupply);
         })
 	.catch(() => {
           console.log("failed to get price");
@@ -51,7 +52,7 @@ export default function XTZprice() {
 	    <div className="XTZ-bottom-supply-container">
               <div className="XTZ-supply-container">
 	        <p className="XTZ-supply-header">Circulating Supply</p>
-	        <p className="XTZ-supply">{Supply}</p>
+	        <p className="XTZ-supply">{Supply.toLocaleString()}</p>
 	      </div>
               <div className="XTZ-bottom-divider-container">
                 <div className="XTZ-bottom-divider"></div>
