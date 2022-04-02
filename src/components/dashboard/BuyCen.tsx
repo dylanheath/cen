@@ -63,7 +63,7 @@ export default function BuyCen() {
 	<button className="buy-cen-button" type="button" onClick={LiquidityNav}>Add/Remove</button>
       </div>
       <div className="buy-cen-pool-usd-container">
-        <p className="buy-cen-pool-usd">${XTZprice * LiquidityAmount}</p>
+        <p className="buy-cen-pool-usd">${(XTZprice * LiquidityAmount).toFixed(2)}</p>
       </div>
       <div className="buy-cen-pool-header-container">
         <p className="buy-cen-pool-header">Total Locked in Pools</p>

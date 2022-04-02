@@ -17,19 +17,22 @@ export default function XTZprice() {
 
   useEffect(() => {
     const fetchToken = async () => {
-      const getPrice = await axios.get(`${api.url}/price/xtz`)
-        .then((response) => {
-          const PriceData = response.data[0];
-	  setPrice(PriceData.Price); 
-	  setMarketCap(PriceData.MarketCap);
-          setChange(PriceData.PriceChange);
-	  setSupply(PriceData.CircSupply);
-	  setVolume(PriceData.Volume);
-        })
-	.catch(() => {
-          console.log("failed to get price");
-	})
-    }
+      const isMounted = true;
+      if (isMounted == true) {
+        const getPrice = await axios.get(`${api.url}/price/xtz`)
+          .then((response) => {
+            const PriceData = response.data[0];
+	    setPrice(PriceData.Price); 
+	    setMarketCap(PriceData.MarketCap);
+            setChange(PriceData.PriceChange);
+	    setSupply(PriceData.CircSupply);
+	    setVolume(PriceData.Volume);
+          })
+	  .catch(() => {
+            console.log("failed to get price");
+	  })
+        }
+      }
     fetchToken();
   }, [])
   return (
