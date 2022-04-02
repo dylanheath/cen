@@ -1,4 +1,4 @@
-<p align="left">
+<p align="center">
   <img width="280" height="100" src="Cen.svg">
 </p>
 
