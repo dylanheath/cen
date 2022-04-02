@@ -33,7 +33,7 @@ export default function Tokens() {
 	    .then((response) => {
               const TokenData = response.data;
 	      TokenData.balances.map((token:any) => {
-	        if (token.token_id == 0 && token.hasOwnProperty('symbol') && !token.hasOwnProperty('creators')) {
+	        if (token.token_id == 0 && token.hasOwnProperty('symbol') && !token.hasOwnProperty('creators') && token.balance !== "0") {
                   TokenBalance.push(token);
 	        }
 	      })
