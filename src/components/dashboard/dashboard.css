@@ -483,6 +483,7 @@ color: white;
     font-size: 2.8vh;
     font-weight: 500;
     padding-left: 12px;
+    padding-right: 12px;
 }
 
 .XTZ-information-container {
@@ -534,6 +535,24 @@ font-size: 1.9vh;
   font-size: 1.9vh;
   color: black;
   padding-right: 10px;
+}
+
+.XTZ-price-info-container {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+}
+
+.XTZ-price-change {
+	    color: white;
+    display: flex;
+    padding: 0.2vw 0.8vh;
+    background: rgb(33, 114, 229);
+    border-radius: 10px;
+    transition: 0.2s;
+    align-items: center;
+    font-weight: 600;
+    font-size: 14px;
 }
 
 
