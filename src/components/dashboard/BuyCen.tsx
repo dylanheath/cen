@@ -5,6 +5,9 @@ import axios from 'axios'
 // styling
 import './dashboard.css';
 
+// api
+import { api } from '../../utils/api';
+
 // assets
 import LiquidityIcon from '../../assets/Liquidity.png';
 
@@ -16,6 +19,7 @@ export default function BuyCen() {
   const [LiquidityAmount, setLiquidityAmount] = useState<number>(0);
   const [LiquidityUSD, setLiquidityUSD] = useState<number>(0);
   const [LiquidityTokens, setLiquidityTokens] = useState<any>(0);
+  const [XTZprice, setXTZprice] = useState<number>(0);
   const navigate = useNavigate();
   const LiquidityNav = () => {
     navigate('/app/liquidity');
@@ -40,6 +44,14 @@ export default function BuyCen() {
 	.catch(() => {
           console.log('failed to fetch available xtz');
 	})
+      const getXTZprice = await axios.get<any>(`${api.url}/price/xtz`)
+        .then((response) => {
+          const PriceData = response.data[0].Price;
+	  setXTZprice(PriceData);
+	})
+        .catch(() => {
+          console.log('failed to get price');
+        })
       }
     }
     fetchLiquidityData();
@@ -51,7 +63,7 @@ export default function BuyCen() {
 	<button className="buy-cen-button" type="button" onClick={LiquidityNav}>Add/Remove</button>
       </div>
       <div className="buy-cen-pool-usd-container">
-        <p className="buy-cen-pool-usd">${LiquidityUSD}</p>
+        <p className="buy-cen-pool-usd">${XTZprice * LiquidityAmount}</p>
       </div>
       <div className="buy-cen-pool-header-container">
         <p className="buy-cen-pool-header">Total Locked in Pools</p>
