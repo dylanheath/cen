@@ -13,6 +13,7 @@ export default function XTZprice() {
   const [Supply, setSupply] = useState<number>(0);
   const [TotalSupply, setTotalSupply] = useState<number>(0);
   const [Change, setChange] = useState<number>(0);
+  const [Volume, setVolume] = useState<number>(0);
 
   useEffect(() => {
     const fetchToken = async () => {
@@ -23,6 +24,7 @@ export default function XTZprice() {
 	  setMarketCap(PriceData.MarketCap);
           setChange(PriceData.PriceChange);
 	  setSupply(PriceData.CircSupply);
+	  setVolume(PriceData.Volume);
         })
 	.catch(() => {
           console.log("failed to get price");
@@ -58,8 +60,11 @@ export default function XTZprice() {
                 <div className="XTZ-bottom-divider"></div>
 	      </div>
 	      <div className="XTZ-total-supply-container">
-                <p className="XTZ-total-supply-header">Total Supply</p>
-		<p className="XTZ-total-supply">{TotalSupply}</p>
+	        <div className="XTZ-volume-details-container">
+                  <p className="XTZ-total-supply-header">Volume</p>
+		  <p className="XTZ-volume-hour">24h</p>
+		</div>
+		<p className="XTZ-total-supply">{Volume.toLocaleString()}</p>
 	      </div>
 	    </div>
 	  </div>
