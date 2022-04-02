@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+// utils
+import { api } from '../../utils/api';
 
 // assets
 import TezosIcon from '../../assets/TezosCoin.png';
@@ -12,8 +16,18 @@ export default function XTZprice() {
 
   useEffect(() => {
     const fetchToken = async () => {
-
+      const getPrice = await axios.get(`${api.url}/price/xtz`)
+        .then((response) => {
+          const PriceData = response.data[0];
+	  setPrice(PriceData.Price); 
+	  setMarketCap(PriceData.MarketCap);
+          setChange(PriceData.PriceChange);
+        })
+	.catch(() => {
+          console.log("failed to get price");
+	})
     }
+    fetchToken();
   }, [])
   return (
       <div className="XTZ-price-box">
@@ -31,7 +45,7 @@ export default function XTZprice() {
 	  <div className="XTZ-bottom-analytics-container">
 	  <div className="XTZ-market-cap-container">
 	    <p className="XTZ-market-cap-header">Market Cap</p>
-	    <p className="XTZ-market-cap">{MarketCap}</p>
+	    <p className="XTZ-market-cap">{MarketCap.toLocaleString()}</p>
 	  </div>
 	  <div className="XTZ-divider"></div>
 	    <div className="XTZ-bottom-supply-container">
