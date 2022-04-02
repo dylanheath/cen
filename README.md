@@ -61,6 +61,12 @@ GET mainnet.cen.network/.netlify/functions/api/transactions/totaltransactions
 GET mainnet.cen.network/.netlify/functions/api/transactions/totalamount
 ```
 
+### Price
+
+```
+GET mainnet.cen.network/.netlify/functions/api/price/xtz
+```
+
 ### Status
 
 ```
