@@ -24,9 +24,9 @@ export default function BottomLeftBox() {
   const { User, setUser } = useContext<any>(UserContext);
   const [Transactions, setTransactions] = useState<Array<string>>(['']);
   useEffect(() => {
-    const LocalTransactions = JSON.parse(localStorage.getItem('transactions') || "");
+    const LocalTransactions = localStorage.getItem('transactions');
     if (LocalTransactions) {
-      setTransactions(LocalTransactions);
+      setTransactions(JSON.parse(LocalTransactions));
     }
     if (User) {
     const transactionsBundle: Array<string> = [];
