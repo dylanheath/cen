@@ -19,6 +19,10 @@ export default function TopRightBox() {
   const [Contacts, setContacts] = useState<Array<string | null>>(['']);
   const { User, setUser } = useContext<any>(UserContext); 
   useEffect(() => {
+    const LocalContacts = localStorage.getItem("contacts");
+    if (LocalContacts) {
+      setContacts(JSON.parse(LocalContacts));
+    }
     if (User) {
       const fetchContacts = async () => {
         const UserContacts = await User?.contacts;
@@ -28,6 +32,7 @@ export default function TopRightBox() {
 	  .then((response) => {
             const ContactsData = response.data;
 	    setContacts(ContactsData);
+	    localStorage.setItem("contacts", JSON.stringify(ContactsData));
 	    console.log('contacts received');
 	  })
 	  .catch(() => {

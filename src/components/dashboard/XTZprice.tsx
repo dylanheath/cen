@@ -16,6 +16,10 @@ export default function XTZprice() {
   const [Volume, setVolume] = useState<number>(0);
 
   useEffect(() => {
+    const LocalPrice = localStorage.getItem('price');
+    if (LocalPrice) {
+      setPrice(Number(LocalPrice));
+    }
     const fetchToken = async () => {
       const isMounted = true;
       if (isMounted == true) {

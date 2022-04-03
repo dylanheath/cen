@@ -24,6 +24,10 @@ export default function BottomLeftBox() {
   const { User, setUser } = useContext<any>(UserContext);
   const [Transactions, setTransactions] = useState<Array<string>>(['']);
   useEffect(() => {
+    const LocalTransactions = JSON.parse(localStorage.getItem('transactions') || "");
+    if (LocalTransactions) {
+      setTransactions(LocalTransactions);
+    }
     if (User) {
     const transactionsBundle: Array<string> = [];
     const fetchTransactions = async () => {
@@ -48,6 +52,7 @@ export default function BottomLeftBox() {
       const TransactionDateSort = transactionsBundle.sort((x: any, y: any) => +new Date(y.date) -  +new Date(x.date));
       TransactionDateSort.pop();
       setTransactions(TransactionDateSort);
+      localStorage.setItem('transactions', JSON.stringify(TransactionDateSort));
       }
     }
     fetchTransactions();
