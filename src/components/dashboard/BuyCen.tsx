@@ -25,6 +25,10 @@ export default function BuyCen() {
     navigate('/app/liquidity');
   }
   useEffect(() => {
+    const LocalPrice = localStorage.getItem('price');
+    if (LocalPrice) {
+      setXTZprice(Number(LocalPrice));
+    }
     const fetchLiquidityData = async () => {
       const isMounted = true
       if (User.status == true && isMounted == true) {
