@@ -11,6 +11,7 @@ import { CurrencyExchangeKey } from '../../keys/currencyExchange';
 
 // utils
 import { currencyList } from '../../utils/currencyList';
+import { api } from '../../utils/api';
 
 //styling
 import './dashboard.css';
@@ -43,23 +44,17 @@ export default function TopLeftBox() {
 	.catch(() => {
           console.log('failed to fetch balance, refreshing in 1 minute');
         })
+      const getXTZprice = await axios.get<any>(`${api.url}/price/xtz`)
+        .then((response) => {
+          const PriceData = response.data[0];
+	  setPrice(PriceData.Price);
+        })
+	.catch(() => {
+          console.log('failed to get price');
+        })
     }
     // recall function
-    const fetchCurrencyConversion = async () => {
-      if (SelectedCurrency !== 'USD') {
-        const getCurrencyConversion = await axios.get<any>(`https://v6.exchangerate-api.com/v6/${CurrencyExchangeKey}/latest/USD`)
-          .then((response) => {
-            const ConversionResponse = response.data;
-	    const ConversionPrice: number = ConversionResponse.SelectedCurrency;
-	    const Conversion: number = ConversionPrice * Price;
-	    setPrice(Conversion);
-          })
-          .catch(() => {
-            console.log('failed to fetch conversion rates'); 
-          })
-      }
-    }
-    }
+   }
     fetchBalance();
   }, [User])
   return (
@@ -75,6 +70,7 @@ export default function TopLeftBox() {
 	  <p className="top-left-balance">{Balance}</p>
 	  <p className="top-left-balance-xtz">XTZ</p>
 	</div>
+	<p className="top-left-balance-converted">${(Price * Balance).toFixed(2)}</p>
 	<div className="top-left-button-container">
           <div className="top-left-send-button-container">	  
 	    <button className="top-left-buy-button" onClick={() => sendNav()}>Send</button>

@@ -113,9 +113,14 @@ height: 100%;
 .top-left-balance-container {
  display: flex;
  flex-direction: row;
- padding-top: 2.6vh;
+ padding-top: 1.2vh;
 }
 
+.top-left-balance-converted {
+color: black;
+    font-size: 1.8vh;
+    font-weight: 500;
+}
 
 .top-left-balance-xtz {
  padding-left: 8px;
@@ -129,7 +134,7 @@ height: 100%;
 .top-left-button-container {
  display: flex;
  flex-direction: row;
- padding-top: 2.6vh;
+ padding-top: 2.4vh;
  justify-content: space-between;
  width: 158px;
 }
