@@ -32,6 +32,12 @@ export default function TopLeftBox() {
     window.open('https://www.moonpay.com/buy');
   }
   useEffect(() => {
+    const LocalPrice = localStorage.getItem('price');
+    const LocalBalance = localStorage.getItem('balance');
+    if (LocalPrice || LocalBalance) {
+      setPrice(Number(LocalPrice));
+      setBalance(Number(LocalBalance));
+    }
     const fetchBalance = async () => {
       if (User.status == true) {
       const address = await User.address?.toString();
@@ -40,6 +46,7 @@ export default function TopLeftBox() {
           const BalanceResponse = response.data; 
 	  console.log(BalanceResponse);
 	  setBalance(BalanceResponse / 1000000);
+	  localStorage.setItem("balance", (BalanceResponse / 1000000).toString()) ;
         })
 	.catch(() => {
           console.log('failed to fetch balance, refreshing in 1 minute');
@@ -48,6 +55,7 @@ export default function TopLeftBox() {
         .then((response) => {
           const PriceData = response.data[0];
 	  setPrice(PriceData.Price);
+	  localStorage.setItem("price", PriceData.Price);
         })
 	.catch(() => {
           console.log('failed to get price');
