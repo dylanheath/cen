@@ -20,7 +20,7 @@ export default function Tokens() {
   const [TokensReceived, setTokensReceived] = useState<boolean>(false);
   const navigate = useNavigate();
   const NFTnav = () => {
-    navigate('/app/collectibles');
+    navigate('/app/assets');
   };
   useEffect(() => { 
     setTokensReceived(false);
@@ -54,7 +54,7 @@ export default function Tokens() {
         <div className="Tokens-box">
           <div className="Tokens-header-container">
             <p className="Tokens-header">Tokens</p>
-	    <button className="Token-header-button" onClick={NFTnav}>View NFTS</button>
+	    <button className="Token-header-button" onClick={NFTnav}>View More</button>
 	  </div>
 	  <div className="Token-content-container">
 	    {TokensReceived == true && (
