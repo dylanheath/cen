@@ -52,7 +52,7 @@ export default function XTZprice() {
 	    </div>
 	    <div className="XTZ-price-info-container">
 	      <p className="XTZ-price-total">${Price}</p>
-	      <p className="XTZ-price-change" style={Change < 0 ? {background: "#C83E4D"} : {background: "rgb(33, 114, 229)"}}>{Change.toFixed(2)}%</p>
+	      <p className="XTZ-price-change" style={Change < 0 ? {background: "rgb(33, 114, 229)"} : {background: "rgb(33, 114, 229)"}}>{Change.toFixed(2)}%</p>
 	    </div>
 	  </div>
 	  <div className="XTZ-bottom-analytics-container">

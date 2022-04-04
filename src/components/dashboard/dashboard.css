@@ -10,7 +10,7 @@
   display: flex;
   overflow: hidden;
   position: relative;
-  background: #bab8ba;
+  background: #1d263b;
   flex-direction: column;
   padding: 1.5rem;
   border-radius: 20px;
@@ -23,7 +23,7 @@
   display: flex;
   overflow: hidden;
   position: relative;
-  background: #bab8ba;
+  background:#1d263b;
   flex-direction: column;
   padding: 1.5rem;
   border-radius: 20px;
@@ -35,7 +35,7 @@
   display: flex;
   overflow: hidden;
   position: relative;
-  background: #bab8ba;
+  background: #1d263b;
   flex-direction: column;
   padding: 1.5rem;
   border-radius: 20px;
@@ -47,7 +47,7 @@
 display: flex;
 overflow: hidden;
 position: relative;
-background: #bab8ba;
+background: #1d263b;
 flex-direction: column;
 padding: 1.5rem;
 border-radius: 20px;
@@ -66,7 +66,7 @@ height: 100%;
 
 .bottom-left-header {
   font-size: 2.4vh;
-  color: black;
+  color: white;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   font-weight: 500;
@@ -75,7 +75,7 @@ height: 100%;
 
 .top-right-header {
   font-size: 2.2vh;
-  color:  black;
+  color:  white;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   font-weight: 500;
@@ -83,7 +83,7 @@ height: 100%;
 
 .top-left-header {
   font-size: 2.4vh;
-  color: black;
+  color: white;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   font-weight: 500;
@@ -92,7 +92,7 @@ height: 100%;
 
 .top-left-currency {
   font-size: 1.6vh;
-  color: #717884;
+  color: #596178;
   transition: 0.2s;
 
 }
@@ -117,7 +117,7 @@ height: 100%;
 }
 
 .top-left-balance-converted {
-color: black;
+color: white;
     font-size: 1.8vh;
     font-weight: 500;
 }
@@ -125,7 +125,7 @@ color: black;
 .top-left-balance-xtz {
  padding-left: 8px;
  font-size: 1.8vh;
- color: black;
+ color: #596178;
  font-weight: 600;
  padding-top: 4px;
 }
@@ -149,10 +149,10 @@ color: black;
 }
 
 .bottom-left-button {
-  color: black;
+  color: white;
   display: flex;
   padding: 0.4vw 1.4vh;
- background: #a6a4a6; 
+ background: #596178; 
  border-radius: 10px;
   border: 1px solid #717884;
   transition: 0.2s;
@@ -160,10 +160,10 @@ color: black;
 }
 
 .top-right-button {
-	color: #717884;
+	color: white;
 	display: flex;
 	padding: 0.3vw 1.4vh;
-	background: #16171a;
+	background: #596178;
 	border-radius: 10px;
 	border: 1px solid #1d1e21;
 	transition: 0.2s;
@@ -182,10 +182,10 @@ color: black;
 }
 
 .top-left-buy-button {
-  color: black;
+  color: white;
   display: flex;
   padding: 0.4rem 1.4rem;
-  background: #a6a4a6;
+  background: #596178;
   border-radius: 10px;
   border: 1px solid #717884;
   transition: 0.2s;
@@ -232,7 +232,7 @@ overflow: hidden;
 display: flex;
 flex-direction: column;
 border-radius: 20px;
-background: #bab8ba;
+background: #1d263b;
 padding: 1.4rem;	
 width: 100%;
 height: 100%;
@@ -246,7 +246,7 @@ height: 100%;
 }
 
 .Middle-top-header {
- color: black;
+ color: white;
  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   font-weight: 500;
@@ -304,7 +304,7 @@ font-size: 1.6vw;
 }
 
 .Middle-top-total-amount-header-top {
- color:black;
+ color:white;
  font-size: 1.8vh; 
  font-weight: 500;
 }
@@ -322,10 +322,10 @@ font-size: 1.6vw;
 }
 
 .Middle-top-personal-analytics {
-color: black;
+color: white;
   display: flex;
   padding: 0.4rem 1rem;
-  background: #a6a4a6;
+  background: #596178;
   border-radius: 10px;
   border: 1px solid #717884;
   transition: 0.2s;
@@ -348,7 +348,7 @@ color: black;
 .Middle-bottom-grid-box {
   display: flex;
   position: relative;
-  background: #bab8ba;
+  background: #1d263b;
   border-radius: 20px;
   padding: 1.4rem;
   flex-direction: column;
@@ -363,7 +363,7 @@ color: black;
 }
 
 .Middle-bottom-grid-header {
-	color: black;
+	color: white;
 	font-size: 2vh;
 	font-weight: 500;
 }
@@ -384,7 +384,7 @@ color: black;
 }
 
 .Middle-bottom-grid-content {
- color: black;
+ color: white;
  font-size: 1.6vh;
  font-weight: 500;
 }
@@ -393,8 +393,8 @@ color: black;
 }
 
 .Middle-bottom-grid-button {
-  background: #a6a4a6;
-  color: black;
+  background: #596178;
+  color: white;
   padding: 0.4vw 1vh;
   border-radius: 10px;
   border: 1px solid #717884;
@@ -440,7 +440,7 @@ color: black;
  display: flex;
  overflow: hidden;
  position: relative;
- background: #bab8ba;
+ background: #1d263b;
  flex-direction: column;
  padding: 1.5rem;
  border-radius: 20px;
@@ -449,7 +449,7 @@ color: black;
 
 
 .XTZ-price-header {
-    color: black;
+    color: white;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     font-weight: 500;
     font-size: 2.4vh;
@@ -499,10 +499,10 @@ color: white;
  
 
 .XTZ-market-cap-container {
-color: #717884;
+color: white;
     display: flex;
     padding: 0.6rem 1.4rem;
-    background: #a6a4a6;
+    background: #171f30;
     border-radius: 10px;
     transition: 0.2s;
     justify-content: space-between!important;
@@ -511,14 +511,14 @@ color: #717884;
 
 .XTZ-market-cap-header {
   font-size: 1.9vh;
-  color: black;
+  color: white;
 }
 
 
 .XTZ-bottom-supply-container {
-    color: #717884;
+    color: white;
     padding: 0.6rem 1.4rem;
-    background: #a6a4a6;
+    background: #171f30;
     border-radius: 10px;
     transition: 0.2s;
     justify-content: space-between!important;
@@ -526,7 +526,7 @@ color: #717884;
 }
 
 .XTZ-supply-header {
-color: black;
+color: white;
 font-size: 1.9vh;
 }
 
@@ -538,7 +538,7 @@ font-size: 1.9vh;
 
 .XTZ-total-supply-header {
   font-size: 1.9vh;
-  color: black;
+  color: white;
   padding-right: 10px;
 }
 
@@ -694,7 +694,7 @@ position: relative;
     display: flex;
     flex-direction: column;
     border-radius: 20px;
-    background: #bab8ba;
+    background: #1d263b;
     padding: 1.4rem;
     width: 100%;
     height: 100%;
@@ -720,7 +720,7 @@ position: relative;
 }
 
 .Tokens-header {
-    color: black;
+    color: white;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     font-weight: 500;
     font-size: 2.4vh;
@@ -729,10 +729,10 @@ position: relative;
 
 .Token-header-button {
 
-    color: black;
+    color: white;
     display: flex;
     padding: 0.4rem 1rem;
-    background: #a6a4a6;
+    background: #596178;
     border-radius: 10px;
     border: 1px solid #717884;
     transition: 0.2s;
@@ -833,7 +833,7 @@ color: black;
 .Buy-cen-box {
 	    display: flex;
     position: relative;
-    background: #bab8ba;
+    background: #1d263b;
     border-radius: 20px;
     padding: 1.4rem;
     flex-direction: column;
@@ -849,7 +849,7 @@ color: black;
 }
 
 .buy-cen-header {
-    color: black;
+    color: white;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     font-weight: 500;
     font-size: 2.4vh;
@@ -867,10 +867,10 @@ color: black;
 
 
 .buy-cen-button {
-	color: black;
+	color: white;
     display: flex;
     padding: 0.4rem 1rem;
-    background: #a6a4a6;
+    background: #596178;
     border-radius: 10px;
     border: 1px solid #717884;
     transition: 0.2s;
@@ -891,7 +891,7 @@ padding-top: 20px;
 }
 
 .buy-cen-pool-header {
-color: black;
+color: white;
     font-size: 1.9vh;
     font-weight: 500;
 }
