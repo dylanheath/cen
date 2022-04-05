@@ -13,17 +13,20 @@ import PercentUp from '../../assets/PercentUp.png';
 
 export default function Assets() {
   const { User, setUser } = useContext<any>(UserContext);
-  const [TotalXTZ, setTotalXTZ] = useState<number | string>("0.00");
+  const [TotalXTZ, setTotalXTZ] = useState<number>(0);
   const [TotalUSD, setTotalUSD] = useState<number | string>("0.00");
-  const [Price, setPrice] = useState<number | string>("0.00");
+  const [Price, setPrice] = useState<number>(0);
   const [Tokens, setTokens] = useState<Array<string | null>>([null]);
   const [Assets, setAssets] = useState<Array<string>>(['']);
+  const [Farms, setFarms] = useState<Array<string>>([""]);
 
   useEffect(() => {
     const LocalBalance = localStorage.getItem("balance");
     const LocalPrice = localStorage.getItem("price");
     const LocalTokens = localStorage.getItem("tokens");
     const LocalAssets = localStorage.getItem("assets");
+    const LocalFarms = localStorage.getItem("farms");
+
     if (LocalBalance || LocalPrice) {
       setTotalXTZ(Number(LocalBalance));
       setPrice(Number(LocalPrice));
@@ -34,6 +37,10 @@ export default function Assets() {
 
     if (LocalAssets) {
       setAssets(JSON.parse(LocalAssets));
+    }
+    
+    if (LocalFarms) {
+      setFarms(JSON.parse(LocalFarms));
     }
   }, [])
   return (
@@ -58,7 +65,7 @@ export default function Assets() {
 	    <p className="assets-percent">0%</p>
 	  </div>
 	  <div className="XTZ-assets-amount-container">
-            <p className="assets-amount">${(Price * TotalXTZ).toFixed(2)}</p>
+            <p className="assets-amount">${Number(Price * TotalXTZ).toFixed(2)}</p>
 	  </div>
 	  <div className="price-change-container">
             <p className="price-change">0%</p>
