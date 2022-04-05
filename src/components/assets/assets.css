@@ -16,12 +16,6 @@ display: flex;
     padding-bottom: 1.6vh;
 
 }
-.assets-header  {
-    color: white;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 500;
-    font-size: 2.4vh;
-}
 
 .assets-total-container {
 display: flex;
@@ -55,6 +49,7 @@ justify-content: space-between;
     color: #596178;
     font-weight: 600;
     padding-left: 8px;
+    padding-bottom: 10px
 }
 
 .assets-total-price-container {
@@ -66,8 +61,8 @@ justify-content: space-between;
 .assets-tokens-container  {
 	    width: 100%;
     display: grid;
-    grid-gap: 8px;
-    gap: 8px;
+    grid-gap: 14px;
+    gap: 14px;
     grid-template-columns: repeat(2, 1fr);
 }
 
@@ -83,7 +78,7 @@ justify-content: space-between;
     padding-top: 0.6rem;
     padding-bottom: 0.6rem;
     width: 100%;
-    border: 1px solid #717884;
+    border: 1px solid #596178;
     height: 134px;
 }
 
@@ -99,9 +94,31 @@ justify-content: space-between;
     padding-top: 0.6rem;
     padding-bottom: 0.6rem;
     width: 100%;
-    border: 1px solid #717884;
+    border: 1px solid #596178;
     height: 134px;
 
+}
+
+.XTZ-assets-amount-container {
+	display: flex;
+	flex-direction: row;
+}
+
+.farm-assets-amount-container {
+	display: flex;
+	flex-direction: row;
+}
+
+.tokens-assets-amount-container {
+	display: flex;
+	flex-direction: row;
+}
+
+.assets-xtz {
+ font-size: 14px;
+ padding-top: 4px;
+ padding-left: 6px;
+ color: #596178;
 }
 
 .tokens-assets {
@@ -116,7 +133,7 @@ justify-content: space-between;
     padding-top: 0.6rem;
     padding-bottom: 0.6rem;
     width: 100%;
-    border: 1px solid #717884;
+    border: 1px solid #596178;
     height: 134px;
 }
 
@@ -134,9 +151,49 @@ justify-content: space-between;
     font-size: 16px;
 }
 
-.tokens-assets-header {
-	color: white;
+.assets-header {
+	    color: white;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 2.4vh;
 }
+
+.assets-amount {
+    color: white;
+    font-size: 28px;
+    font-weight: 500;
+    padding-top: 20px;
+}
+
+.box-assets-usd {
+  color: #596178;
+  font-size: 16px;
+}
+
+
+.XTZ-assets-header-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.farm-assets-header-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.tokens-assets-header-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.assets-percent {
+	color: #596178;
+	font-weight: 700;
+
+}
+
+
+

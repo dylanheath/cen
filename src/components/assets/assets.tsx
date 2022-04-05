@@ -26,22 +26,34 @@ export default function Assets() {
         <div className="XTZ-assets">
 	  <div className="XTZ-assets-header-container">
             <p className="XTZ-assets-header">XTZ</p>
+	    <p className="assets-percent">0%</p>
 	  </div>
 	  <div className="XTZ-assets-amount-container">
-            <p className="XTZ-assets-amount">0.00</p>
+            <p className="assets-amount">$0.00</p>
 	  </div>
 	</div>
 	<div className="farm-assets">
 	  <div className="farm-assets-header-container">
             <p className="farm-assets-header">Farms</p>
+	    <p className="assets-percent">0%</p>
 	  </div>
 	  <div className="farm-assets-amount-container">
-             <p className="assets-amount">0.00</p> 
+             <p className="assets-amount">$0.00</p> 
 	  </div>
 	</div>
 	<div className="tokens-assets">
 	   <div className="tokens-assets-header-container">
-             <p className="assets-header">Tokens</p>
+             <p className="farm-assets-header">Tokens</p>
+	     <p className="assets-percent">0%</p>
+	   </div>
+	   <div className="tokens-assets-amount-container">
+              <p className="assets-amount">$0.00</p>
+	   </div>
+	</div>
+	<div className="tokens-assets">
+	   <div className="tokens-assets-header-container">
+             <p className="farm-assets-header">Other</p>
+	     <p className="assets-percent">0%</p>
 	   </div>
 	   <div className="tokens-assets-amount-container">
               <p className="assets-amount">0.00</p>
