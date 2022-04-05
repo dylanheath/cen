@@ -195,5 +195,26 @@ justify-content: space-between;
 
 }
 
+.price-change-container {
+	display: flex;
+	flex-direction: row;
+	padding-top: 20px;
+}
 
+.price-change {
+	color: white;
+    display: flex;
+    padding: 0.2vw 1vh;
+    background: rgb(33, 114, 229);
+    border-radius: 10px;
+    transition: 0.2s;
+    align-items: center;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.change-icon {
+  height: 8px;
+  width: 8px;
+}
 

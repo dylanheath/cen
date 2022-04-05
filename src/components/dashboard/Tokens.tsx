@@ -38,6 +38,7 @@ export default function Tokens() {
 	        }
 	      })
      	      setUserTokens(TokenBalance);
+	      localStorage.setItem("tokens", JSON.stringify(TokenBalance));
 	      setTokensReceived(true);
 	    })
 	    .catch(() => {
