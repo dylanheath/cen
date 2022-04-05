@@ -27,6 +27,7 @@ import Tokens from '../../components/dashboard/Tokens';
 import Lottery from '../../components/dashboard/Lottery';
 import BuyCen from '../../components/dashboard/BuyCen';
 import Farms from '../../components/farms/farms';
+import Assets from '../../components/assets/assets';
 
 //styling 
 
@@ -54,7 +55,7 @@ export default function Dashboard() {
 	<MiddleBox />
 	<Tokens />
 	<MiddleBottomTopLeft />
-	<BottomLeftBox />
+	<Assets />
 	<div className="Middle-grid-container">
 	  <XTZprice /> 
 	  <BuyCen />
