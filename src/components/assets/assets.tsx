@@ -29,7 +29,7 @@ export default function Assets() {
     const TokenBalance: Array<string | null> = [];
     const TokenData: Array<string> = [];
     let TokensTotal: any = 0;
-    let XTZprice: number = 0;
+    let TokenUSD: any = 0
 
     if (User.status == true) {
       const fetchAssets = async () => {
@@ -63,10 +63,12 @@ export default function Assets() {
                console.log("failed to get price");
 	    })
 	  axios.all([axios.get(`https://api.better-call.dev/v1/account/mainnet/${address}/token_balances`, {timeout: 4000}),
-                     axios.get(`https://api.teztools.io/token/prices`, {timeout: 4000})])
-	  .then(axios.spread((TokenResponse, AssestResponse) => {
+                     axios.get(`https://api.teztools.io/token/prices`, {timeout: 4000}),
+		     axios.get(`${api.url}/price/xtz`, {timeout: 4000})])
+	  .then(axios.spread((TokenResponse, AssestResponse, PriceResponse) => {
            const AssetsData: Array<string> = AssestResponse.data.contracts;
 	   const TokenData: Array<string> = TokenResponse.data.balances;
+	   const XTZprice = PriceResponse.data[0].Price;
 	   const FilteredTokens: Array<string> = [];
 
 	   TokenData.map((token:any) => {
@@ -83,10 +85,14 @@ export default function Assets() {
 	     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
              // @ts-ignore
 	     TokensTotal += FindToken?.currentPrice * Number(TokenAmount);
+	     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+	     // @ts-ignore
+	     TokenUSD += FindToken?.currentPrice * Number(TokenAmount);
 	   })
 	   console.log(TokensTotal);
 	   setTotalAssetsXTZ(TokensTotal);
-	   setTotalUSD(Price * TokensTotal);
+	   setTotalUSD(XTZprice * TokensTotal);
+	   setTokensUSD(XTZprice * TokenUSD);
 	 }))
 	 .catch(error => console.log(error));
 	}
