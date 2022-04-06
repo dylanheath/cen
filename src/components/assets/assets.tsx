@@ -7,6 +7,9 @@ import { UserContext } from '../../context/context';
 // styling
 import './assets.css';
 
+// utils
+import { api } from '../../utils/api';
+
 // assets
 import PercentDown from '../../assets/PercentDown.png';
 import PercentUp from '../../assets/PercentUp.png';
@@ -21,6 +24,9 @@ export default function Assets() {
   const [Farms, setFarms] = useState<Array<string>>([""]);
 
   useEffect(() => {
+    const TokenBalance: Array<string> = [];
+    const TokenData: Array<string> = [];
+	  
     const LocalBalance = localStorage.getItem("balance");
     const LocalPrice = localStorage.getItem("price");
     const LocalTokens = localStorage.getItem("tokens");
@@ -41,6 +47,59 @@ export default function Assets() {
     
     if (LocalFarms) {
       setFarms(JSON.parse(LocalFarms));
+    }
+
+    if (User.status == true) {
+      const fetchAssets = async () => {
+        const address = await User.address?.toString();
+	if (address) {
+	  const getBalance = await axios.get<any>(`https://api.tzkt.io/v1/accounts/${address}/balance`)
+	    .then((response) => {
+              const BalanceData = response.data;
+	      setTotalXTZ(BalanceData);
+	    })
+	    .catch(() => {
+              console.log("failed to get balance");
+	    })
+          const getTokens = await axios.get<any>(`https://api.better-call.dev/v1/account/mainnet/${address}/token_balances`, { timeout: 4000 })
+	    .then((response) => {
+              const TokensList = response.data;
+	      TokensList.balances.map((token:any) => {
+	        if (token.token_id == 0 && token.hasOwnProperty('symbol') && !token.hasOwnProperty('creators') && token.balance !== "0") {
+                  TokenBalance.push(token);
+	        }
+	      })
+	      setTokens(TokenBalance);
+	    })
+	    .catch(() => {
+	      console.log("failed to get tokens"); 
+	    })
+	  const getFarmsBatch = await axios.get(`https://bafybeigogwwmiyuahrfw2qbclpoiausrgbb5ju2jsmx5p7i6wmynvmden4.ipfs.dweb.link/`)
+	    .then((response) => {
+              const FarmsData = response.data;
+	      setFarms(FarmsData);
+	    })
+	    .catch(() => {
+              console.log("failed to get farms");
+	    })
+	  const getAssets = await axios.get(`https://api.teztools.io/token/prices`)
+	    .then((response) => {
+              const AssetsData = response.data;
+	      setAssets(AssetsData); 
+	    })
+	    .catch(() => {
+               console.log("failed to get assets");
+	    })
+	  const getPrice = await axios.get(`${api.url}/price/xtz`)
+	    .then((response) => {
+              const PriceData = response.data;
+	      setPrice(PriceData);
+	    })
+	    .catch(() => {
+               console.log("failed to get price");
+	    })
+	}
+      }
     }
   }, [])
   return (
