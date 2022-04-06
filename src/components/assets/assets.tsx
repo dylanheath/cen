@@ -29,19 +29,7 @@ export default function Assets() {
     const TokenBalance: Array<string | null> = [];
     const TokenData: Array<string> = [];
     let TokensTotal: any = 0;
-	  
-    const LocalBalance = localStorage.getItem("balance");
-    const LocalPrice = localStorage.getItem("price");
-    const LocalFarms = localStorage.getItem("farms");
-
-    if (LocalBalance || LocalPrice) {
-      setTotalXTZ(Number(LocalBalance));
-      setPrice(Number(LocalPrice));
-    }
-
-    if (LocalFarms) {
-      setFarms(JSON.parse(LocalFarms));
-    }
+    let XTZprice: number = 0;
 
     if (User.status == true) {
       const fetchAssets = async () => {
@@ -53,6 +41,7 @@ export default function Assets() {
 	    .then((response) => {
               const BalanceData = response.data;
 	      setTotalXTZ(BalanceData);
+	      TokensTotal += BalanceData / 1000000; 
 	    })
 	    .catch(() => {
               console.log("failed to get balance");
@@ -95,12 +84,10 @@ export default function Assets() {
              // @ts-ignore
 	     TokensTotal += FindToken?.currentPrice * Number(TokenAmount);
 	   })
-	   setTokensUSD(Price * TokensTotal);
-           const XTZtoUSD: Number = (Price * TotalXTZ / 1000000); 
-	   const XTZtotal = (Math.abs(XTZtoUSD + TokensTotal)); 
-	   setTotalAssetsXTZ(XTZtotal);
-	   setTotalUSD(Price * XTZtotal);
-         }))
+	   console.log(TokensTotal);
+	   setTotalAssetsXTZ(TokensTotal);
+	   setTotalUSD(Price * TokensTotal);
+	 }))
 	 .catch(error => console.log(error));
 	}
       }
