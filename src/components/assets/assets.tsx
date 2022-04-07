@@ -158,7 +158,7 @@ export default function Assets() {
 	     <p className="assets-percent">0%</p>
 	   </div>
 	   <div className="tokens-assets-amount-container">
-              <p className="assets-amount">0.00</p>
+              <p className="assets-amount">$0.00</p>
 	   </div>
 	   <div className="price-change-container">
 	     <p className="price-change">0%</p>
