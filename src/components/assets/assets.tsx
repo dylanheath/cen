@@ -24,6 +24,7 @@ export default function Assets() {
   const [Assets, setAssets] = useState<Array<string>>([]);
   const [Farms, setFarms] = useState<Array<string | null>>([null]);
   const [TokensUSD, setTokensUSD] = useState<number>(0);
+  const [FarmsXTZ, setFarmsXTZ] = useState<number>(0);
 
   useEffect(() => {
     const TokenBalance: Array<string | null> = [];
