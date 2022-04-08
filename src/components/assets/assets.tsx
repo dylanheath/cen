@@ -38,13 +38,16 @@ export default function Assets() {
 	let AssetsLoaded = false;
         const address = await User.address?.toString();
 	if (address) {
-	  const getBalance = await axios.get<any>(`https://api.tzkt.io/v1/accounts/${address}/balance`)
+	  // gets User balance from api
+	  // note: timeout of 400 for cold server response time
+	  const getBalance = await axios.get<any>(`https://api.tzkt.io/v1/accounts/${address}/balance`, {timeout: 4000})
 	    .then((response) => {
               const BalanceData = response.data;
 	      setTotalXTZ(BalanceData);
 	      TokensTotal += BalanceData / 1000000; 
 	    })
 	    .catch(() => {
+	      // server response error
               console.log("failed to get balance");
 	    })
 	  const getFarmsBatch = await axios.get(`https://bafybeigogwwmiyuahrfw2qbclpoiausrgbb5ju2jsmx5p7i6wmynvmden4.ipfs.dweb.link/`)
