@@ -12,6 +12,7 @@ Cen is a Tezos powered payment & assets management dapp which provides resources
 * Open Source frontend/backend
 * Asset Management for NFTs & Tokens
 * Swap & Liquidity Support
+* Portfolio Analysis
 
 ## How It Works
 
