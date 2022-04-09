@@ -22,9 +22,9 @@ export default function Assets() {
   const [Price, setPrice] = useState<number>(0);
   const [Tokens, setTokens] = useState<Array<string | null>>([]);
   const [Assets, setAssets] = useState<Array<string>>([]);
-  const [Farms, setFarms] = useState<Array<string | null>>([null]);
+  const [Farms, setFarms] = useState<Array<null | number>>([null]);
   const [TokensUSD, setTokensUSD] = useState<number>(0);
-  const [FarmsXTZ, setFarmsXTZ] = useState<number>(0);
+  const [FarmsUSD, setFarmsUSD] = useState<number | string>("0.00");
 
   useEffect(() => {
     const TokenBalance: Array<string | null> = [];
@@ -92,14 +92,20 @@ export default function Assets() {
 		     axios.get(`https://api.tzkt.io/v1/contracts/KT1Kp3KVT4nHFmSuL8bvETkgQzseUYP3LDBy/bigmaps/balances/keys/${address}`),
 		     axios.get(`https://api.tzkt.io/v1/contracts/KT1S4XjwGtk55TmsMqSdazEMrH4pGA3NMXhz/bigmaps/balances/keys/${address}`),
 		     axios.get(`https://api.tzkt.io/v1/contracts/KT1M82a7arHVwcwaswnNUUuCnQ45xjjGKNd1/bigmaps/balances/keys/${address}`),
-		     axios.get(`https://api.tzkt.io/v1/contracts/KT1CBh8BKFV6xAH42hEdyhkijbwzYSKW2ZZC/bigmaps/balances/keys/${address}`)
+		     axios.get(`https://api.tzkt.io/v1/contracts/KT1CBh8BKFV6xAH42hEdyhkijbwzYSKW2ZZC/bigmaps/balances/keys/${address}`),
+		     axios.get(`https://api.teztools.io/token/prices`)
 	             ])
 		     .then(axios.spread((... PlentyResponse) => {
+		       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                       // @ts-ignore
+		       const PlentyToken: any = PlentyResponse[PlentyResponse.length -1].data.contracts.find(tk => tk.symbol === "PLENTY");
 		       PlentyResponse.map((farm:any) => {
-		         if (Number(farm.data) < 0) {
-                           PlentyFarmTotal += Number(farm.data); 
+		         if (Number(farm.data) > 0) {
+		           const PlentyDecimals = farm.data.toString().slice(0, - PlentyToken.decimals);
+                           PlentyFarmTotal += Number(farm.currentPrice * PlentyDecimals);
 			 }
 		       }) 
+		       setFarmsUSD(PlentyFarmTotal);
 		     }))
 
 	  axios.all([axios.get(`https://api.better-call.dev/v1/account/mainnet/${address}/token_balances`, {timeout: 4000}),
@@ -175,7 +181,7 @@ export default function Assets() {
 	    <p className="assets-percent">0%</p>
 	  </div>
 	  <div className="farm-assets-amount-container">
-             <p className="assets-amount">$0.00</p> 
+             <p className="assets-amount">${FarmsUSD == 0 ? "0.00" : FarmsUSD}</p> 
 	  </div>
 	  <div className="price-change-container">
             <p className="price-change">0%</p>
