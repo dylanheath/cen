@@ -339,10 +339,11 @@ color: white;
 }
 
 .Middle-top-converted-price {
- color: white;
- padding-top: 4px;
- font-size: 2.8vh;
- font-weight: 500;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-size: 3.8vh;
+    color: white;
+    font-weight: 600;
+ padding-top: 14px;
 }
 
 .Middle-bottom-grid-box {

@@ -31,6 +31,7 @@ export default function Assets() {
     const TokenData: Array<string> = [];
     let TokensTotal: any = 0;
     let TokenUSD: any = 0
+    let PlentyFarmTotal: number = 0;
 
     if (User.status == true) {
       const fetchAssets = async () => {
@@ -66,9 +67,45 @@ export default function Assets() {
 	    .catch(() => {
                console.log("failed to get price");
 	    })
+
+	    axios.all([
+	             // Plenty LP farms
+	             axios.get(`https://api.tzkt.io/v1/contracts/KT1MfMMsYX34Q9cEaPtk4qkQ6pojA7D2nsgr/bigmaps/balances/keys/${address}`),
+		     axios.get(`https://api.tzkt.io/v1/contracts/KT1EVfYFoSpte3PnE4tPoWuj1DhNPVQwrW5Y/bigmaps/balances/keys/${address}`),
+		     axios.get(`https://api.tzkt.io/v1/contracts/KT1JQAZqShNMakSNXc2cgTzdAWZFemGcU6n1/bigmaps/balances/keys/${address}`),
+		     axios.get(`https://api.tzkt.io/v1/contracts/KT1MfMMsYX34Q9cEaPtk4qkQ6pojA7D2nsgr/bigmaps/balances/keys/${address}`),
+		     axios.get(`https://api.tzkt.io/v1/contracts/KT1UTvMuyRggQe9q1hrh7YLh7vxffX2egtS6/bigmaps/balances/keys/${address}`),
+		     axios.get(`https://api.tzkt.io/v1/contracts/KT1FsMiweyRTog9GGNC22hiMTFVRPrGs3eto/bigmaps/balances/keys/${address}`),
+		     axios.get(`https://api.tzkt.io/v1/contracts/KT1VwZPZ4bcPQYS1C4yRvmU4giQDXhEV81WD/bigmaps/balances/keys/${address}`),
+		     axios.get(`https://api.tzkt.io/v1/contracts/KT1CWNVmHs6RRbLzwA3P19h7Wa9smnDrAgpS/bigmaps/balances/keys/${address}`),
+		     axios.get(`https://api.tzkt.io/v1/contracts/KT1VCrmywPNf8ZHH95HKHvYA4bBQJPa8g2sr/bigmaps/balances/keys/${address}`),
+		     axios.get(`https://api.tzkt.io/v1/contracts/KT1K9kLuhq9AJjDAgbJdKGBiP9927WsRnjP6/bigmaps/balances/keys/${address}`),
+		     axios.get(`https://api.tzkt.io/v1/contracts/KT1MkXtVBuCKtxqSh7APrg2d7ThGBmEf4hnw/bigmaps/balances/keys/${address}`),
+		     axios.get(`https://api.tzkt.io/v1/contracts/KT1W3DtcPXbD7MMmtUdk3F352G6CYFSpwUUS/bigmaps/balances/keys/${address}`),
+		     axios.get(`https://api.tzkt.io/v1/contracts/KT1MmAy4mSbZZVzPoYbK3M4z3GWUo54UTiQR/bigmaps/balances/keys/${address}`),
+		     axios.get(`https://api.tzkt.io/v1/contracts/KT1RwFV1xQU2E9TsXe1qzkdwAgFWaKk8bfAa/bigmaps/balances/keys/${address}`),
+		     axios.get(`https://api.tzkt.io/v1/contracts/KT1HSYQ9NLTQufuvNUwMhLY7B9TX8LDUfgsr/bigmaps/balances/keys/${address}`),
+		     axios.get(`https://api.tzkt.io/v1/contracts/KT1KJhxkCpZNwAFQURDoJ79hGqQgSC9UaWpG/bigmaps/balances/keys/${address}`),
+		     axios.get(`https://api.tzkt.io/v1/contracts/KT1FJzDx9AwbuNHjhzQuUxxKUMA9BQ7DVfGn/bigmaps/balances/keys/${address}`),
+		     axios.get(`https://api.tzkt.io/v1/contracts/KT1UqnQ6b1EwQgYiKss4mDL7aktAHnkdctTQ/bigmaps/balances/keys/${address}`),
+		     axios.get(`https://api.tzkt.io/v1/contracts/KT1UP9XHQigWMqNXYp9YXaCS1hV9jJkCF4h4/bigmaps/balances/keys/${address}`),
+		     axios.get(`https://api.tzkt.io/v1/contracts/KT1Kp3KVT4nHFmSuL8bvETkgQzseUYP3LDBy/bigmaps/balances/keys/${address}`),
+		     axios.get(`https://api.tzkt.io/v1/contracts/KT1S4XjwGtk55TmsMqSdazEMrH4pGA3NMXhz/bigmaps/balances/keys/${address}`),
+		     axios.get(`https://api.tzkt.io/v1/contracts/KT1M82a7arHVwcwaswnNUUuCnQ45xjjGKNd1/bigmaps/balances/keys/${address}`),
+		     axios.get(`https://api.tzkt.io/v1/contracts/KT1CBh8BKFV6xAH42hEdyhkijbwzYSKW2ZZC/bigmaps/balances/keys/${address}`)
+	             ])
+		     .then(axios.spread((... PlentyResponse) => {
+		       PlentyResponse.map((farm:any) => {
+		         if (Number(farm.data) < 0) {
+                           PlentyFarmTotal += Number(farm.data); 
+			 }
+		       }) 
+		     }))
+
 	  axios.all([axios.get(`https://api.better-call.dev/v1/account/mainnet/${address}/token_balances`, {timeout: 4000}),
                      axios.get(`https://api.teztools.io/token/prices`, {timeout: 4000}),
-		     axios.get(`${api.url}/price/xtz`, {timeout: 4000})])
+		     axios.get(`${api.url}/price/xtz`, {timeout: 4000}),
+		     ])
 	  .then(axios.spread((TokenResponse, AssestResponse, PriceResponse) => {
            const AssetsData: Array<string> = AssestResponse.data.contracts;
 	   const TokenData: Array<string> = TokenResponse.data.balances;
