@@ -105,7 +105,6 @@ export default function Assets() {
                            PlentyFarmTotal += Number(farm.currentPrice * PlentyDecimals);
 			 }
 		       }) 
-		       setFarmsUSD(PlentyFarmTotal);
 		     }))
 
 	  axios.all([axios.get(`https://api.better-call.dev/v1/account/mainnet/${address}/token_balances`, {timeout: 4000}),

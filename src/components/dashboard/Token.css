@@ -17,9 +17,9 @@ justify-content: space-between!important;
 padding-bottom: 4px
 }
 .token-name {
-color: black;
+color: white;
 font-size:2vh;
-font-weight: 500;
+font-weight: 600;
 padding-left: 6px;
 }
 .token-balance {

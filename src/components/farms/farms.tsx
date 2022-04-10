@@ -10,6 +10,7 @@ import PlentyXTZ from '../../assets/farms/plenty-xtz.png'
 export default function Farms() {
   const [AvailableFarms, setAvailableFarms] = useState<Array<string>>(['']);
   const [Tokens, setTokens] = useState<Array<string>>(['']);
+  const [AvailableRewards, setAvailableRewards] = useState<string | number>("0.00");
   useEffect(() => {
     const LocalFarms = localStorage.getItem('farms');
     const LocalAssets = localStorage.getItem('assets');
@@ -50,6 +51,14 @@ export default function Farms() {
       <div className="farms-header-container">
         <p className="farms-header">Farms</p>
 	<button className="farms-header-button">View More</button>
+      </div>
+      <div className="farms-analytics-container">
+        <div className="farms-analytics-header-container">
+          <p className="farms-analytics-header">Available Rewards</p>
+	</div>
+	<div className="farms-analytics-amount">
+          <p className="farms-available-rewards">${AvailableRewards}</p>
+	</div>
       </div>
       <div className="farms-container">
         <div className="farms-detail-header-container">
