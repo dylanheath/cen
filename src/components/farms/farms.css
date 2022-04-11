@@ -115,3 +115,35 @@ color: white;
 .farms-rewards-price {
 	font-weight: 600;
 }
+
+.farms-analytics-header-container {
+
+}
+
+.farms-analytics-header {
+    color: #c3bec2;
+    font-size: 1.8vh;
+    font-weight: 500;
+    padding-bottom: 8px;
+}
+
+.farms-analytics-amount-container {
+display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.farms-available-rewards {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+    font-size: 4vh;
+    color: #fff;
+    font-weight: 600;
+}
+
+.farms-available-rewards-xtz {
+	    font-size: 2vh;
+    color: #596178;
+    font-weight: 600;
+    padding-left: 8px;
+    padding-bottom: 10px;
+}
