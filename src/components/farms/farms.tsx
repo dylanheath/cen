@@ -60,6 +60,7 @@ export default function Farms() {
 	  <p className="farms-available-rewards">0.00</p> 
 	  <p className="farms-available-rewards-xtz">XTZ</p>
 	</div>
+	<p className="farms-available-rewards-usd">$0.00</p>
       </div>
       <div className="farms-box-container">
       <div className="farms-container">

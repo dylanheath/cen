@@ -27,13 +27,13 @@ position: relative;
   display: grid;
   grid-auto-row: auto;
   gap: 2px;
-  background:#bab8ba;
+  background:#1d263b;
   border-radius: 20px;
 }
 
 .send-header {
   font-size:  22px;
-  color: black;
+  color: white;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   font-weight: 500;
@@ -55,10 +55,10 @@ position: relative;
 }
 
 .settings-header-icon-button {
-    color: black;
+	color: white;
     display: flex;
     padding: 0.4rem 1rem;
-    background: #a6a4a6;
+    background: #596178;
     border-radius: 10px;
     border: 1px solid #717884;
     transition: 0.2s;
@@ -80,7 +80,7 @@ position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background: rgb(166, 164, 166);
+  background: rgb(23, 31, 48);
   padding: 1rem;
   border-radius: 20px;
   width: 100%;
@@ -121,7 +121,6 @@ position: relative;
 }
 
 .send-account-name {
-
 }
 
 k
@@ -130,16 +129,17 @@ k
 }
 
 .send-token-select-button {
- display: flex;
+	color: white;
+    display: flex;
+    background: #596178;
+    border: 1px solid #717884;
+    transition: 0.2s;
  flex-direction: row;
  align-items: center;
- background: #999799;
  border-radius: 20px;
- color: black;
  padding: 6px;
  justify-content: space-between;
  width: 100%;
- border: 1px solid #717884;
  transition: 0.2s;
 }
 
@@ -187,7 +187,7 @@ k
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background: rgb(166, 164, 166);
+    background: rgb(23, 31, 48);
     padding: 0.4rem;
     border-radius: 20px;
     width: 100%;
@@ -207,8 +207,8 @@ k
     margin-top: -14px;
     margin-bottom: -14px;
     left: calc(50% - 16px);
-    background-color: rgb(166, 164, 166);
-    border: 4px solid #bab8ba;
+    background-color: rgb(23, 31, 48);
+    border: 4px solid #1d263b;
     z-index: 3;
 }
 
@@ -260,7 +260,7 @@ display: flex;
 
 .send-account-name {
 	    font-size: 20px;
-    color: black;
+    color: white;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     font-weight: 500;
 }

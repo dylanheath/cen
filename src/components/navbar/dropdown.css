@@ -1,13 +1,13 @@
 .Dropdown {
     display: flex;
     flex-direction: column;
-    background: #bab8ba;
+    background: #1d263b;
     box-sizing: border-box;
     border-radius: 1rem;
     top: 4rem;
     width: 140px;
     position: absolute;
-    box-shadow: 20px 20px 50px grey;
+    box-shadow: 20px 20px 50px rgb(23, 31, 48);
     z-index: 2;
     align-items:center;
 }
@@ -29,6 +29,7 @@ padding-bottom: 4px;
     transition: .5s;
         font-weight: 500;
     font-size: 16px;
+    color: white;
 }
 
 .dropdown-option:hover {
