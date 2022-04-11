@@ -61,6 +61,7 @@ export default function Farms() {
 	  <p className="farms-available-rewards-xtz">XTZ</p>
 	</div>
       </div>
+      <div className="farms-box-container">
       <div className="farms-container">
         <div className="farms-detail-header-container">
           <img className="farm-icon" src={PlentyXTZ} />
@@ -80,6 +81,7 @@ export default function Farms() {
 	  Harvest
 	  </button>
 	</div>
+      </div>
       </div>
     </div>
   )
