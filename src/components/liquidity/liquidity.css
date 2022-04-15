@@ -3,7 +3,7 @@
     grid-auto-row: auto;
     grid-gap: 2px;
     gap: 2px;
-    background: #bab8ba;
+    background: #1d263b;
     border-radius: 20px;
 
 }
@@ -21,16 +21,16 @@
 
 .liquidity-header {
 	font-size: 22px;
-    color: black;
+    color: white;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     font-weight: 500;
 }
 
 .liquidity-header-button { 
-color: black;
+	    color: white;
     display: flex;
     padding: 0.4rem 1rem;
-    background: #a6a4a6;
+    background: #596178;
     border-radius: 10px;
     border: 1px solid #717884;
     transition: 0.2s;
@@ -53,7 +53,7 @@ color: black;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background: rgb(166, 164, 166);
+    background: #171f30;
     padding: 1rem;
     border-radius: 20px;
     width: 100%;
@@ -73,16 +73,17 @@ color: black;
 }
 
 .liquidity-token-select {
-	display: flex;
+	color: white;
+    display: flex;
+    background: #596178;
+    border: 1px solid #717884;
+    transition: 0.2s;
     flex-direction: row;
     align-items: center;
-    background: #999799;
     border-radius: 20px;
-    color: black;
     padding: 6px;
     justify-content: space-between;
     width: 100%;
-    border: 1px solid #717884;
     transition: 0.2s;
 }
 
@@ -127,7 +128,7 @@ color: black;
 	    display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background: rgb(166, 164, 166);
+    background: #171f30;
     padding: 1rem;
     border-radius: 20px;
     width: 100%;
@@ -216,16 +217,17 @@ transition: .2s;
 }
 
 .liquidity-token-select-button {
-	display: flex;
+	color: white;
+    display: flex;
+    background: #596178;
+    border: 1px solid #717884;
+    transition: 0.2s;
     flex-direction: row;
     align-items: center;
-    background: #999799;
     border-radius: 20px;
-    color: black;
     padding: 6px;
     justify-content: space-between;
     width: 100%;
-    border: 1px solid #717884;
     transition: 0.2s;
 }
 
@@ -252,7 +254,7 @@ transition: .2s;
 	flex-direction:row;
 	justify-content: space-between;
 	display: flex;
-    background: #bab8ba;
+    background: #1d263b;
     border-radius: 20px;
         padding: 0.8rem 1.4rem 0.8rem;
 }
@@ -278,6 +280,7 @@ transition: .2s;
 .liquidity-data-header {
  font-size: 15px;
  font-weight: 500;
+ color: white;
 }
 
 .liquidity-data {
