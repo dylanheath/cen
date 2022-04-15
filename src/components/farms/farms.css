@@ -157,3 +157,13 @@ display: flex;
     font-weight: 500;
     padding-bottom: 20px;
 }
+
+.farms-rewards-price-header {
+	color: white;
+}
+.farms-rewards-price {
+	color: white;
+	font-weight: 600;
+	font-size: 18px;
+}
+
