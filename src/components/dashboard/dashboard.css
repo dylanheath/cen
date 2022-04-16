@@ -322,20 +322,19 @@ font-size: 1.6vw;
 }
 
 .Middle-top-personal-analytics {
-color: white;
-  display: flex;
-  padding: 0.4rem 1rem;
-  background: #596178;
-  border-radius: 10px;
-  border: 1px solid #717884;
-  transition: 0.2s;
+	color: white;
+    display: flex;
+    padding: 0.2vw 1vh;
+    background: rgb(33, 114, 229);
+    border-radius: 10px;
+    transition: 0.2s;
+    align-items: center;
+    font-weight: 600;
+    font-size: 12px;
 }
 
 
 .Middle-top-personal-analytics:hover {
-	color: white;
- transition: 0.2s;
- border: 1px solid #717884;
 }
 
 .Middle-top-converted-price {

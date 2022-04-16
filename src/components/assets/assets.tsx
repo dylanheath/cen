@@ -24,7 +24,11 @@ export default function Assets() {
   const [Assets, setAssets] = useState<Array<string>>([]);
   const [Farms, setFarms] = useState<Array<null | number>>([null]);
   const [TokensUSD, setTokensUSD] = useState<number>(0);
-  const [FarmsUSD, setFarmsUSD] = useState<number | string>("0.00");
+  const [FarmsUSD, setFarmsUSD] = useState<number>(0);
+
+  const [TokensPercent, setTokensPercent] = useState<number>(0);
+  const [FarmsPercent, setFarmsPercent] = useState<number>(0);
+  const [XTZPercent, setXTZPercent] = useState<number>(0);
 
   useEffect(() => {
     const TokenBalance: Array<string | null> = [];
@@ -139,6 +143,8 @@ export default function Assets() {
 	   setTotalAssetsXTZ(TokensTotal);
 	   setTotalUSD(XTZprice * TokensTotal);
 	   setTokensUSD(XTZprice * TokenUSD);
+	   const XTZtoUSD = Price * TotalXTZ / 1000000;
+	   setXTZPercent(XTZtoUSD / TotalUSD * 100);
 	 }))
 	 .catch(error => console.log(error));
 	}
@@ -165,7 +171,7 @@ export default function Assets() {
         <div className="XTZ-assets">
 	  <div className="XTZ-assets-header-container">
             <p className="XTZ-assets-header">XTZ</p>
-	    <p className="assets-percent">0%</p>
+	    <p className="assets-percent">{((Price *  TotalXTZ / 1000000) / TotalUSD * 100).toFixed(2)}%</p>
 	  </div>
 	  <div className="XTZ-assets-amount-container">
             <p className="assets-amount">${(Price * TotalXTZ / 1000000).toFixed(2)}</p>
@@ -177,7 +183,7 @@ export default function Assets() {
 	<div className="farm-assets">
 	  <div className="farm-assets-header-container">
             <p className="farm-assets-header">Farms</p>
-	    <p className="assets-percent">0%</p>
+	    <p className="assets-percent">{FarmsUSD / TotalUSD * 100}%</p>
 	  </div>
 	  <div className="farm-assets-amount-container">
              <p className="assets-amount">${FarmsUSD == 0 ? "0.00" : FarmsUSD}</p> 
@@ -189,7 +195,7 @@ export default function Assets() {
 	<div className="tokens-assets">
 	   <div className="tokens-assets-header-container">
              <p className="farm-assets-header">Tokens</p>
-	     <p className="assets-percent">0%</p>
+	     <p className="assets-percent">{(TokensUSD / TotalUSD * 100).toFixed(2)}%</p>
 	   </div>
 	   <div className="tokens-assets-amount-container">
               <p className="assets-amount">${(TokensUSD).toFixed(2)}</p>
