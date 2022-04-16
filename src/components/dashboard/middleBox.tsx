@@ -18,7 +18,7 @@ export default function MiddleBox() {
   const [TotalTransactions, setTotalTransactions] = useState<number>(0); 
   const [TotalAmount, setTotalAmount] = useState<number>(0);
   const [TotalAmountConverted, setTotalAmountConverted] = useState<number>(0);
-  const [BalanceHistory, setBalanceHistory] = useState<Array<string | null>>([]);
+  const [BalanceHistory, setBalanceHistory] = useState<Array<number| null>>([]);
   useEffect(() => {
     const getAnalytics = async () => {
       if (User.status ==  true) {
@@ -33,10 +33,16 @@ export default function MiddleBox() {
 	  })
         const getBalanceHistory = await axios.get(`https://api.tzkt.io/v1/accounts/${address}/balance_history`)
 	  .then((response) => {
-            const BalanceHistoryData = response.data;
-            setBalanceHistory([BalanceHistoryData].slice(-10));
-	    console.log(BalanceHistory, 'this is a test');
-          })
+            const BalanceHistoryData = response.data.slice(-10);
+	    const graphBalances: Array<number> = []
+	    if (BalanceHistoryData.length > 0) {
+	       BalanceHistoryData.map((timestampBalance:any) => {
+               graphBalances.push(timestampBalance.balance);
+	    })
+             //  setBalanceHistory([BalanceHistoryData].slice(-10));
+              setBalanceHistory(graphBalances);
+	    }
+	  })
 	  .catch(() => {
             console.log("failed to get balance history");
 	  })
