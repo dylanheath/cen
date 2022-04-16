@@ -34,7 +34,8 @@ export default function MiddleBox() {
         const getBalanceHistory = await axios.get(`https://api.tzkt.io/v1/accounts/${address}/balance_history`)
 	  .then((response) => {
             const BalanceHistoryData = response.data;
-            setBalanceHistory(BalanceHistoryData);
+            setBalanceHistory([BalanceHistoryData].slice(-10));
+	    console.log(BalanceHistory, 'this is a test');
           })
 	  .catch(() => {
             console.log("failed to get balance history");
@@ -48,7 +49,7 @@ export default function MiddleBox() {
       <div className="Middle-top-box">
         <div className="Middle-top-header-container">
 	  <p className="Middle-top-header">Analytics</p>
-	  <p className="Middle-top-personal-analytics">24h</p>
+	  <p className="Middle-top-personal-analytics">Recent</p>
 	</div>
 	<p className="Middle-top-converted-price">${TotalAmountConverted}</p>
 	<div className="Middle-top-analytics-container-main">
