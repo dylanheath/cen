@@ -1,5 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
+
+// context
+import { UserContext } from '../../context/context';
 
 // api
 import { api } from '../../utils/api';
@@ -8,19 +11,32 @@ import { api } from '../../utils/api';
 import './dashboard.css';
 
 export default function MiddleBox() {
+  const { User, setUser } = useContext<any>(UserContext);
   const [TotalTransactions, setTotalTransactions] = useState<number>(0); 
   const [TotalAmount, setTotalAmount] = useState<number>(0);
   const [TotalAmountConverted, setTotalAmountConverted] = useState<number>(0);
+  const [BalanceHistory, setBalanceHistory] = useState<Array<string | null>>([]);
   useEffect(() => {
     const getAnalytics = async () => {
-      const getTotalTransactions = await axios.get(`${api.url}/transactions/totaltransactions`, { timeout: 5000 })
-        .then((response) => {
-          const TotalTransactionsData = response.data;
-	  setTotalTransactions(TotalTransactionsData);
-        })
-	.catch((response) => {
-          console.log('failed to grab total transactions');
-	})
+      if (User.status ==  true) {
+        const address = await User.address?.toString();
+        const getTotalTransactions = await axios.get(`${api.url}/transactions/totaltransactions`, { timeout: 5000 })
+          .then((response) => {
+            const TotalTransactionsData = response.data;
+	    setTotalTransactions(TotalTransactionsData);
+          })
+	  .catch(() => {
+            console.log('failed to grab total transactions');
+	  })
+        const getBalanceHistory = await axios.get(`https://api.tzkt.io/v1/accounts/${address}/balance_history`)
+	  .then((response) => {
+            const BalanceHistoryData = response.data;
+            setBalanceHistory(BalanceHistoryData);
+          })
+	  .catch(() => {
+            console.log("failed to get balance history");
+	  })
+      }
     }
    getAnalytics();
   }, [])

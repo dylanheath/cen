@@ -5,6 +5,8 @@
   "dependencies": {
     "@airgap/beacon-sdk": "^2.3.9",
     "@quipuswap/sdk": "^3.0.0",
+    "@splinetool/react-spline": "^2.0.0",
+    "@splinetool/runtime": "^0.9.33",
     "@taquito/beacon-wallet": "^11.2.0",
     "@taquito/taquito": "^11.2.0",
     "@testing-library/jest-dom": "^5.16.2",
