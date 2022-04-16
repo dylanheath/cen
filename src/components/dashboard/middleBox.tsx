@@ -18,7 +18,7 @@ export default function MiddleBox() {
   const [TotalTransactions, setTotalTransactions] = useState<number>(0); 
   const [TotalAmount, setTotalAmount] = useState<number>(0);
   const [TotalAmountConverted, setTotalAmountConverted] = useState<number>(0);
-  const [BalanceHistory, setBalanceHistory] = useState<Array<number| null>>([]);
+  const [BalanceHistory, setBalanceHistory] = useState<Array<number| null>>([0]);
   useEffect(() => {
     const getAnalytics = async () => {
       if (User.status ==  true) {
@@ -39,7 +39,6 @@ export default function MiddleBox() {
 	       BalanceHistoryData.map((timestampBalance:any) => {
                graphBalances.push(timestampBalance.balance);
 	    })
-             //  setBalanceHistory([BalanceHistoryData].slice(-10));
               setBalanceHistory(graphBalances);
 	    }
 	  })
