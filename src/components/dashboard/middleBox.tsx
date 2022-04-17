@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 
 // graph
-import { ResponsiveContainer,AreaChart,XAxis,YAxis,Area,Tooltip,CartesianGrid,} from "recharts";
+import Graph from '../dashboard/graph';
 
 // context
 import { UserContext } from '../../context/context';
@@ -37,16 +37,9 @@ export default function MiddleBox() {
 	    const graphBalances: Array<number> = []
 	    if (BalanceHistoryData.length > 0) {
 	       BalanceHistoryData.map((timestampBalance:any) => {
-               graphBalances.push(timestampBalance.balance);
+               graphBalances.push(timestampBalance.balance, timestampBalance.timestamp);
 	    })
-	     const graphProps = {
-               graphBalances,
-               smoothing: 0.3,
-               accent: 'palevioletred',
-               fillBelow: 'rgba(200,67,23,0.1)',
-               hover: true,
-};
-              setBalanceHistory(graphProps);
+              setBalanceHistory(graphBalances);
 	    }
 	  })
 	  .catch(() => {
@@ -61,7 +54,7 @@ export default function MiddleBox() {
       <div className="Middle-top-box">
         <div className="Middle-top-header-container">
 	  <p className="Middle-top-header">Analytics</p>
-	  <p className="Middle-top-personal-analytics">30days</p>
+	  <p className="Middle-top-personal-analytics">Recent</p>
 	</div>
 	<p className="Middle-top-converted-price">${TotalAmountConverted}</p>
 	<div className="Middle-top-analytics-container-main">

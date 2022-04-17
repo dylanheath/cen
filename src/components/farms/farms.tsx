@@ -62,6 +62,7 @@ export default function Farms() {
 	</div>
 	<p className="farms-available-rewards-usd">$0.00</p>
       </div>
+      <div className="farm-boxes-container">
       <div className="farms-box-container">
       <div className="farms-container">
         <div className="farms-detail-header-container">
@@ -82,6 +83,29 @@ export default function Farms() {
 	  Harvest
 	  </button>
 	</div>
+      </div>
+      </div>
+      <div className="farms-box-container">
+      <div className="farms-container">
+        <div className="farms-detail-header-container">
+          <img className="farm-icon" src={PlentyXTZ} />
+	  <div className="farm-details-container">
+	    <p className="farms-detail-header">PLENTY / XTZ LP</p>
+	    <div className="farms-pool-detail-icon-container">
+	      <p className="farms-plenty-lp">Plenty LP</p>
+	    </div>
+	  </div>
+	</div>
+	<div className="farms-rewards-price-container">
+          <p className="farms-rewards-price-header">Available Rewards:</p>
+	  <p className="farms-rewards-price">0</p>
+	</div>
+	<div className="farms-rewards-harvest-button-container">
+          <button className="farms-rewards-harvest-button">
+	  Harvest
+	  </button>
+	</div>
+      </div>
       </div>
       </div>
     </div>

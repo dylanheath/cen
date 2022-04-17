@@ -167,3 +167,12 @@ display: flex;
 	font-size: 18px;
 }
 
+
+.farm-boxes-container {
+    width: 100%;
+    display: grid;
+    grid-gap: 14px;
+    grid-gap: 14px;
+    gap: 14px;
+    grid-template-columns: repeat(1, 1fr);
+}
