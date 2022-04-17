@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 
 // graph
-import {LineGraph} from 'react-line-graph';
+import { ResponsiveContainer,AreaChart,XAxis,YAxis,Area,Tooltip,CartesianGrid,} from "recharts";
 
 // context
 import { UserContext } from '../../context/context';
@@ -18,7 +18,7 @@ export default function MiddleBox() {
   const [TotalTransactions, setTotalTransactions] = useState<number>(0); 
   const [TotalAmount, setTotalAmount] = useState<number>(0);
   const [TotalAmountConverted, setTotalAmountConverted] = useState<number>(0);
-  const [BalanceHistory, setBalanceHistory] = useState<Array<number| null>>([0]);
+  const [BalanceHistory, setBalanceHistory] = useState<any>([0]);
   useEffect(() => {
     const getAnalytics = async () => {
       if (User.status ==  true) {
@@ -39,7 +39,14 @@ export default function MiddleBox() {
 	       BalanceHistoryData.map((timestampBalance:any) => {
                graphBalances.push(timestampBalance.balance);
 	    })
-              setBalanceHistory(graphBalances);
+	     const graphProps = {
+               graphBalances,
+               smoothing: 0.3,
+               accent: 'palevioletred',
+               fillBelow: 'rgba(200,67,23,0.1)',
+               hover: true,
+};
+              setBalanceHistory(graphProps);
 	    }
 	  })
 	  .catch(() => {
@@ -54,7 +61,7 @@ export default function MiddleBox() {
       <div className="Middle-top-box">
         <div className="Middle-top-header-container">
 	  <p className="Middle-top-header">Analytics</p>
-	  <p className="Middle-top-personal-analytics">Recent</p>
+	  <p className="Middle-top-personal-analytics">30days</p>
 	</div>
 	<p className="Middle-top-converted-price">${TotalAmountConverted}</p>
 	<div className="Middle-top-analytics-container-main">
