@@ -1,13 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 
 // styling
 import './farms.css';
 
+//context
+import { UserContext } from '../../context/context';
+
 // assets
 import PlentyXTZ from '../../assets/farms/plenty-xtz.png'
+import PlentyCtez from '../../assets/farms/plenty-ctez.png';
 
 export default function Farms() {
+  const { User, setUser } = useContext<any>(UserContext);
   const [AvailableFarms, setAvailableFarms] = useState<Array<string>>(['']);
   const [Tokens, setTokens] = useState<Array<string>>(['']);
   const [AvailableRewards, setAvailableRewards] = useState<string | number>("0.00");
@@ -21,8 +26,9 @@ export default function Farms() {
       setTokens(JSON.parse(LocalAssets)); 
     }
     const isMounted = true;
-    if (isMounted == true) {
+    if (isMounted == true && User.status == true) {
       const fetchFarms = async () => {
+	const address = await User.address?.toString();
         const getFarmsBatch = await axios.get(`https://bafybeigogwwmiyuahrfw2qbclpoiausrgbb5ju2jsmx5p7i6wmynvmden4.ipfs.dweb.link/`)
           .then((response) => {
           const FarmBatch = response.data;
@@ -41,6 +47,22 @@ export default function Farms() {
 	  })
 	  .catch(() => {
             console.log('failed to fetch tokens');
+	  })
+
+	const PlentyXTZ = await axios.get(`https://api.tzkt.io/v1/contracts/KT1JQAZqShNMakSNXc2cgTzdAWZFemGcU6n1/bigmaps/balances/keys/${address}`)
+          .then((response) => {
+          const PlentyXTZdata = response.data;
+	  })
+	  .catch(() => {
+            console.log("failed to get xtz lp");
+	  })
+  
+	const PlentyCtez = await axios.get(`https://api.tzkt.io/v1/contracts/KT1MfMMsYX34Q9cEaPtk4qkQ6pojA7D2nsgr/bigmaps/balances/keys/${address}`)
+          .then((response) => {
+            const PlentyCtezdata = response.data;
+	  })
+	  .catch(() => {
+            console.log("failed to get ctez lp");
 	  })
       }
       fetchFarms();
@@ -88,9 +110,9 @@ export default function Farms() {
       <div className="farms-box-container">
       <div className="farms-container">
         <div className="farms-detail-header-container">
-          <img className="farm-icon" src={PlentyXTZ} />
+          <img className="farm-icon" src={PlentyCtez} />
 	  <div className="farm-details-container">
-	    <p className="farms-detail-header">PLENTY / XTZ LP</p>
+	    <p className="farms-detail-header">PLENTY / Ctez LP</p>
 	    <div className="farms-pool-detail-icon-container">
 	      <p className="farms-plenty-lp">Plenty LP</p>
 	    </div>
