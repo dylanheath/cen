@@ -6,6 +6,7 @@ import { api } from '../../utils/api';
 
 // assets
 import TezosIcon from '../../assets/TezosCoin.png';
+import ArrowDown from '../../assets/arrowdown.png';
 
 export default function XTZprice() {
   const [Price, setPrice] = useState<number>(0); 

@@ -76,7 +76,7 @@ export default function Farms() {
       </div>
       <div className="farms-analytics-container">
         <div className="farms-analytics-header-container">
-          <p className="farms-analytics-header">Available Rewards</p>
+          <p className="farms-analytics-header">Total Staking</p>
 	</div>
 	<div className="farms-analytics-amount-container">
 	  <p className="farms-available-rewards">0.00</p> 

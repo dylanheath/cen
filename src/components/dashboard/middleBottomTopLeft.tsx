@@ -17,7 +17,7 @@ export default function MiddleBottomTopLeft() {
 	<img className="Middle-bottom-grid-header-icon" src={SwapIcon} />
       </div>
       <div className="Middle-bottom-grid-content-container">
-        <p className="Middle-bottom-grid-content">Swap your XTZ for Cen Tokens</p>
+        <p className="Middle-bottom-grid-content">Swap your Tezos Tokens for a wide range of others</p>
       </div>
       <div className="Middle-bottom-grid-button-container">
          <button className="Middle-bottom-grid-button" type="button" onClick={SwapNav}>Go to Swap</button>
