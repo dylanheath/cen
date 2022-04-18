@@ -10,6 +10,8 @@ import { getActiveAccount, getAddress } from '../../utils/wallet';
 
 export default  function Connect() {
   const {User, setUser} = useContext<any>(UserContext);
+  const [BetaAccept, setBetaAccept] = useState<boolean>(false);
+
   const navigate = useNavigate();
   useEffect(() => {
     const checkForUser = async () => {
@@ -25,8 +27,10 @@ export default  function Connect() {
     checkForUser();
   }, [])
   return (
-    <div className="connect">
-      <p>connect</p>
+    <div className="Connect">
+      <div className="connect-container">
+
+      </div>
     </div>
   )
 }
