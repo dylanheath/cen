@@ -64,6 +64,14 @@ export default function Farms() {
 	  .catch(() => {
             console.log("failed to get ctez lp");
 	  })
+	
+	axios.all([axios.get(`https://api.tzkt.io/v1/contracts/KT1JQAZqShNMakSNXc2cgTzdAWZFemGcU6n1/bigmaps/balances/keys/${address}`),
+	           axios.get(`https://api.tzkt.io/v1/contracts/KT1MfMMsYX34Q9cEaPtk4qkQ6pojA7D2nsgr/bigmaps/balances/keys/${address}`),
+		   axios.get(`https://api.teztools.io/token/prices`)])
+	           .then(axios.spread((... FarmsResponse) => {
+		       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                       // @ts-ignore
+		     })) 
       }
       fetchFarms();
     }
@@ -97,7 +105,7 @@ export default function Farms() {
 	  </div>
 	</div>
 	<div className="farms-rewards-price-container">
-          <p className="farms-rewards-price-header">Available Rewards:</p>
+          <p className="farms-rewards-price-header">Staking Balance:</p>
 	  <p className="farms-rewards-price">0</p>
 	</div>
 	<div className="farms-rewards-harvest-button-container">
@@ -119,7 +127,7 @@ export default function Farms() {
 	  </div>
 	</div>
 	<div className="farms-rewards-price-container">
-          <p className="farms-rewards-price-header">Available Rewards:</p>
+          <p className="farms-rewards-price-header"> Staking Balance:</p>
 	  <p className="farms-rewards-price">0</p>
 	</div>
 	<div className="farms-rewards-harvest-button-container">
