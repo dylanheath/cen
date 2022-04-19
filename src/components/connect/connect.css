@@ -1,0 +1,80 @@
+.Connect-container {
+	position: relative;
+}
+
+
+.Connect-box {
+   display: grid;
+    grid-auto-row: auto;
+    grid-gap: 2px;
+    gap: 2px;
+    background: #1d263b;
+    border-radius: 20px;
+    padding: 1.5rem!important;
+}
+
+
+.connect-header-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 1rem 1.25rem 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.connect-header {
+	    font-size: 28px;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+}
+
+.connect-divider {
+	    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid #596178;
+}
+
+.connect-logo {
+height: 55px;
+width: auto;
+}
+
+.connect-content-container {
+
+}
+
+.connect-button-container {
+
+}
+
+.connect-button {
+    background: rgb(33, 114, 229);
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 16px;
+    width: 100%;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 20px;
+    display: flex;
+    border: none;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    transition: transform 450ms ease 0s;
+    transform: perspective(1px) translateZ(0px);
+    transition: .2s;
+}
+
+.connect-button:hover {
+	transition: .2s;
+    color: white;
+    box-shadow: 0px 0px 20px 1px rgb(33, 114, 229);
+}

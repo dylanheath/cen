@@ -2,11 +2,17 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
+// styling
+import './connect.css';
+
 //context
 import { UserContext } from '../../context/context';
 
 //wallet
 import { getActiveAccount, getAddress } from '../../utils/wallet';
+
+// components
+import ConnectBox from '../../components/connect/connectBox';
 
 export default  function Connect() {
   const {User, setUser} = useContext<any>(UserContext);
@@ -24,13 +30,10 @@ export default  function Connect() {
         navigate('/app/dashboard'); 
       }
     }
-    checkForUser();
   }, [])
   return (
     <div className="Connect">
-      <div className="connect-container">
-
-      </div>
+      <ConnectBox />
     </div>
   )
 }
