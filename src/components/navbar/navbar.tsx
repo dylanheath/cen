@@ -163,12 +163,11 @@ const Navbar = () => {
           )}
         </div>
       </div>
+      {!User.status == false && (
       <div className="gpt3__navbar-sign">
-        {!ConnectionState && (
-          <button type="button" onClick={ConnectWallet}>Connect Wallet</button>
-        )}
-        {ConnectionState && <button type="button" onClick={Logout}>Disconnect</button>}
+        <button type="button" onClick={Logout}>Disconnect</button>
       </div>
+     )}
     </div>
   );
 };

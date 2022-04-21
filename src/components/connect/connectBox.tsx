@@ -48,9 +48,7 @@ export default function ConnectBox() {
 	    status: true,
           };
           setUser(userdata);
-	  // setPfp(`${ipfs.url}${UserData.CID}`);
           console.log(UserData);
-          console.log('data has been received');
         })
         .catch(() => {
           console.log('error grabbing user');
@@ -63,14 +61,14 @@ export default function ConnectBox() {
   return (
     <div className="Connect-container">
       <div className="Connect-box">
-        <div className="connect-accept-container">
-
+        <div className="connect-header-container">
+          <div className="connect-header">Connect Wallet</div>
 	</div>
 	<hr className="connect-divider"></hr>
         <div className="connect-content-container">
         </div>
 	<div className="connect-button-container">
-          <button className="connect-button">Connect Wallet</button>
+          <button className="connect-button" onClick={ConnectWallet}>Connect Wallet</button>
 	</div>
       </div>
     </div>
