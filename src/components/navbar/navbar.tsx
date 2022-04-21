@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import axios from 'axios';
+import axios, {AxiosError} from 'axios';
 
 //context
 import { UserContext } from '../../context/context';
@@ -37,6 +37,8 @@ const Navbar = () => {
   const [loadedPfp, setLoadedPfp] = useState<any>({loaded: false});
   const [currentPage, setCurrentPage] = useState<any>({currentPage: null});
   const [DropdownState, setDropdownState] = useState<boolean | null>(null);
+  const [LoadingState, setLoadingState] = useState<string | boolean | null>(null);
+  const [RequestError, setRequestError] = useState<boolean>(false);
 
   const Logout = async () => {
     const disconnectFromCen = await disconnectWallet();
@@ -66,7 +68,6 @@ const Navbar = () => {
             };
             console.log(UserData);
             setUser(userdata);
-	    // setPfp(`${ipfs.url}${UserData.CID}`);
             console.log('data has been received');
           })
           .catch(() => {
@@ -92,6 +93,7 @@ const Navbar = () => {
       myAddress = getAddress.toString();
       setConnectionState(true);
       // eslint-disable-next-line no-unused-vars
+      setLoadingState(true);
       await axios.get(`${api.url}/user/${myAddress}`)
         .then((response) => {
           const UserData = response.data;
@@ -105,13 +107,16 @@ const Navbar = () => {
 	    status: true,
           };
           setUser(userdata);
-	  // setPfp(`${ipfs.url}${UserData.CID}`);
-          console.log(UserData);
-          console.log('data has been received');
+	  setLoadingState(false);
         })
-        .catch(() => {
-          console.log('error grabbing user');
-          navigate('/app/signup');
+        .catch((reason: AxiosError) => {
+	  if (reason.response!.status === 404) {
+	    console.log("failed to connect to server, try again later");
+	    setRequestError(true);
+	  }
+	  if (reason.response!.status === 400) {
+	    navigate("/app/signup");
+	  }
         });
       setAddress({address:`${myAddress?.slice(0, 5)}...${myAddress?.slice(myAddress.length - 5)}`});
       navigate('/app/dashboard');
