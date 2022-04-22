@@ -82,7 +82,7 @@ export default function ConnectBox() {
              <span className="checkmark"></span>
           </label>
 	  <div className="connect-accept-details-container">
-	    <div className="connect-accept-details"><p>I understand that this product is still in beta. I am participating at my own risk.</p></div>
+	    <div className="connect-accept-details"><p className="connect-details">I understand that this product is still in beta. I am participating at my own risk.</p></div>
 	  </div>
         </div>
 	<div className="connect-button-container">
