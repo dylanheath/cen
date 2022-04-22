@@ -114,7 +114,7 @@ const Navbar = () => {
 	    console.log("failed to connect to server, try again later");
 	    setRequestError(true);
 	  }
-	  if (reason.response!.status === 400) {
+	  if (reason.response!.status === 400 || 204) {
 	    navigate("/app/signup");
 	  }
         });

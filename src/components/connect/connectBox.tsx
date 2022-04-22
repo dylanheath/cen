@@ -1,6 +1,6 @@
 import React, {useEffect, useState, useContext} from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import axios, {AxiosError} from 'axios';
 
 // context
 import { UserContext } from '../../context/context';
@@ -22,6 +22,12 @@ export default function ConnectBox() {
   const navigate = useNavigate();
   const [ConnectionState, setConnectionState] = useState<boolean>(false);
   const [BetaAccept, setBetaAccept] = useState<boolean>(false);
+  const [RequestError , setRequestError] = useState<boolean>(false);
+  const [IsChecked, setIsChecked] = useState<boolean>(false);
+
+  const handleOnChange = () => {
+    setIsChecked(!IsChecked);
+  };
 
   const ConnectWallet = async () => {
     const activeAccount = await getActiveAccount();
@@ -50,9 +56,14 @@ export default function ConnectBox() {
           setUser(userdata);
           console.log(UserData);
         })
-        .catch(() => {
-          console.log('error grabbing user');
-          navigate('/app/signup');
+        .catch((reason: AxiosError) => {
+	  if (reason.response!.status === 404) {
+	    console.log("failed to connect to server, try again later");
+	    setRequestError(true);
+	  }
+	  if (reason.response!.status === 400) {
+	    navigate("/app/signup");
+	  }
         });
       navigate('/app/dashboard');
     }
@@ -65,10 +76,22 @@ export default function ConnectBox() {
           <div className="connect-header">Connect Wallet</div>
 	</div>
 	<hr className="connect-divider"></hr>
-        <div className="connect-content-container">
+        <div className="connect-accept-container">
+	  <label className="container">
+             <input type="checkbox" checked={IsChecked} onChange={handleOnChange} />
+             <span className="checkmark"></span>
+          </label>
+	  <div className="connect-accept-details-container">
+	    <div className="connect-accept-details"><p>I understand that this product is still in beta. I am participating at my own risk.</p></div>
+	  </div>
         </div>
 	<div className="connect-button-container">
-          <button className="connect-button" onClick={ConnectWallet}>Connect Wallet</button>
+	  {IsChecked && (
+            <button className="connect-button" onClick={ConnectWallet}>Connect Wallet</button>
+	  )}
+	  {!IsChecked && (
+	    <button className="connect-button-false">Connect Wallet</button>
+	  )}
 	</div>
       </div>
     </div>
