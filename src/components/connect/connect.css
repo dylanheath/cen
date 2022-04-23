@@ -71,6 +71,7 @@ width: auto;
     transition: transform 450ms ease 0s;
     transform: perspective(1px) translateZ(0px);
     transition: .2s;
+    transition: all 1s ease-out;
 }
 
 .connect-button:hover {
@@ -100,6 +101,7 @@ width: auto;
     transition: transform 450ms ease 0s;
     transform: perspective(1px) translateZ(0px);
     transition: .2s;
+    transition: all 1s ease-out;
 }
 
 .connect-accept-container {
@@ -116,6 +118,7 @@ width: auto;
     border-radius: 10px;
     cursor: pointer;
     transition: background .3s;
+    transition: all 1s ease-out;
 }
 
 .connect-accept-details {

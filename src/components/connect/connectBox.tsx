@@ -5,6 +5,9 @@ import axios, {AxiosError} from 'axios';
 // context
 import { UserContext } from '../../context/context';
 
+// ui loading
+import { Jelly } from '@uiball/loaders'
+
 // assets
 import CenLogo from '../../assets/cen/CenWhite.png'
 
@@ -21,9 +24,9 @@ export default function ConnectBox() {
   const { User, setUser } = useContext<any>(UserContext);
   const navigate = useNavigate();
   const [ConnectionState, setConnectionState] = useState<boolean>(false);
-  const [BetaAccept, setBetaAccept] = useState<boolean>(false);
   const [RequestError , setRequestError] = useState<boolean>(false);
   const [IsChecked, setIsChecked] = useState<boolean>(false);
+  const [Loading, setLoading] = useState<boolean>(false);
 
   const handleOnChange = () => {
     setIsChecked(!IsChecked);
@@ -37,6 +40,7 @@ export default function ConnectBox() {
       // @ts-ignore
       myAddress = getAddress;
       console.log('New connection: ', myAddress);
+      setLoading(true);
       // eslint-disable-next-line no-unused-vars
       myAddress = getAddress.toString();
       setConnectionState(true);
@@ -55,14 +59,17 @@ export default function ConnectBox() {
           };
           setUser(userdata);
           console.log(UserData);
+	  setLoading(false);
         })
         .catch((reason: AxiosError) => {
 	  if (reason.response!.status === 404) {
 	    console.log("failed to connect to server, try again later");
 	    setRequestError(true);
+	    setLoading(false);
 	  }
 	  if (reason.response!.status === 400) {
 	    navigate("/app/signup");
+	    setLoading(false);
 	  }
         });
       navigate('/app/dashboard');
@@ -87,7 +94,13 @@ export default function ConnectBox() {
         </div>
 	<div className="connect-button-container">
 	  {IsChecked && (
-            <button className="connect-button" onClick={ConnectWallet}>Connect Wallet</button>
+			  <button className="connect-button" onClick={ConnectWallet}>{Loading == false && (<p>Connect Wallet</p>)} {Loading == true && (
+                          <Jelly 
+                          size={40}
+                          speed={1.3} 
+                          color="white" 
+                          />
+			  )}</button>
 	  )}
 	  {!IsChecked && (
 	    <button className="connect-button-false">Connect Wallet</button>
