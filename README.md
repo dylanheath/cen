@@ -37,7 +37,7 @@ npm start
 ### Transactions
 
 All Transactions will be viewable through the in web browser or through its dedicated Api `mainnet.cen.network/.netlify/functions/api/` allowing any entity the
-permissions to freely view the data
+permission to freely view the data
 
 #### EndPoints
 
