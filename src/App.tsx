@@ -38,9 +38,8 @@ function App() {
 	      <Navbar />
 	      <div className="content">
 	        <Routes>
-	          <Route path="/" element={<Home />} />
+	          <Route path="/" element={<Connect />} />
 	          <Route path="/app/dashboard" element={<Dashboard />} />
-		  <Route path="/app/connect" element={<Connect />} />
 		  <Route path="/app/swap" element={<Swap />} />
 		  <Route path="/app/send" element={<Send />} />
 		  <Route path="/app/liquidity" element={<Liquidity />} />

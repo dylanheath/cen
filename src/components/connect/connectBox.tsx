@@ -69,7 +69,7 @@ export default function ConnectBox() {
 	  }
 	  if (reason.response!.status === 400) {
 	    navigate("/app/signup");
-	    setLoading(false);
+	    setLoading(false)
 	  }
         });
       navigate('/app/dashboard');
