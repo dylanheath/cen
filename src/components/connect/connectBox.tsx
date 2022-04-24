@@ -32,10 +32,6 @@ export default function ConnectBox() {
     setIsChecked(!IsChecked);
   };
 
-  useEffect(() => {
-
-  })
-
   const ConnectWallet = async () => {
     const activeAccount = await getActiveAccount();
     let myAddress: String | undefined;
@@ -71,7 +67,7 @@ export default function ConnectBox() {
 	    setRequestError(true);
 	    setLoading(false);
 	  }
-	  if (reason.response!.status === 400) {
+	  if (reason.response!.status === 204) {
 	    navigate("/app/signup");
 	    setLoading(false)
 	  }
