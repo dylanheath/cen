@@ -32,6 +32,10 @@ export default function ConnectBox() {
     setIsChecked(!IsChecked);
   };
 
+  useEffect(() => {
+
+  })
+
   const ConnectWallet = async () => {
     const activeAccount = await getActiveAccount();
     let myAddress: String | undefined;

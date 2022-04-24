@@ -76,9 +76,11 @@ const Navbar = () => {
         setAddress({address:`${myAddress?.slice(0, 5)}....${myAddress?.slice(myAddress.length - 5)}`});
         setConnectionState(true);
         navigate('/app/dashboard');
+	setCurrentPage({currentPage: "dashboard"});
       }
     }
     checkForAccount();
+    setCurrentPage("dashboard");
   }, []);
   // eslint-disable-next-line no-unused-vars
   const ConnectWallet = async () => {
