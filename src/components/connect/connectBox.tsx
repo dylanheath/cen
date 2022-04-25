@@ -20,6 +20,7 @@ import { api } from '../../utils/api';
 // utils
 import { connectWallet, disconnectWallet, getActiveAccount, checkIfWalletConnected } from '../../utils/wallet';
 
+
 export default function ConnectBox() {
   const { User, setUser } = useContext<any>(UserContext);
   const navigate = useNavigate();
@@ -68,6 +69,7 @@ export default function ConnectBox() {
 	    setLoading(false);
 	  }
 	  if (reason.response!.status === 204) {
+	    console.log("no user found")
 	    navigate("/app/signup");
 	    setLoading(false)
 	  }
