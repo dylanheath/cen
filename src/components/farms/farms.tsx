@@ -71,7 +71,7 @@ export default function Farms() {
 	           .then(axios.spread((... FarmsResponse) => {
 		       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                        // @ts-ignore
-		       const TokenPrices = FarmsResponse[-1];
+		       const TokenPrices =  FarmsResponse.slice(-1)[0].data;
 		     })) 
       }
       fetchFarms();
