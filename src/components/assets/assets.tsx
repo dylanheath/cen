@@ -72,6 +72,15 @@ export default function Assets() {
                console.log("failed to get price");
 	    })
 
+	  const TokensBalance = await axios.get(`https://api.tzkt.io/v1/tokens/balances?account=${address}&balance.gt=1`)
+            .then((response) => {
+              const TokensBalanceData = response.data;
+	    })
+	    .catch(() => {
+              console.log("failed to fetch token balance");
+	    })
+
+
 	    axios.all([
 	             // Plenty LP farms
 	             axios.get(`https://api.tzkt.io/v1/contracts/KT1MfMMsYX34Q9cEaPtk4qkQ6pojA7D2nsgr/bigmaps/balances/keys/${address}`),
