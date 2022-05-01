@@ -20,9 +20,10 @@ export default function Token({TokensList} : {TokensList:Array<string>}) {
             <div className="token-template">
               <div className="token-information-container">
 	        <div className="token-icon-name-container">
-	          <p className="token-name">{tok.balance}</p>
+		<img className="token-icon" src={(`/${tok.token.metadata.symbol}.png`)} onError={(e) => { (e.target as HTMLImageElement).src = DefaultIcon}} />
+	          <p className="token-name">{tok.token.metadata.symbol}</p>
 		</div>
-	        <p className="token-balance">{tok?.balance > 0 ? tok.balance.slice(0, - tok.decimals) + "." + tok.balance.slice(- tok.decimals) : tok.balance}</p>
+	        <p className="token-balance">{tok?.balance > 0 ? tok.balance.slice(0, Number(tok.token.metadata.decimals)) + "." + tok.balance.slice(Number(- tok.token.metadata.decimals)) : tok.balance}</p>
               </div>
             </div>
 	  </div>
