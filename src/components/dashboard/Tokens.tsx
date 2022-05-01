@@ -14,9 +14,15 @@ import './dashboard.css';
 // components
 import Token from './Token';
 
+interface Tokenfields {
+  balance: string,
+  symbol: string,
+  name:string,
+}
+
 export default function Tokens() {
   const { User, setUser } = useContext<any>(UserContext);
-  const [UserTokens, setUserTokens] = useState<Array<string>>(['']);
+  const [UserTokens, setUserTokens] = useState<Array<string>>([]);
   const [TokensReceived, setTokensReceived] = useState<boolean>(false);
   const navigate = useNavigate();
   const NFTnav = () => {
@@ -28,17 +34,17 @@ export default function Tokens() {
       const fetchTokens = async () => {
 	const address = await User.address?.toString();
 	const TokenBalance: Array<string> = [];
+	const AllTokens: Array<any> = [];
 	if (address) {
-          const getTokens = await axios.get<any>(`https://api.better-call.dev/v1/account/mainnet/${address}/token_balances`, { timeout: 4000 })  
+          const getTokens = await axios.get<any>(`https://api.tzkt.io/v1/tokens/balances?account=${address}&balance.gt=1`, { timeout: 4000 })  
 	    .then((response) => {
-              const TokenData = response.data;
-	      TokenData.balances.map((token:any) => {
-	        if (token.token_id == 0 && token.hasOwnProperty('symbol') && !token.hasOwnProperty('creators') && token.balance !== "0") {
-                  TokenBalance.push(token);
-	        }
+	      const TokenData = response.data;
+	      TokenData.map((tok:any) => {
+	        if ( tok.token.hasOwnProperty('metadata')&& tok.balance !== "0") {
+                  TokenBalance.push(tok);
+		  }
 	      })
-     	      setUserTokens(TokenBalance);
-	      localStorage.setItem("tokens", JSON.stringify(TokenBalance));
+	      setUserTokens(TokenBalance);
 	      setTokensReceived(true);
 	    })
 	    .catch(() => {
@@ -58,8 +64,8 @@ export default function Tokens() {
 	    <button className="Token-header-button" onClick={NFTnav}>View More</button>
 	  </div>
 	  <div className="Token-content-container">
-	    {TokensReceived == true && (
-              <Token TokensList={UserTokens} />          
+	  {TokensReceived == true && (
+              <Token TokensList={UserTokens} />
 	    )}
 	  </div>
 	</div>
