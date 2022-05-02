@@ -15,7 +15,8 @@ export default function Farms() {
   const { User, setUser } = useContext<any>(UserContext);
   const [AvailableFarms, setAvailableFarms] = useState<Array<string>>(['']);
   const [Tokens, setTokens] = useState<Array<string>>(['']);
-  const [AvailableRewards, setAvailableRewards] = useState<string | number>("0.00");
+  const [TotalStakingUSD, setTotalStakingUSD] = useState<string | number>("0.00");
+  const [TotalStakingXTZ, setTotalStakingXTZ] = useState<string | number>("0.00");
   useEffect(() => {
     const LocalFarms = localStorage.getItem('farms');
     const LocalAssets = localStorage.getItem('assets');
@@ -49,29 +50,27 @@ export default function Farms() {
             console.log('failed to fetch tokens');
 	  })
 
-	const PlentyXTZ = await axios.get(`https://api.tzkt.io/v1/contracts/KT1JQAZqShNMakSNXc2cgTzdAWZFemGcU6n1/bigmaps/balances/keys/${address}`)
-          .then((response) => {
-          const PlentyXTZdata = response.data;
-	  })
-	  .catch(() => {
-            console.log("failed to get xtz lp");
-	  })
-  
-	const PlentyCtez = await axios.get(`https://api.tzkt.io/v1/contracts/KT1MfMMsYX34Q9cEaPtk4qkQ6pojA7D2nsgr/bigmaps/balances/keys/${address}`)
-          .then((response) => {
-            const PlentyCtezdata = response.data;
-	  })
-	  .catch(() => {
-            console.log("failed to get ctez lp");
-	  })
-	
 	axios.all([axios.get(`https://api.tzkt.io/v1/contracts/KT1JQAZqShNMakSNXc2cgTzdAWZFemGcU6n1/bigmaps/balances/keys/${address}`),
 	           axios.get(`https://api.tzkt.io/v1/contracts/KT1MfMMsYX34Q9cEaPtk4qkQ6pojA7D2nsgr/bigmaps/balances/keys/${address}`),
 		   axios.get(`https://api.teztools.io/token/prices`)])
 	           .then(axios.spread((... FarmsResponse) => {
+		       let FarmsUSD: any = [];
 		       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                        // @ts-ignore
 		       const TokenPrices =  FarmsResponse.slice(-1)[0].data;
+		       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                       // @ts-ignore
+		       const PlentyToken: any = TokenPrices.contracts.find(tk => tk.symbol === "PLENTY");
+		       console.log(PlentyToken);
+		       FarmsResponse.slice(0, -1);
+		       FarmsResponse.map((farm:any) => {
+		         if (Number(farm.data) > 0) {
+                           const PlentyDecimals = farm.data.slice(0, - PlentyToken.decimals)
+			   FarmsUSD += Number(farm.currentPrice * PlentyDecimals);
+			 }
+		       })
+		       setTotalStakingUSD(FarmsUSD);
+		       
 		     })) 
       }
       fetchFarms();
@@ -91,7 +90,7 @@ export default function Farms() {
 	  <p className="farms-available-rewards">0.00</p> 
 	  <p className="farms-available-rewards-xtz">XTZ</p>
 	</div>
-	<p className="farms-available-rewards-usd">$0.00</p>
+	<p className="farms-available-rewards-usd">0.00</p>
       </div>
       <div className="farm-boxes-container">
       <div className="farms-box-container">
