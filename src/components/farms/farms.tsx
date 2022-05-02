@@ -54,7 +54,7 @@ export default function Farms() {
 	           axios.get(`https://api.tzkt.io/v1/contracts/KT1MfMMsYX34Q9cEaPtk4qkQ6pojA7D2nsgr/bigmaps/balances/keys/${address}`),
 		   axios.get(`https://api.teztools.io/token/prices`)])
 	           .then(axios.spread((... FarmsResponse) => {
-		       let FarmsUSD: any = [];
+		       let FarmsUSD: any = 0;
 		       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                        // @ts-ignore
 		       const TokenPrices =  FarmsResponse.slice(-1)[0].data;
