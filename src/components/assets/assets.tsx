@@ -120,27 +120,27 @@ export default function Assets() {
 		       }) 
 		     }))
 
-	  axios.all([axios.get(`https://api.better-call.dev/v1/account/mainnet/${address}/token_balances`, {timeout: 4000}),
+	  axios.all([axios.get(`https://api.tzkt.io/v1/tokens/balances?account=${address}&balance.gt=1`, {timeout: 4000}),
                      axios.get(`https://api.teztools.io/token/prices`, {timeout: 4000}),
 		     axios.get(`${api.url}/price/xtz`, {timeout: 4000}),
 		     ])
 	  .then(axios.spread((TokenResponse, AssestResponse, PriceResponse) => {
            const AssetsData: Array<string> = AssestResponse.data.contracts;
-	   const TokenData: Array<string> = TokenResponse.data.balances;
+	   const TokenData: Array<string> = TokenResponse.data;
 	   const XTZprice = PriceResponse.data[0].Price;
 	   const FilteredTokens: Array<string> = [];
 
 	   TokenData.map((token:any) => {
-	        if (token.token_id == 0 && token.hasOwnProperty('symbol') && !token.hasOwnProperty('creators') && token.balance !== "0") {
+	        if (token.token.hasOwnProperty('metadata')&& token.balance !== "0") {
                   FilteredTokens.push(token);
 	        }
 	      })
 
-	   FilteredTokens.map((token:any) => {
+	   FilteredTokens.map((tok:any) => {
 	     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 	     // @ts-ignore
-             const FindToken = AssetsData.find(tk => tk.symbol === token.symbol);
-	     const TokenAmount = token.balance.slice(0, - token.decimals) + "." + token.balance.slice(- token.decimals);
+             const FindToken = AssetsData.find(tk => tk.symbol === tok.token.metadata.symbol);
+	     const TokenAmount = tok.balance.slice(0, Number(- tok.token.metadata.decimals)) + "." + tok.balance.slice(Number(- tok.token.metadata.decimals));
 	     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
              // @ts-ignore
 	     TokensTotal += FindToken?.currentPrice * Number(TokenAmount);
