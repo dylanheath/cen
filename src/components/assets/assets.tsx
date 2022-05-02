@@ -134,7 +134,7 @@ export default function Assets() {
 	        if (token.token.hasOwnProperty('metadata')&& token.balance !== "0") {
                   FilteredTokens.push(token);
 	        }
-	      })
+	   })
 
 	   FilteredTokens.map((tok:any) => {
 	     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -159,6 +159,11 @@ export default function Assets() {
 	}
       }
       fetchAssets();
+      setInterval(function(){
+	TokensTotal = 0
+	TokenUSD = 0
+        fetchAssets();
+      },60 * 1000);
     }
   }, [])
   return (
