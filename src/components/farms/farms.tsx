@@ -7,16 +7,21 @@ import './farms.css';
 //context
 import { UserContext } from '../../context/context';
 
+// utils
+import { api } from '../../utils/api';
+
 // assets
 import PlentyXTZ from '../../assets/farms/plenty-xtz.png'
 import PlentyCtez from '../../assets/farms/plenty-ctez.png';
+import XTZprice from '../dashboard/XTZprice';
 
 export default function Farms() {
   const { User, setUser } = useContext<any>(UserContext);
   const [AvailableFarms, setAvailableFarms] = useState<Array<string>>(['']);
   const [Tokens, setTokens] = useState<Array<string>>(['']);
-  const [TotalStakingUSD, setTotalStakingUSD] = useState<string | number>("0.00");
+  const [TotalStakingUSD, setTotalStakingUSD] = useState<number>(0);
   const [TotalStakingXTZ, setTotalStakingXTZ] = useState<string | number>("0.00");
+  const [XTZprice, setXTZprice] = useState<number>(0);
   useEffect(() => {
     const LocalFarms = localStorage.getItem('farms');
     const LocalAssets = localStorage.getItem('assets');
@@ -39,22 +44,22 @@ export default function Farms() {
 	  .catch(() => {
             console.log('failed to get farms');
           })
-
-	const getTokens = await axios.get(`https://api.teztools.io/token/prices`)
-	  .then((response) => {
-            const TokensData = response.data;
-            setTokens(TokensData);
-	    localStorage.setItem('assets', JSON.stringify(TokensData));
-	  })
-	  .catch(() => {
-            console.log('failed to fetch tokens');
-	  })
+	
+	const getPrice = await axios.get(`${api.url}/price/xtz`)
+	    .then((response) => {
+              const PriceData = response.data[0];
+	      setXTZprice(PriceData.Price);
+	    })
+	    .catch(() => {
+               console.log("failed to get price");
+	    })
 
 	axios.all([axios.get(`https://api.tzkt.io/v1/contracts/KT1JQAZqShNMakSNXc2cgTzdAWZFemGcU6n1/bigmaps/balances/keys/${address}`),
 	           axios.get(`https://api.tzkt.io/v1/contracts/KT1MfMMsYX34Q9cEaPtk4qkQ6pojA7D2nsgr/bigmaps/balances/keys/${address}`),
 		   axios.get(`https://api.teztools.io/token/prices`)])
 	           .then(axios.spread((... FarmsResponse) => {
 		       let FarmsUSD: any = 0;
+		       let FarmsXTZ: any = 0;
 		       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                        // @ts-ignore
 		       const TokenPrices =  FarmsResponse.slice(-1)[0].data;
@@ -70,7 +75,6 @@ export default function Farms() {
 			 }
 		       })
 		       setTotalStakingUSD(FarmsUSD);
-		       
 		     })) 
       }
       fetchFarms();
@@ -87,10 +91,10 @@ export default function Farms() {
           <p className="farms-analytics-header">Total Staking</p>
 	</div>
 	<div className="farms-analytics-amount-container">
-	  <p className="farms-available-rewards">0.00</p> 
+	  <p className="farms-available-rewards">{XTZprice * TotalStakingUSD == 0 ? "0.00" : XTZprice * TotalStakingUSD}</p> 
 	  <p className="farms-available-rewards-xtz">XTZ</p>
 	</div>
-	<p className="farms-available-rewards-usd">0.00</p>
+	<p className="farms-available-rewards-usd">{TotalStakingUSD == 0 ? "0.00" : TotalStakingUSD}</p>
       </div>
       <div className="farm-boxes-container">
       <div className="farms-box-container">
