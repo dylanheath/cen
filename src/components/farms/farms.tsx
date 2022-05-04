@@ -91,10 +91,10 @@ export default function Farms() {
           <p className="farms-analytics-header">Total Staking</p>
 	</div>
 	<div className="farms-analytics-amount-container">
-	  <p className="farms-available-rewards">{XTZprice * TotalStakingUSD == 0 ? "0.00" : XTZprice * TotalStakingUSD}</p> 
+	  <p className="farms-available-rewards">{XTZprice * TotalStakingUSD == 0 ? "0.00" : XTZprice * Number(TotalStakingUSD.toFixed(2))}</p> 
 	  <p className="farms-available-rewards-xtz">XTZ</p>
 	</div>
-	<p className="farms-available-rewards-usd">{TotalStakingUSD == 0 ? "0.00" : TotalStakingUSD}</p>
+	<p className="farms-available-rewards-usd">{TotalStakingUSD == 0 ? "0.00" : TotalStakingUSD.toFixed(2)}</p>
       </div>
       <div className="farm-boxes-container">
       <div className="farms-box-container">
