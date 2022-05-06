@@ -54,7 +54,7 @@ User information will be accessable either by api or browser but some data may n
 #### EndPoints
 
 ```
-GET mainnet.cen.network/.netlify/functions/api/user/{address, name, email or phone number}
+GET mainnet.cen.network/.netlify/functions/api/user/{address, name, email}
 ```
 ### Analytics
 
