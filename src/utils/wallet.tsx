@@ -4,6 +4,7 @@ import { TezosToolkit } from '@taquito/taquito';
 import { BeaconWallet } from '@taquito/beacon-wallet';
 // eslint-disable-next-line no-unused-vars
 import { ColorMode, Network, NetworkType, TezosOperationType } from '@airgap/beacon-sdk';
+import { swap, batchify } from "@quipuswap/sdk";
 // eslint-disable-next-line no-unused-vars
 const Tezos = new TezosToolkit('https://mainnet.smartpy.io');
 const network: Network = { type: NetworkType.MAINNET };
