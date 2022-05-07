@@ -22,6 +22,8 @@ export default function Farms() {
   const [TotalStakingUSD, setTotalStakingUSD] = useState<number>(0);
   const [TotalStakingXTZ, setTotalStakingXTZ] = useState<string | number>("0.00");
   const [XTZprice, setXTZprice] = useState<number>(0);
+  const [XTZfarm, setXTZfarm] = useState<number>(0);
+  const [CTEZfarm, setCTEZfarm] = useState<number>(0);
   useEffect(() => {
     const LocalFarms = localStorage.getItem('farms');
     const LocalAssets = localStorage.getItem('assets');
@@ -68,6 +70,10 @@ export default function Farms() {
 		       const PlentyToken: any = TokenPrices.contracts.find(tk => tk.symbol === "PLENTY");
 		       console.log(PlentyToken);
 		       FarmsResponse.slice(0, -1);
+		       const XTZfarmData =  FarmsResponse[0].data;
+		       const CTEZfarmData =  FarmsResponse[1].data;
+		       setXTZfarm(Number(XTZfarmData));
+		       setCTEZfarm(Number(CTEZfarmData));
 		       FarmsResponse.map((farm:any) => {
 		         if (Number(farm.data) > 0) {
                            const PlentyDecimals = farm.data.slice(0, - PlentyToken.decimals)
@@ -110,7 +116,7 @@ export default function Farms() {
 	</div>
 	<div className="farms-rewards-price-container">
           <p className="farms-rewards-price-header">Staking Balance:</p>
-	  <p className="farms-rewards-price">0</p>
+	  <p className="farms-rewards-price">{XTZfarm == 0 ||  null || undefined ? "0.00" : XTZfarm}</p>
 	</div>
 	<div className="farms-rewards-harvest-button-container">
           <button className="farms-rewards-harvest-button">
@@ -132,7 +138,7 @@ export default function Farms() {
 	</div>
 	<div className="farms-rewards-price-container">
           <p className="farms-rewards-price-header"> Staking Balance:</p>
-	  <p className="farms-rewards-price">0</p>
+	  <p className="farms-rewards-price">{CTEZfarm == 0 || null || undefined ? "0.00" : CTEZfarm}</p>
 	</div>
 	<div className="farms-rewards-harvest-button-container">
           <button className="farms-rewards-harvest-button">
