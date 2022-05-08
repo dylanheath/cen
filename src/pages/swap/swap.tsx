@@ -13,7 +13,8 @@ import CenIcon from '../../assets/CEN.png';
 import './swap.css';
 
 export default function Swap() {
-  const [SwapAmount, setSwapAmount] = useState<number>(0);
+  const [CoinAmountInputOne, setCoinAmountInputOne] = useState<number>(0);
+  const [CoinAmountInputTwo, setCoinAmountInputTwo] = useState<number>(0);
   return (
     <div className="Swap">
       <div className="swap-container">
