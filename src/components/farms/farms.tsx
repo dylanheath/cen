@@ -116,7 +116,7 @@ export default function Farms() {
 	</div>
 	<div className="farms-rewards-price-container">
           <p className="farms-rewards-price-header">Staking Balance:</p>
-	  <p className="farms-rewards-price">{XTZfarm == 0 ||  null || undefined ? "0.00" : XTZfarm}</p>
+	  <p className="farms-rewards-price">{XTZfarm == 0 ||  null || undefined ? "0.00" : XTZfarm.toFixed(2)}</p>
 	</div>
 	<div className="farms-rewards-harvest-button-container">
           <button className="farms-rewards-harvest-button">
@@ -138,7 +138,7 @@ export default function Farms() {
 	</div>
 	<div className="farms-rewards-price-container">
           <p className="farms-rewards-price-header"> Staking Balance:</p>
-	  <p className="farms-rewards-price">{CTEZfarm == 0 || null || undefined ? "0.00" : CTEZfarm}</p>
+	  <p className="farms-rewards-price">{CTEZfarm == 0 || null || undefined ? "0.00" : CTEZfarm.toFixed(2)}</p>
 	</div>
 	<div className="farms-rewards-harvest-button-container">
           <button className="farms-rewards-harvest-button">
