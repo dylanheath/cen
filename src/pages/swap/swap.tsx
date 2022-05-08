@@ -43,7 +43,7 @@ export default function Swap() {
 	  <div className="swap-output-container">
 	    <div className="swap-output-button">
               <div className="swap-amount-container">
-                <p className="swap-amount">{SwapAmount}</p>
+                <p className="swap-amount">{CoinAmountInputTwo == 0 ?  "0.00" : CoinAmountInputTwo}</p>
 		<div className="swap-token-select-container">
                   <button className="swap-token-select-button">
                     <div className="swap-token-select-content-container">
