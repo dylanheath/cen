@@ -14,7 +14,7 @@ import './swap.css';
 
 export default function Swap() {
   const [CoinAmountInputOne, setCoinAmountInputOne] = useState<number>(0);
-  const [CoinAmountInputTwo, setCoinAmountInputTwo] = useState<number>(0);
+  const [CoinAmountOutput, setCoinAmountOutput] = useState<number>(0);
   return (
     <div className="Swap">
       <div className="swap-container">
@@ -43,7 +43,7 @@ export default function Swap() {
 	  <div className="swap-output-container">
 	    <div className="swap-output-button">
               <div className="swap-amount-container">
-                <p className="swap-amount">{CoinAmountInputTwo == 0 ?  "0.00" : CoinAmountInputTwo}</p>
+                <p className="swap-amount">{CoinAmountOutput == 0 ?  "0.00" : CoinAmountOutput}</p>
 		<div className="swap-token-select-container">
                   <button className="swap-token-select-button">
                     <div className="swap-token-select-content-container">
