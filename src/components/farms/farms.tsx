@@ -24,6 +24,7 @@ export default function Farms() {
   const [XTZprice, setXTZprice] = useState<number>(0);
   const [XTZfarm, setXTZfarm] = useState<number>(0);
   const [CTEZfarm, setCTEZfarm] = useState<number>(0);
+  const [ChangePercentage, setChangePercentage] = useState<number>(0);
   useEffect(() => {
     const LocalFarms = localStorage.getItem('farms');
     const LocalAssets = localStorage.getItem('assets');
