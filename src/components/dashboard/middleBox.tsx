@@ -19,6 +19,7 @@ export default function MiddleBox() {
   const [TotalAmount, setTotalAmount] = useState<number>(0);
   const [TotalAmountConverted, setTotalAmountConverted] = useState<number>(0);
   const [BalanceHistory, setBalanceHistory] = useState<any>([0]);
+  const [XTZdata, setXTZdata] = useState<any>({});
   useEffect(() => {
     const getAnalytics = async () => {
       if (User.status ==  true) {
@@ -44,6 +45,14 @@ export default function MiddleBox() {
 	  })
 	  .catch(() => {
             console.log("failed to get balance history");
+	  })
+	const getXTZdata = await axios.get(`${api.url}/price/xtz`, {timeout: 5000})
+          .then((response) => {
+            const PriceData = response.data;
+	    setXTZdata(PriceData);
+	  })
+	  .catch(() => {
+            console.log("failed to get price data");
 	  })
       }
     }
