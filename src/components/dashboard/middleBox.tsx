@@ -19,7 +19,7 @@ export default function MiddleBox() {
   const [TotalAmount, setTotalAmount] = useState<number>(0);
   const [TotalAmountConverted, setTotalAmountConverted] = useState<number>(0);
   const [BalanceHistory, setBalanceHistory] = useState<any>([0]);
-  const [XTZdata, setXTZdata] = useState<any>({});
+  const [XTZdata, setXTZdata] = useState<any>(null);
   useEffect(() => {
     const getAnalytics = async () => {
       if (User.status ==  true) {
@@ -63,7 +63,7 @@ export default function MiddleBox() {
       <div className="Middle-top-box">
         <div className="Middle-top-header-container">
 	  <p className="Middle-top-header">Market</p>
-	  <p className="Middle-top-personal-analytics">24h</p>
+	  <p className="Middle-top-personal-analytics">Analytics</p>
 	</div>
 	<p className="Middle-top-converted-price">${TotalAmountConverted}</p>
 	<div className="Middle-top-analytics-container-main">
