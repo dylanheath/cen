@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 
 // graph
-import Graph from '../dashboard/graph';
+import { Sparklines, SparklinesLine } from 'react-sparklines';
 
 // context
 import { UserContext } from '../../context/context';
@@ -49,7 +49,20 @@ export default function MiddleBox() {
 	const getXTZdata = await axios.get(`${api.url}/price/xtz`, {timeout: 5000})
           .then((response) => {
             const PriceData = response.data;
-	    setXTZdata(PriceData);
+	    const XTZobj = {
+              ATH: PriceData.ATH,
+              ATH_date: PriceData.ATH_date,
+              ATL: PriceData.ATL,
+              ATL_date: PriceData.ATL_date,
+	      CircSupply: PriceData.CircSupply,
+              MarketCap: PriceData.MarketCap,
+              Price: PriceData.Price,
+              PriceChange: PriceData.PriceChange,
+              Timestamp: PriceData.Timestamp,
+              Token: "XTZ",
+              Volume: PriceData.Volume
+	    }
+	    setXTZdata(XTZobj);
 	  })
 	  .catch(() => {
             console.log("failed to get price data");
@@ -62,8 +75,8 @@ export default function MiddleBox() {
     <div className="Middle-top">
       <div className="Middle-top-box">
         <div className="Middle-top-header-container">
-	  <p className="Middle-top-header">Market</p>
-	  <p className="Middle-top-personal-analytics">Analytics</p>
+	  <p className="Middle-top-header">Analytics</p>
+	  <p className="Middle-top-personal-analytics">ecosystem</p>
 	</div>
 	<p className="Middle-top-converted-price">${TotalAmountConverted}</p>
 	<div className="Middle-top-analytics-container-main">

@@ -58,6 +58,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-sparklines": "^1.7.2",
     "@types/styled-components": "^5.1.23",
     "react-error-overlay": "^6.0.9"
   }
