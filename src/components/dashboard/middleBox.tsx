@@ -19,7 +19,7 @@ export default function MiddleBox() {
   const [TotalAmount, setTotalAmount] = useState<number>(0);
   const [TotalAmountConverted, setTotalAmountConverted] = useState<number>(0);
   const [BalanceHistory, setBalanceHistory] = useState<any>([0]);
-  const [XTZdata, setXTZdata] = useState<any>(null);
+  const [XTZdata, setXTZdata] = useState<any>({ATH: 0, ATL: 0, ATH_date: 0, ATL_date: 0, CircSupply: 0, MarketCap: 0, Price: 0, PriceChange: 0, Timestamp: 0, Volume: 0, ATL_change: 0, ATH_change: 0});
   useEffect(() => {
     const getAnalytics = async () => {
       if (User.status ==  true) {
@@ -48,21 +48,24 @@ export default function MiddleBox() {
 	  })
 	const getXTZdata = await axios.get(`${api.url}/price/xtz`, {timeout: 5000})
           .then((response) => {
-            const PriceData = response.data;
-	    const XTZobj = {
+            const PriceData = response.data[0];
+	    const XTZobj: any = {
               ATH: PriceData.ATH,
-              ATH_date: PriceData.ATH_date,
+              ATH_date: new Date(PriceData.ATH_date),
               ATL: PriceData.ATL,
-              ATL_date: PriceData.ATL_date,
+              ATL_date: new Date(PriceData.ATL_date),
 	      CircSupply: PriceData.CircSupply,
               MarketCap: PriceData.MarketCap,
               Price: PriceData.Price,
               PriceChange: PriceData.PriceChange,
               Timestamp: PriceData.Timestamp,
               Token: "XTZ",
-              Volume: PriceData.Volume
+              Volume: PriceData.Volume,
+	      ATL_change: PriceData.ATL_change,
+	      ATH_change: PriceData.ATH_change
 	    }
 	    setXTZdata(XTZobj);
+	    console.log(XTZobj.ATL_date)
 	  })
 	  .catch(() => {
             console.log("failed to get price data");
@@ -78,12 +81,19 @@ export default function MiddleBox() {
 	  <p className="Middle-top-header">Analytics</p>
 	  <p className="Middle-top-personal-analytics">ecosystem</p>
 	</div>
-	<p className="Middle-top-converted-price">${TotalAmountConverted}</p>
-	<div className="Middle-top-analytics-container-main">
-	  <div className="Middle-top-analytics-container">
-	    <p className="Middle-top-total-amount-header-top">Total XTZ</p>
-	    <div className="Middle-top-total-header">
-	      <p className="Middle-top-total-transactions">{TotalAmount} XTZ</p>
+	<div className="Middle-top-market-ecosystem-container">
+	  <div className="Middle-top-market-data-container">
+	    <div className="Middle-top-atl-container">
+	      <p className="Middle-top-converted-price">${XTZdata.ATH}</p>
+	      <p className="Middle-top-atl-tag">ATH</p>
+	    </div>
+	    <div className="Middle-top-analytics-container-main">
+	      <div className="Middle-top-analytics-container">
+	        <p className="Middle-top-total-amount-header-top">ATH change</p>
+	        <div className="Middle-top-total-header">
+	          <p className="Middle-top-total-transactions"> {XTZdata.ATH_change.toFixed(2)} %</p>
+	        </div>
+	      </div>
 	    </div>
 	  </div>
 	</div>

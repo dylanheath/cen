@@ -265,7 +265,6 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
 .Middle-top-analytics-container-main {
  display: flex;
  flex-direction: row;
- width: 44vh;
 }
 
 @media screen and (max-width: 485px) {
@@ -969,3 +968,35 @@ padding-right: 20px;
 	width: 24px;
 }
 
+
+.Middle-top-atl-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.Middle-top-atl-tag {
+	padding-left: 10px;
+	color:#596178 ;
+	font-size: 2vh;
+	font-weight: 600;
+	padding-top: 4px;
+}
+
+.Middle-top-market-ecosystem-container {
+	display: flex;
+	flex-direction:row;
+	width: 44vh;
+}
+
+.Middle-top-atl-data-container {
+}
+
+.Middle-top-atl-amount  {
+	    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-size: 3.8vh;
+    color: white;
+    font-weight: 600;
+    padding-top: 14px;
+    padding-left: 20px;
+}
