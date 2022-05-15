@@ -84,7 +84,7 @@ export default function MiddleBox() {
 	<div className="Middle-top-market-ecosystem-container">
 	  <div className="Middle-top-market-data-container">
 	    <div className="Middle-top-atl-container">
-	      <p className="Middle-top-converted-price">${XTZdata.ATH}</p>
+	      <p className="Middle-top-converted-price">${XTZdata.ATH.toFixed(2)}</p>
 	      <p className="Middle-top-atl-tag">ATH</p>
 	    </div>
 	    <div className="Middle-top-analytics-container-main">
