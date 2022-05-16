@@ -96,6 +96,11 @@ export default function MiddleBox() {
 	      </div>
 	    </div>
 	  </div>
+	  <div className="Middle-top-analytics-outline-container">
+            <div className="Middle-top-analytics-outline">
+
+	    </div>
+	  </div>
 	</div>
       </div>
     </div>

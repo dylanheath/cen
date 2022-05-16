@@ -1000,3 +1000,39 @@ padding-right: 20px;
     padding-top: 14px;
     padding-left: 20px;
 }
+
+
+.Middle-top-analytics-outline-container {
+padding-top: 14px ;
+padding-left: 20px;
+width: 100%;
+}
+
+.Middle-top-analytics-outline {
+	    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    background: none;
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    width: 100%;
+    border: 1px solid #596178;
+    height: 134px;
+}
+
+@media screen and (max-width: 475px) {
+  .Middle-top-analytics-outline {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .Middle-top-market-ecosystem-container {
+    width: unset;
+  }
+}
+
