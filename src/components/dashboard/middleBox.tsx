@@ -20,7 +20,13 @@ export default function MiddleBox() {
   const [TotalAmountConverted, setTotalAmountConverted] = useState<number>(0);
   const [BalanceHistory, setBalanceHistory] = useState<any>([0]);
   const [XTZdata, setXTZdata] = useState<any>({ATH: 0, ATL: 0, ATH_date: 0, ATL_date: 0, CircSupply: 0, MarketCap: 0, Price: 0, PriceChange: 0, Timestamp: 0, Volume: 0, ATL_change: 0, ATH_change: 0});
+  const [CurrentTimestamp, setCurrentTimestamp] = useState<number | null>(null);
   useEffect(() => {
+    const getCurrentTimestamp = () => {
+      const currentDate = new Date();
+      const timestamp = currentDate.getTime();
+      setCurrentTimestamp(timestamp);
+    }
     const getAnalytics = async () => {
       if (User.status ==  true) {
         const address = await User.address?.toString();
@@ -62,7 +68,8 @@ export default function MiddleBox() {
               Token: "XTZ",
               Volume: PriceData.Volume,
 	      ATL_change: PriceData.ATL_change,
-	      ATH_change: PriceData.ATH_change
+	      ATH_change: PriceData.ATH_change,
+	      Price_graph: PriceData.Price_graph
 	    }
 	    setXTZdata(XTZobj);
 	    console.log(XTZobj.ATL_date)
@@ -98,7 +105,7 @@ export default function MiddleBox() {
 	  </div>
 	  <div className="Middle-top-analytics-outline-container">
             <div className="Middle-top-analytics-outline">
-
+              <p className="Middle-top-analytics-outlne-header"></p>
 	    </div>
 	  </div>
 	</div>
