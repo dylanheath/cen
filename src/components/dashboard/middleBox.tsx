@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 
 // graph
-import { Sparklines, SparklinesLine } from 'react-sparklines';
+import { Sparklines, SparklinesLine, SparklinesSpots } from 'react-sparklines';
 
 // context
 import { UserContext } from '../../context/context';
@@ -54,8 +54,8 @@ export default function MiddleBox() {
             const PriceData = response.data[0];
 	    let currentDatesPrice: Array<Date> = [];
 	    PriceData.Price_graph.map((price_time:any) => {
-	      if ( new Date(price_time.Timestamp).toLocaleDateString("en-US") ==  new Date(timestamp).toLocaleDateString("en-US")) {
-                currentDatesPrice.push(price_time);
+	      if ( new Date(price_time.Timestamp).toLocaleDateString("en-US") == new Date(timestamp).toLocaleDateString("en-US")) {
+                currentDatesPrice.push(price_time.Price);
 	      }
 	    })
 	    const XTZobj: any = {
@@ -110,7 +110,9 @@ export default function MiddleBox() {
 	  </div>
 	  <div className="Middle-top-analytics-outline-container">
             <div className="Middle-top-analytics-outline">
-              <p className="Middle-top-analytics-outlne-header"></p>
+	      <Sparklines data={XTZdata.Price_graph}>
+                <SparklinesLine color="rgb(33, 114, 229)" />
+              </Sparklines>
 	    </div>
 	  </div>
 	</div>
