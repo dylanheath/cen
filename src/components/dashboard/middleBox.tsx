@@ -20,13 +20,10 @@ export default function MiddleBox() {
   const [TotalAmountConverted, setTotalAmountConverted] = useState<number>(0);
   const [BalanceHistory, setBalanceHistory] = useState<any>([0]);
   const [XTZdata, setXTZdata] = useState<any>({ATH: 0, ATL: 0, ATH_date: 0, ATL_date: 0, CircSupply: 0, MarketCap: 0, Price: 0, PriceChange: 0, Timestamp: 0, Volume: 0, ATL_change: 0, ATH_change: 0});
-  const [CurrentTimestamp, setCurrentTimestamp] = useState<number | null>(null);
   useEffect(() => {
-    const getCurrentTimestamp = () => {
-      const currentDate = new Date();
-      const timestamp = currentDate.getTime();
-      setCurrentTimestamp(timestamp);
-    }
+    const currentDate = new Date();
+    const timestamp = currentDate.getTime();
+    console.log(currentDate);
     const getAnalytics = async () => {
       if (User.status ==  true) {
         const address = await User.address?.toString();
@@ -55,6 +52,13 @@ export default function MiddleBox() {
 	const getXTZdata = await axios.get(`${api.url}/price/xtz`, {timeout: 5000})
           .then((response) => {
             const PriceData = response.data[0];
+	    let currentDatesPrice: Array<number> = [];
+	    PriceData.Price_graph.map((price_time:any) => {
+	      if ( new Date(price_time.Timestamp).toLocaleDateString("en-US") ==  new Date(timestamp).toLocaleDateString("en-US")) {
+                currentDatesPrice.push(price_time);
+	      }
+	    })
+	    console.log(currentDatesPrice);
 	    const XTZobj: any = {
               ATH: PriceData.ATH,
               ATH_date: new Date(PriceData.ATH_date),
@@ -72,7 +76,6 @@ export default function MiddleBox() {
 	      Price_graph: PriceData.Price_graph
 	    }
 	    setXTZdata(XTZobj);
-	    console.log(XTZobj.ATL_date)
 	  })
 	  .catch(() => {
             console.log("failed to get price data");
