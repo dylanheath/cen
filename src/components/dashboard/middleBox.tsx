@@ -58,7 +58,6 @@ export default function MiddleBox() {
                 currentDatesPrice.push(price_time);
 	      }
 	    })
-	    console.log(currentDatesPrice);
 	    const XTZobj: any = {
               ATH: PriceData.ATH,
               ATH_date: new Date(PriceData.ATH_date),
@@ -83,6 +82,9 @@ export default function MiddleBox() {
       }
     }
    getAnalytics();
+      setInterval(function(){
+        getAnalytics();
+      },60 * 1000);
   }, [])
   return (
     <div className="Middle-top">
