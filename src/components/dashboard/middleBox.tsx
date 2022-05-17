@@ -52,7 +52,7 @@ export default function MiddleBox() {
 	const getXTZdata = await axios.get(`${api.url}/price/xtz`, {timeout: 5000})
           .then((response) => {
             const PriceData = response.data[0];
-	    let currentDatesPrice: Array<number> = [];
+	    let currentDatesPrice: Array<Date> = [];
 	    PriceData.Price_graph.map((price_time:any) => {
 	      if ( new Date(price_time.Timestamp).toLocaleDateString("en-US") ==  new Date(timestamp).toLocaleDateString("en-US")) {
                 currentDatesPrice.push(price_time);
