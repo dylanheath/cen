@@ -73,7 +73,7 @@ export default function MiddleBox() {
               Volume: PriceData.Volume,
 	      ATL_change: PriceData.ATL_change,
 	      ATH_change: PriceData.ATH_change,
-	      Price_graph: PriceData.Price_graph
+	      Price_graph: currentDatesPrice 
 	    }
 	    setXTZdata(XTZobj);
 	  })
