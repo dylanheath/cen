@@ -1015,10 +1015,7 @@ width: 100%;
     flex-direction: column;
     border-radius: 20px;
     background: none;
-    padding-left: 1.4rem;
-    padding-right: 1.4rem;
-    padding-top: 0.6rem;
-    padding-bottom: 0.6rem;
+    padding-top: 2rem;
     width: 100%;
     border: 1px solid #596178;
     height: 134px;
@@ -1034,5 +1031,11 @@ width: 100%;
   .Middle-top-market-ecosystem-container {
     width: unset;
   }
+}
+
+.Middle-top-graph-load-container {
+	 margin-left: auto;
+  margin-right: auto;
+padding-top:10px;
 }
 

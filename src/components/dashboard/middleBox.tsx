@@ -13,6 +13,9 @@ import { api } from '../../utils/api';
 // styling
 import './dashboard.css';
 
+// loading animation
+import { Waveform } from '@uiball/loaders'
+
 export default function MiddleBox() {
   const { User, setUser } = useContext<any>(UserContext);
   const [TotalTransactions, setTotalTransactions] = useState<number>(0); 
@@ -20,6 +23,7 @@ export default function MiddleBox() {
   const [TotalAmountConverted, setTotalAmountConverted] = useState<number>(0);
   const [BalanceHistory, setBalanceHistory] = useState<any>([0]);
   const [XTZdata, setXTZdata] = useState<any>({ATH: 0, ATL: 0, ATH_date: 0, ATL_date: 0, CircSupply: 0, MarketCap: 0, Price: 0, PriceChange: 0, Timestamp: 0, Volume: 0, ATL_change: 0, ATH_change: 0});
+  const [GraphLoading, setGraphLoading] = useState<boolean>(false);
   useEffect(() => {
     const currentDate = new Date();
     const timestamp = currentDate.getTime();
@@ -75,12 +79,15 @@ export default function MiddleBox() {
 	      Price_graph: currentDatesPrice 
 	    }
 	    setXTZdata(XTZobj);
+	    setGraphLoading(false);
 	  })
 	  .catch(() => {
             console.log("failed to get price data");
+	    setGraphLoading(false);
 	  })
       }
     }
+   setGraphLoading(true);
    getAnalytics();
       setInterval(function(){
         getAnalytics();
@@ -110,9 +117,23 @@ export default function MiddleBox() {
 	  </div>
 	  <div className="Middle-top-analytics-outline-container">
             <div className="Middle-top-analytics-outline">
+	      {GraphLoading == false && (
 	      <Sparklines data={XTZdata.Price_graph}>
                 <SparklinesLine color="rgb(33, 114, 229)" />
               </Sparklines>
+              )}
+              {GraphLoading == true && (
+	      <div className="Middle-top-graph-load-container">
+              <Waveform
+                size={40}
+ 		lineWeight={3.5}
+ 		speed={1}
+ 		color="grey"
+              />
+	      </div>
+	      )}
+	      <p className="Middle-top-graph-subtitle">Price</p>
+	      <p className="Middle-top-graph-24hr">24h</p>
 	    </div>
 	  </div>
 	</div>
