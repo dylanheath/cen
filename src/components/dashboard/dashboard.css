@@ -1015,7 +1015,7 @@ width: 100%;
     flex-direction: column;
     border-radius: 20px;
     background: none;
-    padding-top: 2rem;
+    padding-top: 3rem;
     width: 100%;
     border: 1px solid #596178;
     height: 134px;
@@ -1039,3 +1039,20 @@ width: 100%;
 padding-top:10px;
 }
 
+.Middle-top-graph-subtitle-container {
+text-align: center;
+}
+
+.Middle-top-subtitle {
+
+}
+
+.Middle-top-graph-24hr {
+color: white;
+font-weight: 600;
+}
+
+.Middle-top-graph-underline-container {
+	display: flex;
+	flex-direction: row;
+}

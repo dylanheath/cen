@@ -132,8 +132,11 @@ export default function MiddleBox() {
               />
 	      </div>
 	      )}
-	      <p className="Middle-top-graph-subtitle">Price</p>
-	      <p className="Middle-top-graph-24hr">24h</p>
+	      {GraphLoading == false && (
+	        <div className="Middle-top-graph-subtitle-container">
+	            <p className="Middle-top-graph-24hr">24h</p>
+		</div>
+	      )}
 	    </div>
 	  </div>
 	</div>
