@@ -105,3 +105,22 @@
   grid-template-columns: repeat(1, 1fr);
   }
 }
+
+.Dashboard-loading-animation-container {
+}
+
+
+.Dashboard-loading-animation-center-container {
+	display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 260px 16px 0px;
+    align-items: center;
+    flex: 1 1;
+    z-index: 1;
+}
+
+.components-container {
+	width: 100%;
+}
+

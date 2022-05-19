@@ -30,26 +30,35 @@ import Farms from '../../components/farms/farms';
 import Assets from '../../components/assets/assets';
 
 //styling 
-
 import './dashboard.css';
+
+//loading animation
+import { Ring } from '@uiball/loaders'
 
 export default function Dashboard() {
   const {User, setUser} = useContext<any>(UserContext);
   const navigate = useNavigate();
+  const [UserLoaded, setUserLoaded] = useState<boolean>(false);
   useEffect(() => {
     const checkForUser = async () => {
-      const activeAccount = await getActiveAccount();
-      if (!activeAccount) {
-    	console.log('Wallet not connected');
-        navigate('/app/connect');
-      } else if (User.status === false) {
-	navigate('/app/signup');
-      } 
-    }
+      const activeAccount = await getActiveAccount()
+      const accountResponse = new Promise(function(resolve, reject){
+		      if (!activeAccount === null || User.status === false) {
+			console.log("Wallet not Connected or User not found");
+			reject(true);
+			} else {
+		         console.log("Wallet Connected & User found");
+			 resolve(true);
+			}
+      })
+      accountResponse.then(bool => setUserLoaded(true));
+  }
     checkForUser();
   }, [User])
   return (
+    <div className="components-container">
     <div className="dashboard-container">
+      {UserLoaded === true && (
       <div className="dashboard">
 	<TopLeftBox />
 	<MiddleBox />
@@ -66,6 +75,19 @@ export default function Dashboard() {
 	  <MiddleBottomRight />
 	</div>
       </div>
+      )}
+    </div>
+      {UserLoaded === false && (
+      <div className="Dashboard-loading-animation-container">
+        <div className="Dashboard-loading-animation-center-container">
+          <Ring
+	    size={100}
+	    speed={1.75}
+	    color="rgb(33, 114, 229)"
+	  />
+	</div>
+      </div>
+      )}
     </div>
   ) 
 }
