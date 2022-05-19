@@ -116,26 +116,21 @@ export default function MiddleBox() {
 	    </div>
 	  </div>
 	  <div className="Middle-top-analytics-outline-container">
-            <div className="Middle-top-analytics-outline">
+            <div className="Middle-top-analytics-outline" style={GraphLoading == true ? {paddingTop: '2.6rem'} : {}}>
 	      {GraphLoading == false && (
-	      <Sparklines data={XTZdata.Price_graph}>
-                <SparklinesLine color="rgb(33, 114, 229)" />
-              </Sparklines>
-              )}
-              {GraphLoading == true && (
-	      <div className="Middle-top-graph-load-container">
-              <Waveform
-                size={40}
- 		lineWeight={3.5}
- 		speed={1}
- 		color="grey"
-              />
-	      </div>
+	        <Sparklines data={XTZdata.Price_graph}>
+                  <SparklinesLine color="rgb(33, 114, 229)" />
+                </Sparklines>
 	      )}
-	      {GraphLoading == false && (
-	        <div className="Middle-top-graph-subtitle-container">
-	            <p className="Middle-top-graph-24hr">24h</p>
-		</div>
+	      {GraphLoading == true && (
+	        <div className="Middle-top-graph-load-container">
+                  <Waveform
+                    size={40}
+ 		    lineWeight={3.5}
+ 		    speed={1}
+ 		    color="white"
+                  />
+	        </div>
 	      )}
 	    </div>
 	  </div>
