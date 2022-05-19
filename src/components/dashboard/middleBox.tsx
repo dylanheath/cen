@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 
 // graph
-import { Sparklines, SparklinesLine, SparklinesSpots } from 'react-sparklines';
+import { Sparklines, SparklinesLine, SparklinesReferenceLine } from 'react-sparklines';
 
 // context
 import { UserContext } from '../../context/context';
@@ -14,7 +14,7 @@ import { api } from '../../utils/api';
 import './dashboard.css';
 
 // loading animation
-import { Waveform } from '@uiball/loaders'
+import { Pulsar } from '@uiball/loaders'
 
 export default function MiddleBox() {
   const { User, setUser } = useContext<any>(UserContext);
@@ -120,7 +120,7 @@ export default function MiddleBox() {
 	    </div>
 	  </div>
 	  <div className="Middle-top-analytics-outline-container">
-            <div className="Middle-top-analytics-outline" style={GraphLoading == true ? {paddingTop: '2.6rem'} : {}}>
+            <div className="Middle-top-analytics-outline" style={GraphLoading == true ? {paddingTop: '2.2rem'} : {}}>
 	      {GraphLoading == false && (
 	        <Sparklines data={XTZdata.Price_graph}>
                   <SparklinesLine color="rgb(33, 114, 229)" />
@@ -128,11 +128,10 @@ export default function MiddleBox() {
 	      )}
 	      {GraphLoading == true && (
 	        <div className="Middle-top-graph-load-container">
-                  <Waveform
+                  <Pulsar
                     size={40}
- 		    lineWeight={3.5}
- 		    speed={1}
- 		    color="white"
+ 		    speed={2}
+ 		    color="rgb(33, 114, 229)"
                   />
 	        </div>
 	      )}
