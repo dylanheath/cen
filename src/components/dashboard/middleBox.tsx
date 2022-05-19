@@ -22,7 +22,8 @@ export default function MiddleBox() {
   const [TotalAmount, setTotalAmount] = useState<number>(0);
   const [TotalAmountConverted, setTotalAmountConverted] = useState<number>(0);
   const [BalanceHistory, setBalanceHistory] = useState<any>([0]);
-  const [XTZdata, setXTZdata] = useState<any>({ATH: 0, ATL: 0, ATH_date: 0, ATL_date: 0, CircSupply: 0, MarketCap: 0, Price: 0, PriceChange: 0, Timestamp: 0, Volume: 0, ATL_change: 0, ATH_change: 0});
+  const [XTZdata, setXTZdata] = useState<any>({ATH: 0, ATL: 0, ATH_date: 0, ATL_date: 0, CircSupply: 0, MarketCap: 0, Price: 0,
+  PriceChange: 0, Timestamp: 0, Volume: 0, ATL_change: 0, ATH_change: 0, Price_change_24: 0, High_24: 0, Low_24: 0});
   const [GraphLoading, setGraphLoading] = useState<boolean>(false);
   useEffect(() => {
     const currentDate = new Date();
@@ -76,7 +77,10 @@ export default function MiddleBox() {
               Volume: PriceData.Volume,
 	      ATL_change: PriceData.ATL_change,
 	      ATH_change: PriceData.ATH_change,
-	      Price_graph: currentDatesPrice 
+	      Price_graph: currentDatesPrice,
+	      High_24: PriceData.High_24,
+	      Low_24: PriceData.Low_24,
+	      Price_change_24: PriceData.Price_change_24
 	    }
 	    setXTZdata(XTZobj);
 	    setGraphLoading(false);
