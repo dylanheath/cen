@@ -29,7 +29,7 @@ export default function XTZprice() {
             const PriceData = response.data[0];
 	    setPrice(PriceData.Price); 
 	    setMarketCap(PriceData.MarketCap);
-            setChange(PriceData.PriceChange);
+            setChange(PriceData.Price_change_24.toFixed(2));
 	    setSupply(PriceData.CircSupply);
 	    setVolume(PriceData.Volume);
           })
@@ -53,7 +53,7 @@ export default function XTZprice() {
 	    </div>
 	    <div className="XTZ-price-info-container">
 	      <p className="XTZ-price-total">${Price}</p>
-	      <p className="XTZ-price-change" style={Change < 0 ? {background: "rgb(33, 114, 229)"} : {background: "rgb(33, 114, 229)"}}>{Change.toFixed(2)}%</p>
+	      <p className="XTZ-price-change" style={Change < 0 ? {background: "rgb(33, 114, 229)"} : {background: "rgb(33, 114, 229)"}}>{Change}%</p>
 	    </div>
 	  </div>
 	  <div className="XTZ-bottom-analytics-container">
