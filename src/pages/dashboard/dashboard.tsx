@@ -43,7 +43,7 @@ export default function Dashboard() {
     const checkForUser = async () => {
       const activeAccount = await getActiveAccount()
       const accountResponse = new Promise(function(resolve, reject){
-		      if (!activeAccount === null || User.status === false) {
+		      if (User.status === false) {
 			console.log("Wallet not Connected or User not found");
 			reject(true);
 			} else {
@@ -52,6 +52,10 @@ export default function Dashboard() {
 			}
       })
       accountResponse.then(bool => setUserLoaded(true));
+      if (!activeAccount) {
+        navigate('/');
+      }
+
   }
     checkForUser();
   }, [User])
