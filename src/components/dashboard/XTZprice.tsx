@@ -39,6 +39,9 @@ export default function XTZprice() {
         }
       }
     fetchToken();
+    setInterval(function(){
+        fetchToken();
+      },60 * 1000);
   }, [])
   return (
       <div className="XTZ-price-box">
