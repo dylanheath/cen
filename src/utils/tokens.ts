@@ -13,6 +13,12 @@ type token = {
     name: string,
     image: string,
    },
+   "ctez": {
+     name: string,
+   },
+   "CRUNCH": {
+     name: string,
+   }
 }
 
 export const tokens: token = {
@@ -24,4 +30,10 @@ export const tokens: token = {
     name: "USDtz",
     image: USDtzIcon,
   },
+  "ctez": {
+    name: "ctez",
+  },
+  "CRUNCH": {
+    name: "CRUNCH"
+  }
 }
