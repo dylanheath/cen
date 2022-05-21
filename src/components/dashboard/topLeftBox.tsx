@@ -64,6 +64,9 @@ export default function TopLeftBox() {
     // recall function
    }
     fetchBalance();
+    setInterval(function(){
+        fetchBalance();
+      },60 * 1000);
   }, [User])
   return (
     <div className="top-left">

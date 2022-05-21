@@ -55,7 +55,6 @@ export default function Dashboard() {
       if (!activeAccount) {
         navigate('/');
       }
-
   }
     checkForUser();
   }, [User])
