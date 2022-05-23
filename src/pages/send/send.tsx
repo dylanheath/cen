@@ -30,7 +30,7 @@ export default function Send() {
   const [Amount, setAmount] = useState<number>(0);
   const [Message, setMessage] = useState<string | null>(null);
   const [Contacts, setContacts] = useState<Array<string>>(['']);
-  const [Popup, setPopup] = useState<boolean | null>(null);
+  const [PopupContacts, setPopupContacts] = useState<boolean | null>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -56,7 +56,7 @@ export default function Send() {
   }, [])
   return  (
     <div className="send">
-      {Popup && (
+      {PopupContacts && (
         <div className="send-contact-popup-container">
 	  <ContactsPopup currentUser={User?.address} ContactsData={Contacts} selectReceiver={setReceiver} />
         </div>
@@ -85,7 +85,7 @@ export default function Send() {
 	    <img className="send-arrow-down" src={SendArrowDown} />
 	  </div>
 	  <div className="send-contact-button-container">
-            <button className="send-contact-button" type="button" onClick={() => setPopup(true)}>
+            <button className="send-contact-button" type="button" onClick={() => setPopupContacts(true)}>
 	      <div className="send-account-container">
 	        {Receiver && (
                   <p className="send-account-name">{Receiver?.User}</p>
