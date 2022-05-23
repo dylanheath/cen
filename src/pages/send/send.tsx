@@ -24,6 +24,9 @@ import SendArrowDown from '../../assets/In.png';
 // components 
 import ContactsPopup from '../../components/contacts/Contacts';
 
+// popups
+import Settings from '../../components/popups/Settings';
+
 export default function Send() {
   const { User, setUser } = useContext<any>(UserContext);
   const [Receiver, setReceiver]  = useState<any>(null);
@@ -31,6 +34,8 @@ export default function Send() {
   const [Message, setMessage] = useState<string | null>(null);
   const [Contacts, setContacts] = useState<Array<string>>(['']);
   const [PopupContacts, setPopupContacts] = useState<boolean | null>(null);
+  const [SettingsPopup, setSettingsPopup] = useState<boolean>(false);
+  const [SlippageSettings, setSlippageSettings] = useState<number>(0);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -60,6 +65,11 @@ export default function Send() {
         <div className="send-contact-popup-container">
 	  <ContactsPopup currentUser={User?.address} ContactsData={Contacts} selectReceiver={setReceiver} />
         </div>
+      )}
+      {SettingsPopup == true && (
+        <div className="Settings-popup">
+          <Settings />
+	</div>
       )}
       <div className="send-container">
         <div className="send-box">

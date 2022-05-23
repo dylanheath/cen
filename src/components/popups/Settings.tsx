@@ -1,17 +1,16 @@
 import React, {useState, useEffect} from 'react';
 
-type SettingsOptions = {
-  "Slippage": {
-    "0": number,
-    "0.5": number,
-    "1": number,
-  }
-}
+// styling
+import './Settings.css';
 
 export default function Settings() {
-  
+  const [Slippage, setSlippage] = useState<number>(0);
+  const [Popup, setPopup] = useState<boolean>(false);
   return (
-    <div>
+    <div className="Settings-popup-container">
+      <div className="Settings-popup">
+
+      </div>
     </div>
   )
 }
