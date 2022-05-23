@@ -2,7 +2,7 @@
   <img width="280" height="100" src="Cen.svg">
 </p>
 
-Cen is a Tezos powered payment & assets management dapp which provides resources for Sending/Receiving XTZ or FA1.2/FA2 Tokens and tracking assets across a range of other dapps such as PlentyDefi & QuipuSwap
+Cen is a Tezos powered Portfolio, Payment & Assets management dapp which provides resources for Sending/Receiving XTZ or FA1.2/FA2 Tokens and tracking assets across a range of other dapps such as PlentyDefi & QuipuSwap
 
 * Supports up to 8 Wallets.
 * Safe & Secure using the BeaconSDK
