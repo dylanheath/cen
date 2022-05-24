@@ -34,7 +34,7 @@ position: relative;
 .send-header {
   font-size:  22px;
   color: white;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI'', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   font-weight: 500;
 }
@@ -259,9 +259,13 @@ display: flex;
 }
 
 .send-account-name {
-	    font-size: 20px;
+	    font-size: 14px;
     color: white;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     font-weight: 500;
 }
 
+
+.Popup-container {
+	z-index: 100;
+}

@@ -1,0 +1,72 @@
+.Settings-popups-container {
+	    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    flex: 1 1;
+    z-index: 100;
+    animation: fadeIn 0.5s;
+  -webkit-animation: fadeIn 0.5s;
+  -moz-animation: fadeIn 0.5s;
+  -o-animation: fadeIn 0.5s;
+  -ms-animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+.Settings-popup {
+	display: flex;
+  padding: 30px;
+  border-radius: 30px;
+  background: #1d263b;
+  transition:.5s;
+  position: absolute;
+  flex-direction: column;
+  box-shadow: 0 0 0 100000px rgba(0,0,0,.5);
+  transition: .5s;
+}
+
+.Settings-header-container {
+
+}
+
+.Settings-header {
+	    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    font-size: 2.4vh;
+}
+
+.Settings-options-container {
+ padding-top: 40px;
+}
+
+.Settings-option-button-container {
+
+}
+
+
+

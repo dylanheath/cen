@@ -67,7 +67,7 @@ export default function Send() {
         </div>
       )}
       {SettingsPopup == true && (
-        <div className="Settings-popup">
+        <div className="Popup-container">
           <Settings />
 	</div>
       )}
@@ -75,7 +75,7 @@ export default function Send() {
         <div className="send-box">
 	  <div className="send-header-container">
             <p className="send-header">Send</p>
-	    <button className="settings-header-icon-button" type="button">Settings</button>
+	    <button className="settings-header-icon-button" type="button" onClick={() => setSettingsPopup(true)}>Settings</button>
 	  </div>
 	  <div className="send-input-container">
             <div className="send-amount-input-box">
