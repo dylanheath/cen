@@ -212,3 +212,7 @@ display: flex;
 box-shadow: 0px 0px 20px 1px rgb(33, 114, 229);
 }
 
+
+.Settings-popup-container {
+z-index: 100;
+}

@@ -25,7 +25,7 @@ export default function LiquidityBox() {
     <div className="Liquidity-box">
       <div className="liquidity-header-container">
         <p className="liquidity-header">Liquidity</p> 
-	<button className="liquidity-header-button" type="button">More</button>
+	<button className="liquidity-header-button" type="button">Settings</button>
       </div>
       <div className="liquidity-input-container">
         <div className="liquidity-amount-input-box">

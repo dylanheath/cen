@@ -9,19 +9,30 @@ import ArrowDown from '../../assets/arrowdown.png';
 import ArrowIn from '../../assets/In.png';
 import CenIcon from '../../assets/CEN.png';
 
+// components
+import Settings from '../../components/popups/Settings';
+
 // styling
 import './swap.css';
 
 export default function Swap() {
   const [CoinAmountInputOne, setCoinAmountInputOne] = useState<number>(0);
   const [CoinAmountOutput, setCoinAmountOutput] = useState<number>(0);
+  const [SettingsPopup, setSettingsPopup] = useState<boolean>(false);
+  const [SlippageSettings, setSlippageSettings] = useState<number>(0);
   return (
     <div className="Swap">
+    {SettingsPopup === true && (
+      <div className="Settings-popup-container">
+        <Settings popupController={SettingsPopup} setPopupController={setSettingsPopup}
+	SlippageController={SlippageSettings} setSlippageController={setSlippageSettings}/>
+      </div>
+    )}
       <div className="swap-container">
         <div className="swap-box">
 	  <div className="swap-header-container">
 	    <p className="swap-header">Swap</p>
-	    <button className="swap-header-button">Settings</button>
+	    <button className="swap-header-button" onClick={() => setSettingsPopup(true)}>Settings</button>
 	  </div>
 	  <div className="swap-input-container">
 	    <div className="swap-amount-input-box">
