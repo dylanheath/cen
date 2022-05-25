@@ -131,7 +131,13 @@ align-items: center;
     width: auto;
     min-width: 3.5rem;
     outline: none;
-    background: rgb(33, 114, 229);
+    background: rgb(23, 31, 48);
     color: white;
     border: none;
+    transition: .2s;
 }
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+

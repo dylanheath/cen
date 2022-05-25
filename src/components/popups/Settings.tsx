@@ -19,14 +19,14 @@ export default function Settings({popupController, setPopupController,
 	<div className="Settings-options-container">
 	  <p className="Slippage-tag">Quick Select</p>
 	  <div className="Settings-option-button-container">
-	    <button className="Slippage-option" onClick={() => setSlippageController(0.5)}>Auto</button>
-            <button className="Slippage-option" onClick={() => setSlippageController(0)}>0%</button>
-	    <button className="Slippage-option" onClick={() => setSlippageController(0.5)}>0.5%</button>
-	    <button className="Slippage-option" onClick={() => setSlippageController(1)}>1%</button>
+	    <button className="Slippage-option" style={SlippageController == 0.5 ? {background: 'rgb(33, 114, 229)'} : {}} onClick={() => setSlippageController(0.5)}>Auto</button>
+            <button className="Slippage-option" style={SlippageController == 0 ? {background: 'rgb(33, 114, 229)'} : {}} onClick={() => setSlippageController(0)}>0%</button>
+	    <button className="Slippage-option" style={SlippageController == 0.5 ? {background: 'rgb(33, 114, 229)'} : {}} onClick={() => setSlippageController(0.5)}>0.5%</button>
+	    <button className="Slippage-option" style={SlippageController == 1 ? {background: 'rgb(33, 114, 229)'} : {}} onClick={() => setSlippageController(1)}>1%</button>
 	  </div>
 	  <p className="Slippage-custom-tag">Custom</p>
 	  <div className="Slippage-custom-container">
-            <input className="Slippage-custom-input" placeholder="0.00%" /> 
+            <input className="Slippage-custom-input" placeholder="0.00%"  onChange={e => setSlippageController(e.target.value)}/> 
 	  </div>
 	</div>
       </div>
