@@ -68,7 +68,8 @@ export default function Send() {
       )}
       {SettingsPopup == true && (
         <div className="Popup-container">
-          <Settings />
+          <Settings popupController={SettingsPopup} setPopupController={setSettingsPopup}
+	  SlippageController={SlippageSettings} setSlippageController={setSlippageSettings} />
 	</div>
       )}
       <div className="send-container">
