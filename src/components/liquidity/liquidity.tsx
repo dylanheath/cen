@@ -17,7 +17,8 @@ import CENicon from '../../assets/CEN.png';
 // components
 import Settings from '../popups/Settings';
 
-export default function LiquidityBox() {
+export default function LiquidityBox({Popup, setPopup, Slippage, setSlippage} : 
+  {Popup:any, setPopup:any, Slippage:any, setSlippage:any}) {
   const { User, setUser } = useContext<any>(UserContext);
   const [CenOutput, setCenOutput] = useState<number>(0);
   const [PoolShare, setPoolShare] = useState<number | string>('0.00');
@@ -28,15 +29,9 @@ export default function LiquidityBox() {
   return (
     <div>
     <div className="Liquidity-box">
-      {SettingsPopup === true && (
-        <div className="Settings-popup-container">
-          <Settings popupController={SettingsPopup} setPopupController={setSettingsPopup}
-           SlippageController={SlippageSettings} setSlippageController={setSettingsPopup}  />
-	 </div>
-      )}
       <div className="liquidity-header-container">
         <p className="liquidity-header">Liquidity</p> 
-	<button className="liquidity-header-button" type="button" onClick={() => setSettingsPopup(true)}>Settings</button>
+	<button className="liquidity-header-button" type="button" onClick={() => setPopup(true)}>Settings</button>
       </div>
       <div className="liquidity-input-container">
         <div className="liquidity-amount-input-box">
