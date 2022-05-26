@@ -142,7 +142,7 @@ align-items: center;
 }
 
 .SlippageError {
-	color: white;
+	color: red;
 	padding-top: 20px;
 }
 
