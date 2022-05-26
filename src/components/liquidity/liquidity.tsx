@@ -14,18 +14,29 @@ import DownArrow from '../../assets/arrowdown.png';
 import ArrowOut from '../../assets/In.png';
 import CENicon from '../../assets/CEN.png';
 
+// components
+import Settings from '../popups/Settings';
+
 export default function LiquidityBox() {
   const { User, setUser } = useContext<any>(UserContext);
   const [CenOutput, setCenOutput] = useState<number>(0);
   const [PoolShare, setPoolShare] = useState<number | string>('0.00');
   const [CenPerXTZ, setCenPerXTZ] = useState<number | string>('0.00');
   const [XtzPerCEN, setXtzPerCEN] = useState<number | string>('0.00');
+  const [SlippageSettings, setSlippageSettings] = useState<number>(0);
+  const [SettingsPopup, setSettingsPopup] = useState<boolean>(false);
   return (
     <div>
     <div className="Liquidity-box">
+      {SettingsPopup === true && (
+        <div className="Settings-popup-container">
+          <Settings popupController={SettingsPopup} setPopupController={setSettingsPopup}
+           SlippageController={SlippageSettings} setSlippageController={setSettingsPopup}  />
+	 </div>
+      )}
       <div className="liquidity-header-container">
         <p className="liquidity-header">Liquidity</p> 
-	<button className="liquidity-header-button" type="button">Settings</button>
+	<button className="liquidity-header-button" type="button" onClick={() => setSettingsPopup(true)}>Settings</button>
       </div>
       <div className="liquidity-input-container">
         <div className="liquidity-amount-input-box">

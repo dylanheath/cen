@@ -11,11 +11,11 @@ export default function Settings({popupController, setPopupController,
  function SlippageCheck(e:any) {
    if (e > 30) {
      setSlippageLimitError(true); 
-     console.log("invalid slippage");
+     console.log("Invalid Slippage");
    } else {
      setSlippageLimitError(false);
      setSlippageController(e);
-     console.log("slippage accepted");
+     console.log("Slippage Accepted");
    }
  }
   return (

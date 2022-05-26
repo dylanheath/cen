@@ -19,3 +19,8 @@
 .liquidity {
   position: relative;
 }
+
+
+.Settings-popup-container {
+	z-index: 100;
+}
