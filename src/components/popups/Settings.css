@@ -141,3 +141,8 @@ align-items: center;
   opacity: 1; /* Firefox */
 }
 
+.SlippageError {
+	color: white;
+	padding-top: 20px;
+}
+

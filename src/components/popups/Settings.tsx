@@ -9,10 +9,13 @@ export default function Settings({popupController, setPopupController,
  const [SlippageLimitError, setSlippageLimitError] = useState<boolean>(false);
 
  function SlippageCheck(e:any) {
-   if (e > 30 || e < 0) {
+   if (e > 30) {
      setSlippageLimitError(true); 
+     console.log("invalid slippage");
    } else {
+     setSlippageLimitError(false);
      setSlippageController(e);
+     console.log("slippage accepted");
    }
  }
   return (
@@ -34,8 +37,11 @@ export default function Settings({popupController, setPopupController,
 	  </div>
 	  <p className="Slippage-custom-tag">Custom</p>
 	  <div className="Slippage-custom-container">
-            <input className="Slippage-custom-input" placeholder="0.00%"  onChange={SlippageCheck}/> 
+            <input className="Slippage-custom-input" placeholder="0.00%"  onChange={e => SlippageCheck(e.target.value) }/> 
 	  </div>
+	  {SlippageLimitError === true && (
+            <p className="SlippageError">Slippage must be between 1 & 30</p>
+	  )} 
 	</div>
       </div>
     </div>
