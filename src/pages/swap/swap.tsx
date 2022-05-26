@@ -19,7 +19,7 @@ export default function Swap() {
   const [CoinAmountInputOne, setCoinAmountInputOne] = useState<number>(0);
   const [CoinAmountOutput, setCoinAmountOutput] = useState<number>(0);
   const [SettingsPopup, setSettingsPopup] = useState<boolean>(false);
-  const [SlippageSettings, setSlippageSettings] = useState<number>(0);
+  const [SlippageSettings, setSlippageSettings] = useState<number>(0.5);
   return (
     <div className="Swap">
     {SettingsPopup === true && (

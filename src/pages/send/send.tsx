@@ -35,7 +35,7 @@ export default function Send() {
   const [Contacts, setContacts] = useState<Array<string>>(['']);
   const [PopupContacts, setPopupContacts] = useState<boolean | null>(null);
   const [SettingsPopup, setSettingsPopup] = useState<boolean>(false);
-  const [SlippageSettings, setSlippageSettings] = useState<number>(0);
+  const [SlippageSettings, setSlippageSettings] = useState<number>(0.5);
   const navigate = useNavigate();
 
   useEffect(() => {
