@@ -6,7 +6,15 @@ import './Settings.css';
 export default function Settings({popupController, setPopupController,
 	SlippageController, setSlippageController}: {popupController:any, setPopupController:any,
 	SlippageController:any, setSlippageController:any}) {
+ const [SlippageLimitError, setSlippageLimitError] = useState<boolean>(false);
 
+ function SlippageCheck(e:any) {
+   if (e > 30 || e < 0) {
+     setSlippageLimitError(true); 
+   } else {
+     setSlippageController(e);
+   }
+ }
   return (
     <div className="Settings-popups-container">
       <div className="Settings-popup">
@@ -26,7 +34,7 @@ export default function Settings({popupController, setPopupController,
 	  </div>
 	  <p className="Slippage-custom-tag">Custom</p>
 	  <div className="Slippage-custom-container">
-            <input className="Slippage-custom-input" placeholder="0.00%"  onChange={e => setSlippageController(e.target.value)}/> 
+            <input className="Slippage-custom-input" placeholder="0.00%"  onChange={SlippageCheck}/> 
 	  </div>
 	</div>
       </div>
