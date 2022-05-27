@@ -6,7 +6,7 @@ import axios, {AxiosError} from 'axios';
 import { UserContext } from '../../context/context';
 
 // ui loading
-import { Jelly } from '@uiball/loaders'
+import { Jelly, Ring } from '@uiball/loaders'
 
 // assets
 import CenLogo from '../../assets/cen/CenWhite.png'
@@ -21,7 +21,7 @@ import { api } from '../../utils/api';
 import { connectWallet, disconnectWallet, getActiveAccount, checkIfWalletConnected } from '../../utils/wallet';
 
 
-export default function ConnectBox() {
+export default function ConnectBox({Uiload, setUiload} : {Uiload:any, setUiload:any}) {
   const { User, setUser } = useContext<any>(UserContext);
   const navigate = useNavigate();
   const [ConnectionState, setConnectionState] = useState<boolean>(false);
@@ -34,6 +34,7 @@ export default function ConnectBox() {
   };
 
   const ConnectWallet = async () => {
+    setUiload(true)
     const activeAccount = await getActiveAccount();
     let myAddress: String | undefined;
     if (!activeAccount) {
@@ -41,7 +42,6 @@ export default function ConnectBox() {
       // @ts-ignore
       myAddress = getAddress;
       console.log('New connection: ', myAddress);
-      setLoading(true);
       // eslint-disable-next-line no-unused-vars
       myAddress = getAddress.toString();
       setConnectionState(true);
@@ -60,18 +60,18 @@ export default function ConnectBox() {
           };
           setUser(userdata);
           console.log(UserData);
-	  setLoading(false);
+	  setUiload(false);
         })
         .catch((reason: AxiosError) => {
 	  if (reason.response!.status === 404) {
 	    console.log("failed to connect to server, try again later");
 	    setRequestError(true);
-	    setLoading(false);
+	    setUiload(false);
 	  }
 	  if (reason.response!.status === 204) {
 	    console.log("no user found")
 	    navigate("/app/signup");
-	    setLoading(false)
+	    setUiload(false)
 	  }
         });
       navigate('/app/dashboard');

@@ -14,10 +14,13 @@ import { getActiveAccount, getAddress } from '../../utils/wallet';
 // components
 import ConnectBox from '../../components/connect/connectBox';
 
+// loading animations
+import { MrMiyagi, Pinwheel, Pulsar, RaceBy, Ring, SuperBalls } from '@uiball/loaders';
+
 export default  function Connect() {
   const {User, setUser} = useContext<any>(UserContext);
   const [BetaAccept, setBetaAccept] = useState<boolean>(false);
-
+  const [Loaded, setLoaded] = useState<boolean>(true);
   const navigate = useNavigate();
   useEffect(() => {
     const checkForUser = async () => {
@@ -33,7 +36,18 @@ export default  function Connect() {
   }, [])
   return (
     <div className="Connect">
-      <ConnectBox />
+      {Loaded === false && (
+        <ConnectBox Uiload={Loaded} setUiload={setLoaded} />
+      )}
+      {Loaded === true && (
+        <div className="Connect-loading-animation">
+         <Pinwheel
+           size={240}
+ 	   speed={1} 
+ 	  color="rgb(33, 114, 229)" 
+	 /> 
+	</div>
+      )}
     </div>
   )
 }
