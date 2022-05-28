@@ -20,26 +20,28 @@ import { MrMiyagi, Pinwheel, Pulsar, RaceBy, Ring, SuperBalls } from '@uiball/lo
 export default  function Connect() {
   const {User, setUser} = useContext<any>(UserContext);
   const [BetaAccept, setBetaAccept] = useState<boolean>(false);
-  const [Loaded, setLoaded] = useState<boolean>(true);
+  const [Loaded, setLoaded] = useState<boolean>(false);
   const navigate = useNavigate();
   useEffect(() => {
     const checkForUser = async () => {
       const activeAccount = await getActiveAccount();
       if (activeAccount) {
         console.log('wallet already connected');
+	setLoaded(true);
 	navigate('/app/dashboard');
       } else if (User.status === true) {
 	console.log('wallet already connected');
+	setLoaded(true);
         navigate('/app/dashboard'); 
       }
     }
   }, [])
   return (
     <div className="Connect">
-      {Loaded === false && (
+      {Loaded == true && (
         <ConnectBox Uiload={Loaded} setUiload={setLoaded} />
       )}
-      {Loaded === true && (
+      {Loaded == false && (
         <div className="Connect-loading-animation">
          <Pinwheel
            size={240}

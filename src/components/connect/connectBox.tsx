@@ -34,7 +34,7 @@ export default function ConnectBox({Uiload, setUiload} : {Uiload:any, setUiload:
   };
 
   const ConnectWallet = async () => {
-    setUiload(true)
+    setLoading(true);
     const activeAccount = await getActiveAccount();
     let myAddress: String | undefined;
     if (!activeAccount) {
@@ -60,20 +60,21 @@ export default function ConnectBox({Uiload, setUiload} : {Uiload:any, setUiload:
           };
           setUser(userdata);
           console.log(UserData);
-	  setUiload(false);
+	  setLoading(false);
         })
         .catch((reason: AxiosError) => {
 	  if (reason.response!.status === 404) {
 	    console.log("failed to connect to server, try again later");
 	    setRequestError(true);
-	    setUiload(false);
+	    setLoading(false);
 	  }
 	  if (reason.response!.status === 204) {
 	    console.log("no user found")
 	    navigate("/app/signup");
-	    setUiload(false)
+	    setLoading(false)
 	  }
         });
+      setLoading(false);
       navigate('/app/dashboard');
     }
   };
