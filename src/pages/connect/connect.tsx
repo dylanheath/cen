@@ -17,10 +17,9 @@ import ConnectBox from '../../components/connect/connectBox';
 // loading animations
 import { MrMiyagi, Pinwheel, Pulsar, RaceBy, Ring, SuperBalls } from '@uiball/loaders';
 
-export default  function Connect() {
+export default  function Connect({Loaded, setLoaded}: {Loaded:any, setLoaded:any}) {
   const {User, setUser} = useContext<any>(UserContext);
   const [BetaAccept, setBetaAccept] = useState<boolean>(false);
-  const [Loaded, setLoaded] = useState<boolean>(true);
   const navigate = useNavigate();
   useEffect(() => {
     const checkForUser = async () => {

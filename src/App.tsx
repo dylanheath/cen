@@ -30,15 +30,16 @@ function App() {
   const [User, setUser] = useState<userInfo>({name: null, email: null, address: null, cid: null, contacts: null, status: false });
   const context = useContext(UserContext);
   const providerValue = useMemo(() => ({ User, setUser }), [User, setUser]);
+  const [ConnectLoading, setConnectLoading] = useState<boolean>(true);
   return (
     <div className="App">
       <BrowserRouter>
           <div className="Main">
 	    <UserContext.Provider value={providerValue}>
-	      <Navbar />
+	      <Navbar  Loaded={ConnectLoading} setLoaded={setConnectLoading} />
 	      <div className="content">
 	        <Routes>
-	          <Route path="/" element={<Connect />} />
+	          <Route path="/" element={<Connect Loaded={ConnectLoading} setLoaded={setConnectLoading} />} />
 	          <Route path="/app/dashboard" element={<Dashboard />} />
 		  <Route path="/app/swap" element={<Swap />} />
 		  <Route path="/app/send" element={<Send />} />

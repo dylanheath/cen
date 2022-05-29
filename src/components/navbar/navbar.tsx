@@ -28,7 +28,7 @@ import './navbar.css';
 //wallet
 import { connectWallet, disconnectWallet, getActiveAccount, checkIfWalletConnected } from '../../utils/wallet';
 
-const Navbar = () => {
+const Navbar = ({Loaded, setLoaded}: {Loaded:any, setLoaded:any}) => {
   const { User, setUser } = useContext<any>(UserContext);
   const navigate = useNavigate();
   const [address, setAddress] = useState<Partial<addressInfo>>({});
@@ -51,6 +51,7 @@ const Navbar = () => {
     async function checkForAccount() {
       const activeAccount = await getActiveAccount();
       let myAddress: String | undefined;
+      setLoaded(false);
       if (activeAccount) {
         myAddress = activeAccount.address;
         await axios.get(`${api.url}/user/${myAddress}`)
@@ -68,15 +69,20 @@ const Navbar = () => {
             };
             console.log(UserData);
             setUser(userdata);
+	    setLoaded(true);
             console.log('data has been received');
           })
           .catch(() => {
+	    setLoaded(true);
             console.log('error grabbing user');
           });
         setAddress({address:`${myAddress?.slice(0, 5)}....${myAddress?.slice(myAddress.length - 5)}`});
         setConnectionState(true);
+	setLoaded(true);
         navigate('/app/dashboard');
 	setCurrentPage({currentPage: "dashboard"});
+      } else {
+       setLoaded(true);
       }
     }
     checkForAccount();
