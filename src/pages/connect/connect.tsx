@@ -20,7 +20,7 @@ import { MrMiyagi, Pinwheel, Pulsar, RaceBy, Ring, SuperBalls } from '@uiball/lo
 export default  function Connect() {
   const {User, setUser} = useContext<any>(UserContext);
   const [BetaAccept, setBetaAccept] = useState<boolean>(false);
-  const [Loaded, setLoaded] = useState<boolean>(false);
+  const [Loaded, setLoaded] = useState<boolean>(true);
   const navigate = useNavigate();
   useEffect(() => {
     const checkForUser = async () => {
