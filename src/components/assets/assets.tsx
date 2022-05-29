@@ -185,7 +185,7 @@ export default function Assets() {
         <div className="XTZ-assets">
 	  <div className="XTZ-assets-header-container">
             <p className="XTZ-assets-header">XTZ</p>
-	    <p className="assets-percent">{((Price *  TotalXTZ / 1000000) / TotalUSD * 100).toFixed(2)}%</p>
+	    <p className="assets-percent">{((Price *  TotalXTZ / 1000000) / TotalUSD * 100 === 0 ? "0" : ((Price * TotalXTZ / 1000000) / TotalUSD * 100 ).toFixed(2))}%</p>
 	  </div>
 	  <div className="XTZ-assets-amount-container">
             <p className="assets-amount">${(Price * TotalXTZ / 1000000).toFixed(2)}</p>
@@ -197,7 +197,7 @@ export default function Assets() {
 	<div className="farm-assets">
 	  <div className="farm-assets-header-container">
             <p className="farm-assets-header">Farms</p>
-	    <p className="assets-percent">{FarmsUSD / TotalUSD * 100}%</p>
+	    <p className="assets-percent">{FarmsUSD / TotalUSD * 100 === 0 ? "0" : (FarmsUSD / TotalUSD * 100).toFixed(2)}%</p>
 	  </div>
 	  <div className="farm-assets-amount-container">
              <p className="assets-amount">${FarmsUSD == 0 ? "0.00" : FarmsUSD}</p> 
@@ -209,7 +209,7 @@ export default function Assets() {
 	<div className="tokens-assets">
 	   <div className="tokens-assets-header-container">
              <p className="farm-assets-header">Tokens</p>
-	     <p className="assets-percent">{(TokensUSD / TotalUSD * 100).toFixed(2)}%</p>
+	     <p className="assets-percent">{(TokensUSD / TotalUSD * 100) === 0 ? "0" : (TokensUSD / TotalUSD * 100).toFixed(2)}%</p>
 	   </div>
 	   <div className="tokens-assets-amount-container">
               <p className="assets-amount">${(TokensUSD).toFixed(2)}</p>
