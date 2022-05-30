@@ -83,17 +83,4 @@ Cen is Open to Contributions, for every pull request make sure you include
 - Reason for these changes
 
 
-## Connected Repos
-
-### Explore Dapps
-https://github.com/dylanheath/cen-explore-dapps
-
-#### Smart Contracts
-https://github.com/dylanheath/cen-lottery
-
-#### Backend
-https://github.com/dylanheath/cen-server
-
-#### Backend Documentation
-https://github.com/dylanheath/cen-api-documentation
 
